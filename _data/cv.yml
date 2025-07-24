@@ -1,74 +1,45 @@
-- title: General Information
+- title: BASICS
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
+      value: Ruiyan Huang
+    - name: Contact
+      value: ruiyan.huang@outlook.com
     - name: Languages
-      value: English, German
+      value: C, Python, SQL, Ruby, R, Java, English, Chinese, Spanish, German
 
-- title: Education
+- title: EDUCATION
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: B.S., Statistics & Data Science
+      institution: Yale University
+      year: Sep 2021 - May 2026
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
+        - GPA: 3.93/4.0
+        - Coursework: Machine Learning, Data Structures, Algorithms, Multivariate Statistics, Probability, Casual Inference, Renewable Energy Finance, Econometrics, Strategic Market Measurement 
+        - Teaching Assistant for: Statistical Theory, Linear Models 
 
-- title: Experience
+- title: PROFESSIONAL EXPERIENCE
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Quantitative Analyst Intern
+      institution: LVMH x Carbon Containment Lab
+      year: Sep 2024 – present
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
-      description:
-        - Description 1.
-        - Description 2.
+        - Developed a green finance screening tool to evaluate real estate portfolios’ eligibility for climate investment based on emissions intensity and retrofit potential.
+        - Forecasted refrigerant emissions for U.S. and China commercial real estate using time-series models, boosting planning accuracy.
+        - Built a Monte Carlo climate-economic model (1,000+ simulations, 8 parameters) to estimate social costs and guide policy.
+        - Interviewed industry experts at McKinsey, RMI, ICF, CBRE, and other major firms to validate model assumptions and policy recommendations.
 
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
 
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
+- title: PROJECTS
   type: time_table
   contents:
     - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
       year: 2015-now
       description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
 
-- title: Honors and Awards
+- title: FELLOWSHIPS & PROGRAMS
   type: time_table
   contents:
     - year: 1921
@@ -79,7 +50,7 @@
       items:
         - Max Planck Medal
 
-- title: Academic Interests
+- title: LANGUAGES & FRAMEWORKS
   type: nested_list
   contents:
     - title: Topic 1.
@@ -91,7 +62,7 @@
         - Description 1.
         - Description 2.
 
-- title: Other Interests
+- title: OTHER INTERESTS
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - <u>Hobbies:</u> karate 3rd Kyu (brown belt)
