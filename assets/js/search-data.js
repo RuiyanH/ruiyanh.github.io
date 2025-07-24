@@ -501,7 +501,21 @@ ninja.data = [{
         title: 'email',
         section: 'Socials',
         handler: () => {
-          window.open("mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D", "_blank");
+          window.open("mailto:%72%75%69%79%61%6E.%68%75%61%6E%67@%6F%75%74%6C%6F%6F%6B.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-flickr',
+        title: 'Flickr',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.flickr.com/", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/", "_blank");
         },
       },{
         id: 'social-inspire',
@@ -518,11 +532,11 @@ ninja.data = [{
           window.open("/feed.xml", "_blank");
         },
       },{
-        id: 'social-scholar',
-        title: 'Google Scholar',
+        id: 'social-wechat_qr',
+        title: 'Wechat_qr',
         section: 'Socials',
         handler: () => {
-          window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
+          window.open("", "_blank");
         },
       },{
         id: 'social-custom_social',
