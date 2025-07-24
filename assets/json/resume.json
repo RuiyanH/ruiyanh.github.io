@@ -3,10 +3,11 @@
     "name": "Ruiyan Huang",
     "label": "", 
     "image": "",
-    "email": "ruiyan.huang@outlool.com",
-    "phone": "(475) 365-9557",
+    "email": "ruiyan.huang@outlook.com",
+    "phone": "",
     "url": "https://ruiyanh.github.io/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "summary": "A Yale senior in Data Science & Environmental Studies. 
+    I build data-driven climate solutions—from refrigerant emissions forecasting and green-finance screeners to computer-vision wildlife identification tools.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -14,15 +15,15 @@
       "countryCode": "US",
       "region": "Connecticut"
     },
-    "profiles": [
-      {
-        "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
-      }
-    ]
+#    "profiles": [
+#      {
+#        "network": "Twitter",
+#        "username": "AlbertEinstein",
+ #       "url": "https://twitter.com/AlbertEinstein"
+#      }
+ #   ]
   },
-  "work": [
+  "professional experience": [
     {
       "name": "Institute for Advanced Study, Princeton University",
       "position": "Professor of Theoretical Physics",
@@ -33,29 +34,29 @@
       "highlights": ["Relativity"]
     }
   ],
-  "volunteer": [
-    {
-      "organization": "People's Climate March",
-      "location": "Zurich, Switzerland",
-      "position": "Lead Organizer",
-      "url": "https://example.com",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
-    }
-  ],
+  #"volunteer": [
+  #  {
+   #   "organization": "People's Climate March",
+  #    "location": "Zurich, Switzerland",
+   #   "position": "Lead Organizer",
+   #   "url": "https://example.com",
+   #   "startDate": "2014-04-01",
+    #  "endDate": "2015-07-01",
+    #  "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
+    #  "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
+    #}
+  #],
   "education": [
     {
       "institution": "Yale University",
       "location": "New Haven, CT",
       "url": "",
-      "area": "Statistics & Data Science",
-      "studyType": "B.S.",
+      "area": "Minor in Climate Changes and Solutions",
+      "studyType": "B.S., Statistics & Data Science",
       "startDate": "Sep 2021",
       "endDate": "May 2026",
       "score": "3.93/4.0",
-      "courses": ["Theory of Relativity"]
+      "courses": ["Machine Learning", "Data Structures & Algorithms"]
     }
   ],
   "awards": [
