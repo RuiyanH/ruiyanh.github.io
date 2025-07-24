@@ -6,8 +6,7 @@
     "email": "ruiyan.huang@outlook.com",
     "phone": "",
     "url": "https://ruiyanh.github.io/",
-    "summary": "A Yale senior in Data Science & Environmental Studies. 
-    I build data-driven climate solutions—from refrigerant emissions forecasting and green-finance screeners to computer-vision wildlife identification tools.",
+    "summary": "A Yale senior in Data Science & Environmental Studies. I build data-driven climate solutions—from refrigerant emissions forecasting and green-finance screeners to computer-vision wildlife identification tools.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -15,14 +14,7 @@
       "countryCode": "US",
       "region": "Connecticut"
     },
-#    "profiles": [
-#      {
-#        "network": "Twitter",
-#        "username": "AlbertEinstein",
- #       "url": "https://twitter.com/AlbertEinstein"
-#      }
- #   ]
-  },
+
   "professional experience": [
     {
       "name": "Institute for Advanced Study, Princeton University",
@@ -34,18 +26,18 @@
       "highlights": ["Relativity"]
     }
   ],
-  #"volunteer": [
-  #  {
-   #   "organization": "People's Climate March",
-  #    "location": "Zurich, Switzerland",
-   #   "position": "Lead Organizer",
-   #   "url": "https://example.com",
-   #   "startDate": "2014-04-01",
-    #  "endDate": "2015-07-01",
-    #  "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-    #  "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
-    #}
-  #],
+  "volunteer": [
+    {
+      "organization": "People's Climate March",
+      "location": "Zurich, Switzerland",
+      "position": "Lead Organizer",
+      "url": "https://example.com",
+      "startDate": "2014-04-01",
+      "endDate": "2015-07-01",
+      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
+      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
+    }
+  ],
   "education": [
     {
       "institution": "Yale University",
