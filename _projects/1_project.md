@@ -59,3 +59,55 @@ To replicate or modify the model, follow these steps:
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/yourusername/commercial-cooling-emissions.git
+   ```
+
+2. **Install dependencies**
+
+   Install the necessary Python packages:
+
+   ```bash
+   pip install pandas matplotlib seaborn scipy
+   ```
+
+3. **Data Setup**
+
+   The model requires building-specific data (e.g., energy usage, refrigerant type, cooling demand) in a structured format. Input this data into the `data/input_data.csv` file.
+
+4. **Run the Analysis**
+
+   Execute the Python script to calculate emissions and generate the abatement cost curve:
+
+   ```bash
+   python run_analysis.py
+   ```
+   
+5. **View Results**
+
+   The results will be saved as a .csv report and visualized as a graph (abatement_cost_curve.png).
+
+## Key Insights
+
+### 1. Cooling Emissions Insights
+
+The model reveals that energy consumption is the dominant source of emissions for commercial buildings, with certain regions (like the **East South Central**) exhibiting particularly high emissions due to the grid's reliance on coal. However, refrigerant leakage still contributes significantly, especially when legacy refrigerants are in use.
+
+### 2. Cost-Effective Abatement Measures
+
+The Abatement Cost Curve highlights the most cost-effective solutions:
+
+- **Energy Efficiency**: Measures like upgrading HVAC systems and optimizing cooling setpoints offer high emissions reductions at relatively low cost.
+- **Refrigerant Management**: Switching to low-GWP refrigerants and improving leak detection and repair practices can yield significant reductions, with a moderate upfront cost.
+- **Alternative Technologies**: While technologies like district cooling and green roofs offer substantial long-term reductions, they tend to have higher initial costs, making them less attractive for short-term cost savings.
+
+### 3. Prioritization of Measures
+
+The ACC helps prioritize measures based on cost-effectiveness and the feasibility of implementation. For example:
+
+- Low-cost measures, such as increasing operational efficiency and minor system optimizations, should be prioritized in the short term.
+- Higher-cost measures, such as new cooling systems and advanced refrigerant management, should be considered for long-term investments or where significant emissions reductions are required.
+
+## Future Work
+
+- **Integration with Real-Time Data**: Incorporating real-time energy consumption data for more dynamic and accurate modeling.
+- **Global Expansion**: Extending the model to account for cooling emissions in other regions, particularly emerging economies in Asia and Africa.
+- **Machine Learning Models**: Exploring machine learning techniques to predict future cooling emissions based on trends in energy use, building construction, and policy changes.
