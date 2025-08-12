@@ -4,7 +4,7 @@ title: Commercial Cooling Emissions Model & Abatement Cost Curve
 description: 
 img: assets/img/12.jpg
 importance: 1
-category: model
+category: work
 related_publications: true
 ---
 
