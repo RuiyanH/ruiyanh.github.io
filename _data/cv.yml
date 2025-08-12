@@ -13,7 +13,7 @@
   contents:
     - title: B.S., Statistics & Data Science
       institution: Yale University
-      year: Sep 2021 - May 2026
+      year: 09.2021 - 05.2026
       description:
         - GPA: 3.93/4.0
         - Coursework: Machine Learning, Data Structures, Algorithms, Multivariate Statistics, Probability, Casual Inference, Renewable Energy Finance, Econometrics, Strategic Market Measurement 
@@ -24,7 +24,7 @@
   contents:
     - title: Quantitative Analyst Intern
       institution: LVMH x Carbon Containment Lab
-      year: Sep 2024 – present
+      year: 09.2024-09.2025
       description:
         - Developed a green finance screening tool to evaluate real estate portfolios’ eligibility for climate investment based on emissions intensity and retrofit potential.
         - Forecasted refrigerant emissions for U.S. and China commercial real estate using time-series models, boosting planning accuracy.
@@ -42,13 +42,9 @@
 - title: FELLOWSHIPS & PROGRAMS
   type: time_table
   contents:
-    - year: 1921
+    - year: 2021
       items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
+        - Richter Fellwoship
 
 - title: LANGUAGES & FRAMEWORKS
   type: nested_list
