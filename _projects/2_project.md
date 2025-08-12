@@ -1,81 +1,46 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
+title: Snow Leopard Individual Identification
+description: Snow Leopard Individual Identification Using Computer Vision and Machine Learning
 img: assets/img/3.jpg
 importance: 2
 category: work
 giscus_comments: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+## Overview
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+Snow leopards are one of the most elusive and endangered big cats in the world. Traditional methods for monitoring their populations, such as tagging or manual image annotation, are labor-intensive and often intrusive. This project aims to apply cutting-edge computer vision and machine learning techniques to automatically identify individual snow leopards from camera trap images, enabling more effective and non-invasive wildlife monitoring.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+## Problem Statement
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+Effective conservation of snow leopards requires accurate tracking of individual animals over time and across locations. However, their secretive behavior and rugged habitat make population monitoring challenging. Automated individual identification from photos can significantly reduce manual effort and improve the accuracy of population estimates.
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+## Approach
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+- **Data Collection**: Curated a dataset of snow leopard images captured via camera traps in various natural habitats.
+- **Image Preprocessing**: Applied image enhancement and normalization techniques using OpenCV to improve feature extraction.
+- **Model Architecture**: Developed a convolutional neural network (CNN) combined with a Siamese network framework to learn discriminative features that distinguish individual animals.
+- **Training & Validation**: Used metric learning approaches to train the model on labeled pairs of images (same vs different individuals), enabling the system to identify new individuals accurately.
+- **Evaluation**: Measured model performance using precision, recall, and accuracy on a held-out test set.
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+## Tech Stack
 
-{% raw %}
+- **Languages & Frameworks**: Python, TensorFlow, PyTorch
+- **Libraries**: OpenCV, Scikit-learn, NumPy, Matplotlib
+- **Environment**: Jupyter Notebooks for experimentation and visualization
+- **Data**: Camera trap image datasets sourced from conservation partners and open repositories
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+## Results & Impact
 
-{% endraw %}
+- Achieved over **92% accuracy** in correctly identifying individual snow leopards.
+- Significantly reduced manual annotation time for conservation teams.
+- Provided a scalable, automated pipeline to support ongoing snow leopard monitoring and conservation efforts.
+
+## Future Work
+
+- Expand the dataset with additional images from diverse geographic regions.
+- Integrate the model into a real-time camera trap system for instant identification.
+- Develop explainability features to visualize what the model “sees” for each identification, increasing trust for field researchers.
+- Explore transfer learning for related species identification tasks.
+
