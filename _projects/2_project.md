@@ -4,7 +4,7 @@ title: Snow Leopard Individual Identification
 description: Snow Leopard Individual Identification Using Computer Vision and Machine Learning
 img: assets/img/3.jpg
 importance: 2
-category: work
+category: AI
 giscus_comments: true
 ---
 
