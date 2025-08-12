@@ -381,17 +381,6 @@ ninja.data = [{
             window.location.href = "/blog/2015/math/";
           
         },
-      },{id: "post-a-post-with-code",
-        
-          title: "a post with code",
-        
-        description: "an example of a blog post with some code",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2015/code/";
-          
-        },
       },{id: "post-a-post-with-images",
         
           title: "a post with images",
@@ -401,17 +390,6 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2015/images/";
-          
-        },
-      },{id: "post-a-post-with-formatting-and-links",
-        
-          title: "a post with formatting and links",
-        
-        description: "march &amp; april, looking forward to summer",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2015/formatting-and-links/";
           
         },
       },{id: "books-the-godfather",
