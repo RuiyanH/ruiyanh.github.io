@@ -312,9 +312,9 @@ ninja.data = [{
           description: "Snow Leopard Individual Identification Using Computer Vision and Machine Learning",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
-            },},{id: "projects-project-4",
-          title: 'project 4',
-          description: "another without an image",
+            },},{id: "projects-graphic-design-projects",
+          title: 'Graphic Design Projects',
+          description: "a collection of my graphic designs, including books, posters, and many more.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
             },},{
