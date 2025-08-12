@@ -2,11 +2,11 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Yale University Statistics & Data Science</a>. For Code. For Climate. For Change.
+subtitle: <a href='#'>Yale DS+Env
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: profile1.jpg
   image_circular: false # crops the image to make it circular
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
@@ -23,11 +23,4 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I’m a Yale student majoring in Data Science & Statistics and Environmental Studies, driven by the belief that meaningful impact happens when data meets purpose. My journey began at UWC, where experiential learning and global citizenship shaped my early commitment to education equity and environmental action.
-
-During my gap year, I co-founded a bilingual coding bootcamp for middle school girls in rural China and became a certified nature educator—experiences that taught me to lead with empathy and communicate complex ideas across diverse audiences.
-
-At Yale, I’ve deepened my technical toolkit and applied it to real-world problems—developing AI models for leopard conservation, visualizing geophysical data for carbon sequestration, and analyzing ESG performance for climate strategy. These experiences reflect my transition from advocacy to applied analytics and now to building tools that scale solutions.
-
-Today, I’m exploring career opportunities in data science, software engineering, and climate tech—especially roles that blend technical rigor with systems thinking. I'm particularly interested in projects that empower communities, unlock climate resilience, or drive equity through data.
-Let’s connect if you’re building something impactful at the intersection of data and sustainability—or if you just want to talk code, climate, or coffee.
+I’m a Yale senior (Data Science & Environmental Studies) aiming for SWE/frontend roles. I design and ship user-facing features with React, TypeScript, Next.js, Tailwind, Node, and Python—often for data-heavy, climate-focused projects. Recent work includes an interactive geophysical viz for carbon sequestration, a green-finance screening dashboard, and tooling around computer-vision workflows for snow-leopard ID. I care about accessibility (WCAG), performance (Core Web Vitals), testing (Jest/Cypress), and clean design systems. Earlier, I co-founded a bilingual coding bootcamp for middle-school girls in rural China—experience that sharpened my product sense and communication.
