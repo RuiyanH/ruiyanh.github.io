@@ -159,3 +159,73 @@ html[data-theme-setting="light"] {
     display: block;
   }
 }
+
+
+/* === Evergreen theme override === */
+:root {
+  --global-bg-color: #f7fbf8;
+  --global-code-bg-color: #f0f4f2;
+  --global-text-color: #0e1b16;
+  --global-text-color-light: #5d6b64;
+  --global-theme-color: #0f766e;          /* teal */
+  --global-hover-color: #0ea5a4;
+  --global-hover-text-color: #ffffff;
+  --global-footer-bg-color: #0e1b16;
+  --global-footer-text-color: #cfd7d3;
+  --global-footer-link-color: #ffffff;
+  --global-distill-app-color: #7a8a83;
+  --global-divider-color: rgba(0,0,0,0.08);
+  --global-card-bg-color: #ffffff;
+  --global-highlight-color: #d64545;      /* accents for <mark>, etc. */
+  --global-back-to-top-bg-color: rgba(14, 27, 22, 0.4);
+  --global-back-to-top-text-color: #ffffff;
+  --global-newsletter-bg-color: #ffffff;
+  --global-newsletter-text-color: #0e1b16;
+
+  --global-tip-block: #16a34a;
+  --global-tip-block-bg: #e8f6ec;
+  --global-tip-block-text: #14532d;
+  --global-tip-block-title: #15803d;
+  --global-warning-block: #b45309;
+  --global-warning-block-bg: #fff6e6;
+  --global-warning-block-text: #7c2d12;
+  --global-warning-block-title: #a14907;
+  --global-danger-block: #b91c1c;
+  --global-danger-block-bg: #ffebeb;
+  --global-danger-block-text: #7f1d1d;
+  --global-danger-block-title: #b91c1c;
+}
+
+html[data-theme="dark"] {
+  --global-bg-color: #0c1311;
+  --global-code-bg-color: #0f1916;
+  --global-text-color: #dbe7e2;
+  --global-text-color-light: #93a39c;
+  --global-theme-color: #2dd4bf;          /* brighter teal */
+  --global-hover-color: #99f6e4;
+  --global-hover-text-color: #0b1210;
+  --global-footer-bg-color: #e4efe9;
+  --global-footer-text-color: #0c1311;
+  --global-footer-link-color: #0c1311;
+  --global-distill-app-color: #dbe7e2;
+  --global-divider-color: #27302d;
+  --global-card-bg-color: #101916;
+  --global-back-to-top-bg-color: rgba(255,255,255,0.5);
+  --global-back-to-top-text-color: #0b1210;
+  --global-newsletter-bg-color: #e4efe9;
+  --global-newsletter-text-color: #0c1311;
+
+  --global-tip-block: #34d399;
+  --global-tip-block-bg: #11231c;
+  --global-tip-block-text: #b8e6d3;
+  --global-tip-block-title: #34d399;
+  --global-warning-block: #f59e0b;
+  --global-warning-block-bg: #201a0c;
+  --global-warning-block-text: #fde39f;
+  --global-warning-block-title: #f59e0b;
+  --global-danger-block: #ef4444;
+  --global-danger-block-bg: #261112;
+  --global-danger-block-text: #ffc9c9;
+  --global-danger-block-title: #ef4444;
+}
+
