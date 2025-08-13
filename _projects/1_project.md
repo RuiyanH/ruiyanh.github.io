@@ -58,7 +58,7 @@ To replicate or modify the model, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/commercial-cooling-emissions.git
+   git clone https://github.com/ruiyanh/commercial-cooling-emissions.git
    ```
 
 2. **Install dependencies**
