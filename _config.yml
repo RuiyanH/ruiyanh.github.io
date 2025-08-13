@@ -7,11 +7,10 @@ first_name: Ruiyan
 middle_name:
 last_name: Huang
 contact_note: >
-  Let’s connect if you’re building something impactful at the intersection of data and sustainability—or if you just want to talk code, climate, or coffee.
+  Let’s connect! Code, climate, or coffee.
 description: > 
   Yale senior in Data Science & Environmental Studies. I build data-driven tools for positive impacts for the planet and humanity.
 footer_text: >
-  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords:  # add your own keywords or leave empty
 lang: en 
@@ -28,8 +27,8 @@ back_to_top: true # set to false to disable the back to top button
 # -----------------------------------------------------------------------------
 
 # repo color theme
-repo_theme_light: default # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
-repo_theme_dark: dark # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
+repo_theme_light: shadow_green # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
+repo_theme_dark: vue-dark # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 repo_trophies:
   enabled: true
   theme_light: flat # https://github.com/ryo-ma/github-profile-trophy
