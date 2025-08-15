@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Yale DS+Env
+subtitle: <a href='#'>Yale DS+Env | Climate x Code x Design
 
 profile:
   align: right
