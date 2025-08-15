@@ -329,7 +329,14 @@ ninja.data = [{
         title: 'GitHub',
         section: 'Socials',
         handler: () => {
-          window.open("https://github.com/", "_blank");
+          window.open("https://github.com/RuiyanH", "_blank");
+        },
+      },{
+        id: 'social-unsplash',
+        title: 'Unsplash',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://unsplash.com/@riah215", "_blank");
         },
       },{
       id: 'light-theme',
