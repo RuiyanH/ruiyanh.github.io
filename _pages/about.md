@@ -23,8 +23,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hi, I’m Ruiyan—a data scientist and visual storyteller drawn to messy, meaningful problems at the intersection of climate, computation, and AI. My recent work spans from building McKinsey-style cost curves for commercial cooling systems to identifying snow leopards with computer vision—applying machine learning, spatial analysis, and statistical modeling to real-world complexity. I ship with Python/SQL, PyTorch, and geospatial tooling—and I care about making results intuitive and usable.
-Lately, I’ve been exploring how AI agents can turn fuzzy trip ideas into bookable plans—structured tool-calls, a lightweight constraint solver for cost/time/CO₂, and one-tap calendar holds.
+I’m Ruiyan Huang, a Statistics & Data Science student at Yale. I am broadly interested in probabilistic forecasting, graph- and sequence-based models, and how to design machine learning systems that remain reliable under noisy data and changing physical environments.
 
+My work spans cooling-emissions forecasting for commercial buildings, snow leopard re-identification from camera traps, and NLP methods that translate single-cell genomics data into interpretable text.
 
-Off-screen I collect languages (Mandarin/English/Spanish/German), train karate (brown belt, 3rd Kyu), and roam around the world with my well-loved Sony α7 (11 years old) and a Ricoh GR IIIx. I’m a mild plant hoarder, happiest backpacking, climbing, and chasing ocean swells and starry skies—then home to two orange cats and a border collie.
+Whenever I'm not home with my cats or practicing Karate, I’m outside in nature: backpacking, rock climbing, or making photo essays.
