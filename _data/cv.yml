@@ -6,7 +6,7 @@
     - name: Contact
       value: ruiyan.huang@outlook.com
     - name: Languages
-      value: C, Python, SQL, Ruby, R, Java, English, Chinese, Spanish, German
+      value: English, Chinese, Spanish, German
 
 - title: EDUCATION
   type: time_table
@@ -16,47 +16,60 @@
       year: 09.2021 - 05.2026
       description:
         - GPA: 3.93/4.0
-        - Coursework: Machine Learning, Data Structures, Algorithms, Multivariate Statistics, Probability, Casual Inference, Renewable Energy Finance, Econometrics, Strategic Market Measurement 
-        - Teaching Assistant for: Statistical Theory, Linear Models 
+        - Minor: Climate Sciences and Solutions
+        - Coursework: Machine Learning, Data Structures, Algorithms, Multivariate Statistics, Probability, Casual Inference, Renewable Energy Finance, Full-Stack Web Development; Intensive Real Analysis
+        - Teaching Assistant for: Linear Models, Applied Machine Learning & Causal Inference
 
-- title: PROFESSIONAL EXPERIENCE
+- title: RESEARCH EXPERIENCE
   type: time_table
   contents:
-    - title: Quantitative Analyst Intern
-      institution: LVMH x Carbon Containment Lab
-      year: 09.2024-09.2025
+    - title: NLP Research Assistant
+      institution: Yale NLP & Genomics Lab
+      year: Oct 2025 - Present
       description:
-        - Developed a green finance screening tool to evaluate real estate portfolios’ eligibility for climate investment based on emissions intensity and retrofit potential.
-        - Forecasted refrigerant emissions for U.S. and China commercial real estate using time-series models, boosting planning accuracy.
-        - Built a Monte Carlo climate-economic model (1,000+ simulations, 8 parameters) to estimate social costs and guide policy.
-        - Interviewed industry experts at McKinsey, RMI, ICF, CBRE, and other major firms to validate model assumptions and policy recommendations.
+        - Benchmarked methods translating high-dimensional single-cell RNA-seq data into textual descriptions using large language models.
+        - Assisted with prompt design, training/evaluation pipelines, and data preprocessing.
+    - title: Machine Learning Researcher
+      institution: Shan Shui Conservation Center
+      year: Apr 2025 - Aug 2025
+      description:
+        - Built a computer-vision pipeline for individual snow-leopard re-identification from sparse, noisy camera-trap images.
+        - Combined PIE (splines + XGBoost) with SIFT-based feature matching on top of CNN embeddings; benchmarked embeddings and distance metrics.
+        - Performed data cleaning, background subtraction, and augmentation.
+    - title: Biostatistics Research Assistant
+      institution: Yale School of Medicine (Dr. Guan Leying)
+      year: Mar 2024 - May 2024
+      description:
+        - Implemented causal inference and optimization with convex M-estimators on small-sample public health datasets.
+        - Benchmarked against traditional maximum-likelihood estimators.
 
-
-- title: PROJECTS
+- title: WORK EXPERIENCE
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: Analyst Intern
+      institution: Carbon Containment Lab
+      year: May 2025 - Aug 2025
+      description:
+        - Built a bottom-up spreadsheet model of cooling emissions for U.S. + China commercial real estate (2020–2060).
+        - Implemented baseline logic and a scenario engine to recompute emissions and cost curves under alternative grid/adoption pathways.
+    - title: Climate Data / ESG Analyst Intern
+      institution: Suzano S.A.
+      year: Feb 2023 - Aug 2023
+      description:
+        - Benchmarked ESG performance versus global competitors using sustainability ratings, climate disclosures, value-chain risks, and governance metrics.
 
-- title: FELLOWSHIPS & PROGRAMS
+- title: PROJECTS & PUBLICATIONS
   type: time_table
   contents:
-    - year: 2021
-      items:
-        - Richter Fellwoship
-
-- title: LANGUAGES & FRAMEWORKS
-  type: nested_list
-  contents:
-    - title: Topic 1.
-      items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
+    - title: Independent Research (Graph Theory)
+      year: 2022 - 2023
+      description:
+        - "Simulated triangulations and quivers on non-orientable surfaces with proofs."
+        - "Publication: Involve Math Journal (2023); arXiv:2201.05643 (2022)."
+    - title: Geospatial Mapping with Supervised Machine Learning
+      year: ""
+      description:
+        - Processed large-scale geospatial datasets in ArcGIS/R to classify ecological recovery patterns from abandoned oil wells.
 
 - title: OTHER INTERESTS
   type: list
