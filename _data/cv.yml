@@ -15,30 +15,30 @@
       institution: Yale University
       year: 09.2021 - 05.2026
       description:
-        - GPA: 3.93/4.0
-        - Minor: Climate Sciences and Solutions
-        - Coursework: Machine Learning, Data Structures, Algorithms, Multivariate Statistics, Probability, Casual Inference, Renewable Energy Finance, Full-Stack Web Development; Intensive Real Analysis
-        - Teaching Assistant for: Linear Models, Applied Machine Learning & Causal Inference
+        - "GPA: 3.93/4.0"
+        - "Minor: Climate Sciences and Solutions"
+        - "Coursework: Machine Learning, Data Structures, Algorithms, Multivariate Statistics, Probability, Casual Inference, Renewable Energy Finance, Full-Stack Web Development; Intensive Real Analysis"
+        - "Teaching Assistant for: Linear Models, Applied Machine Learning & Causal Inference"
 
 - title: RESEARCH EXPERIENCE
   type: time_table
   contents:
     - title: NLP Research Assistant
       institution: Yale NLP & Genomics Lab
-      year: Oct 2025 - Present
+      year: 10.2025 - Present
       description:
         - Benchmarked methods translating high-dimensional single-cell RNA-seq data into textual descriptions using large language models.
         - Assisted with prompt design, training/evaluation pipelines, and data preprocessing.
     - title: Machine Learning Researcher
       institution: Shan Shui Conservation Center
-      year: Apr 2025 - Aug 2025
+      year: 04.2025 - 08.2025
       description:
         - Built a computer-vision pipeline for individual snow-leopard re-identification from sparse, noisy camera-trap images.
         - Combined PIE (splines + XGBoost) with SIFT-based feature matching on top of CNN embeddings; benchmarked embeddings and distance metrics.
         - Performed data cleaning, background subtraction, and augmentation.
     - title: Biostatistics Research Assistant
       institution: Yale School of Medicine (Dr. Guan Leying)
-      year: Mar 2024 - May 2024
+      year: 03.2024 - 05.2024
       description:
         - Implemented causal inference and optimization with convex M-estimators on small-sample public health datasets.
         - Benchmarked against traditional maximum-likelihood estimators.
@@ -48,13 +48,13 @@
   contents:
     - title: Analyst Intern
       institution: Carbon Containment Lab
-      year: May 2025 - Aug 2025
+      year: 05.2025 - 08.2025
       description:
         - Built a bottom-up spreadsheet model of cooling emissions for U.S. + China commercial real estate (2020–2060).
         - Implemented baseline logic and a scenario engine to recompute emissions and cost curves under alternative grid/adoption pathways.
     - title: Climate Data / ESG Analyst Intern
       institution: Suzano S.A.
-      year: Feb 2023 - Aug 2023
+      year: 02.2023 - 08.2023
       description:
         - Benchmarked ESG performance versus global competitors using sustainability ratings, climate disclosures, value-chain risks, and governance metrics.
 
@@ -67,7 +67,7 @@
         - "Simulated triangulations and quivers on non-orientable surfaces with proofs."
         - "Publication: Involve Math Journal (2023); arXiv:2201.05643 (2022)."
     - title: Geospatial Mapping with Supervised Machine Learning
-      year: ""
+      year: "2023"
       description:
         - Processed large-scale geospatial datasets in ArcGIS/R to classify ecological recovery patterns from abandoned oil wells.
 
