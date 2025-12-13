@@ -4,7 +4,7 @@ title: Graphic Design Projects
 description: a collection of my graphic designs, including books, posters, and many more. 
 img:
 importance: 3
-category: design
+category: art
 ---
 
 Every project has a beautiful feature showcase page.
