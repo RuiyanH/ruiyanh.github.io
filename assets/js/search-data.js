@@ -145,7 +145,7 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "projects-commercial-cooling-emissions-model-amp-abatement-cost-curve",
           title: 'Commercial Cooling Emissions Model &amp;amp; Abatement Cost Curve',
-          description: "",
+          description: "Forecasting cooling energy + refrigerant emissions and building abatement cost curves.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
             },},{id: "projects-snow-leopard-individual-identification",
@@ -171,6 +171,13 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://github.com/RuiyanH", "_blank");
+        },
+      },{
+        id: 'social-instagram',
+        title: 'Instagram',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://instagram.com/ruiy_augen", "_blank");
         },
       },{
         id: 'social-unsplash',
