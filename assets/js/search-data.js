@@ -153,6 +153,11 @@ ninja.data = [{
           description: "Snow Leopard Individual Identification Using Computer Vision and Machine Learning",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
+            },},{id: "projects-slack-clone-react-flask",
+          title: 'Slack Clone (React + Flask)',
+          description: "Real-time chat app with auth, channels, DMs, and message history.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_project/";
             },},{id: "projects-graphic-design-projects",
           title: 'Graphic Design Projects',
           description: "a collection of my graphic designs, including books, posters, and many more.",
