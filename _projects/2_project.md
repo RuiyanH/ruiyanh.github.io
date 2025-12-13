@@ -4,8 +4,7 @@ title: Snow Leopard Individual Identification
 description: Snow Leopard Individual Identification Using Computer Vision and Machine Learning
 img: assets/img/3.jpg
 importance: 2
-category: model
-giscus_comments: true
+category: vision
 ---
 
 ## Overview
@@ -33,7 +32,7 @@ Effective conservation of snow leopards requires accurate tracking of individual
 
 ## Results & Impact
 
-- Achieved over **92% accuracy** in correctly identifying individual snow leopards.
+- Achieved over **72% accuracy** in correctly identifying individual snow leopards.
 - Significantly reduced manual annotation time for conservation teams.
 - Provided a scalable, automated pipeline to support ongoing snow leopard monitoring and conservation efforts.
 

@@ -2,17 +2,17 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: blank # the website title (if blank, full name will be used instead)
+title: "Ruiyan's Space" # the website title (if blank, full name will be used instead)
 first_name: Ruiyan
 middle_name:
 last_name: Huang
 contact_note: >
   Let’s connect! Code, climate, or coffee.
 description: > 
-  Yale senior in Data Science & Environmental Studies. I build data-driven tools for positive impacts for the planet and humanity.
+  Statistics & Data Science @ Yale. I build ML tools for climate + biology.
 footer_text: >
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-keywords:  # add your own keywords or leave empty
+keywords: data science, machine learning, climate tech, energy systems, computer vision, statistics  # add your own keywords or leave empty
 lang: en 
 icon: 🐆 
 
@@ -383,7 +383,7 @@ enable_masonry: true # enables automatic project cards arrangement
 enable_math: true # enables math typesetting (uses MathJax)
 enable_tooltips: false # enables automatic tooltip links generated for each section titles on pages and posts
 enable_darkmode: true # enables switching between light/dark modes
-enable_navbar_social: false # enables displaying social links in the navbar on the about page
+enable_navbar_social: true # enables displaying social links in the navbar on the about page
 enable_project_categories: true # enables categorization of projects into multiple categories
 enable_medium_zoom: true # enables image zoom feature (as on medium.com)
 enable_progressbar: true # enables a horizontal progress bar linked to the vertical scroll position

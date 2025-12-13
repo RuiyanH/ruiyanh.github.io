@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Yale DS+Env | Climate x Code x Design
+subtitle: <a href='#'>Stats & Data Science @ Yale · Climate ML · Systems + storytelling
 
 profile:
   align: right
@@ -28,3 +28,4 @@ I’m Ruiyan Huang, a Statistics & Data Science student at Yale. I am broadly in
 My work spans cooling-emissions forecasting for commercial buildings, snow leopard re-identification from camera traps, and NLP methods that translate single-cell genomics data into interpretable text.
 
 Whenever I'm not home with my cats or practicing Karate, I’m outside in nature: backpacking, rock climbing, or making photo essays.
+
