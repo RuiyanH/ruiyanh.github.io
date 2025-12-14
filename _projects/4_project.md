@@ -2,7 +2,7 @@
 layout: page
 title: Graphic Design Projects
 description: a collection of my graphic designs, including books, posters, and many more. 
-img:
+img: assets/img/4.JPG
 importance: 3
 category: art
 ---

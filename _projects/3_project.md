@@ -2,7 +2,7 @@
 layout: project
 title: "Slack Clone (React + Flask)"
 description: "Real-time chat app with auth, channels, DMs, and message history."
-img: /assets/img/projects/discord-clone.png
+img: /assets/img/chatapp.png
 importance: 3
 category: software
 ---
