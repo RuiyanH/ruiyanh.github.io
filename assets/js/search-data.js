@@ -163,6 +163,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
+            },},{id: "projects-probabilistic-load-amp-renewable-generation-forecasting-germany",
+          title: 'Probabilistic Load &amp;amp; Renewable Generation Forecasting (Germany)',
+          description: "Point and probabilistic forecasts for Germany’s hourly electricity load with optional renewables and weather predictors.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/renewable_generation_forecasting/";
             },},{
         id: 'social-email',
         title: 'email',
