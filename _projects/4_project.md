@@ -1,49 +1,49 @@
 ---
 layout: page
-title: Graphic Design Projects
-description: a collection of my graphic designs, including books, posters, and many more. 
+title: In suspension - graphic design project
+description: 
 img: assets/img/4.JPG
 importance: 3
 category: art
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
-
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/art/suspension.JPG" title="In suspension" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
+    A handmade booklet project I made on memory, transits, and the state of in between. 
 </div>
+
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/art/sus2.JPG" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/art/sus3.JPF" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/art/sus4.JPF" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    This image can also have a caption. It's like magic.
+    
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+I grew up in a small town in China, and somehow my life has always been measured in distances. Each chapter begins at a station: a place I learn, briefly, and then leave. Even when I’m happy somewhere, there’s a quiet knowledge underneath it—this isn’t forever. I don’t always know when the departure will come, only that it will. Over time, that constant moving gave my life a recurring feeling: not quite here, not quite there—suspended.
+This book is my way of holding that in-between.
+It gathers photographs and fragments of writing I collected while traveling, especially on trains—my favorite kind of motion. A train ride is a gentle pause inside a journey: you don’t have to perform arrival or mourn departure. You just sit. The world slides by the window like a reel of fleeting scenes, and for a while, time belongs to no one but you.
+The book moves in sequence—departure → motion → arrival—like a quiet itinerary. I used translucent pages to mimic the misted blur of a train window, and the way memory edits the past into softness. White space becomes its own landscape, giving the text room to drift and the reader room to breathe. The typography stays minimal, not to be empty, but to be attentive—to let small details speak.
+In the end, the book isn’t about reaching a destination. It’s about the moment in between: the hush of movement, the tenderness of leaving, and the strange clarity that arrives when you’re simply passing through.
 
+<!--
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/art/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/art/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -60,12 +60,13 @@ Here's the code for the last row of images above:
 ```html
 <div class="row justify-content-sm-center">
   <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid path="assets/img/art/7.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
   </div>
   <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid path="assets/img/art/8.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
 ```
 
 {% endraw %}
+-->
