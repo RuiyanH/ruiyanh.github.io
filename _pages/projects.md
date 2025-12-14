@@ -5,7 +5,6 @@ permalink: /projects/
 description: A growing collection of my passion projects!
 nav: true
 nav_order: 3
-display_categories: [climate, ML, software, art]
 horizontal: false
 ---
 

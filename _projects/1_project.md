@@ -4,7 +4,7 @@ title: Commercial Cooling Emissions Model & Abatement Cost Curve
 description: Forecasting cooling energy + refrigerant emissions and building abatement cost curves.
 img: assets/img/12.jpg
 importance: 1
-category: climate
+category: ML
 related_publications: true
 ---
 
