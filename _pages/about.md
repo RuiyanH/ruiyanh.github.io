@@ -29,3 +29,4 @@ My work spans [cooling-emissions forecasting for commercial buildings](/projects
 
 Whenever I'm not home with my cats or practicing Karate, I’m outside in nature: backpacking, rock climbing, or [making photo essays](/projects/4_project/).
 
+Yo
