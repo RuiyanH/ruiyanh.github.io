@@ -163,11 +163,36 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
+            },},{id: "projects-guatemala-town-study",
+          title: 'Guatemala — Town Study',
+          description: "A walk through streets and markets—color, motion, and everyday architectures.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/guatemala_town/";
+            },},{id: "projects-hugging-trees-photo-essay",
+          title: 'Hugging Trees — Photo Essay',
+          description: "Portraits with trees—contact, weight, and the quiet scale of time.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/hugging_trees/";
+            },},{id: "projects-paintings-selected-works",
+          title: 'Paintings — Selected Works',
+          description: "A small portfolio of paintings and mixed-media studies.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/paintings/";
             },},{id: "projects-probabilistic-load-amp-renewable-generation-forecasting-germany",
           title: 'Probabilistic Load &amp;amp; Renewable Generation Forecasting (Germany)',
           description: "Point and probabilistic forecasts for Germany’s hourly electricity load with optional renewables and weather predictors.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/renewable_generation_forecasting/";
+            },},{id: "projects-tibet-photo-essay",
+          title: 'Tibet — Photo Essay',
+          description: "High-altitude light, prayer flags, and the feeling of far.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/tibet/";
+            },},{id: "projects-trash-museum-photo-essay",
+          title: 'Trash Museum — Photo Essay',
+          description: "Found forms, discarded lives—objects that tell stories once we learn to look.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/trash_museum/";
             },},{
         id: 'social-email',
         title: 'email',
