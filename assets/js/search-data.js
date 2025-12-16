@@ -188,9 +188,9 @@ ninja.data = [{
           description: "High-altitude light, prayer flags, and the feeling of far.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/tibet/";
-            },},{id: "projects-trash-museum-photo-essay",
-          title: 'Trash Museum — Photo Essay',
-          description: "Found forms, discarded lives—objects that tell stories once we learn to look.",
+            },},{id: "projects-tender-ruins-photo-essay",
+          title: 'Tender Ruins — Photo Essay',
+          description: "A quiet archive of what we throw away.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/trash_museum/";
             },},{
