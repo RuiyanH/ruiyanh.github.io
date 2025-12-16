@@ -168,9 +168,9 @@ ninja.data = [{
           description: "A walk through streets and markets—color, motion, and everyday architectures.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/guatemala_town/";
-            },},{id: "projects-hugging-trees-photo-essay",
-          title: 'Hugging Trees — Photo Essay',
-          description: "Portraits with trees—contact, weight, and the quiet scale of time.",
+            },},{id: "projects-rooted-photo-essay",
+          title: 'Rooted — Photo Essay',
+          description: "Small moments of contact with living structures older than us.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/hugging_trees/";
             },},{id: "projects-paintings-selected-works",
