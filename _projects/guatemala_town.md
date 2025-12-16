@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Guatemala — Town Study
+title: Street Corners & Soft Mornings
 description: A walk through streets and markets—color, motion, and everyday architectures.
 img: assets/img/photos/IMG_3225.JPG
 importance: 6

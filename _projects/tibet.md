@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tibet — Photo Essay
+title: Where the Sky Touches — Photo Essay
 description: High-altitude light, prayer flags, and the feeling of far.
 img: assets/img/photos/R0021145.JPG
 importance: 6
