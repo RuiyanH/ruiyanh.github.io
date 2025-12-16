@@ -27,7 +27,7 @@ For a minute, my body becomes quiet. The tree stays. I leave—lighter, still.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/art/treelight.JPG" title="In suspension" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/photos/treelight.jpg" title="In suspension" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
@@ -43,13 +43,13 @@ For a minute, my body becomes quiet. The tree stays. I leave—lighter, still.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/art/R0020820.JPG" title="In suspension" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/photos/R0020820.JPG" title="In suspension" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/art/IMG_5895.JPG" title="In suspension" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/photos/IMG_5895.JPG" title="In suspension" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 

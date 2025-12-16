@@ -12,7 +12,7 @@ category: art
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/art/R0021217.JPG" title="In suspension" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/photos/R0021217.JPG" title="In suspension" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
@@ -38,7 +38,7 @@ I photographed the afterlife of things: wrappers, rust, plastic, paper—objects
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/art/R0021129.JPG" title="In suspension" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/photos/R0021129.JPG" title="In suspension" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
@@ -61,7 +61,7 @@ I photographed the afterlife of things: wrappers, rust, plastic, paper—objects
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/art/R0021146.JPG" title="In suspension" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/photos/R0021146.JPG" title="In suspension" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
