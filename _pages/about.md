@@ -28,5 +28,3 @@ I’m Ruiyan Huang, a Statistics & Data Science student at Yale. I am broadly in
 My work spans [cooling-emissions forecasting for commercial buildings](/projects/1_project/), [snow leopard re-identification from camera traps](/projects/2_project/), and NLP methods that translate single-cell genomics data into interpretable text.
 
 Whenever I'm not home with my cats or practicing Karate, I’m outside in nature: backpacking, rock climbing, or [making photo essays](/projects/4_project/).
-
-Yo
