@@ -2,7 +2,7 @@
 layout: page
 title: Tender Ruins — Photo Essay
 description: A quiet archive of what we throw away.
-img: assets/img/photos/IMG_0101.JPG
+img: assets/img/photos/R0021217.JPG
 importance: 5
 category: art
 ---
@@ -12,7 +12,7 @@ category: art
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/photos/R0021217.JPG" title="In suspension" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/photos/R0021217.JPG" title="Tender Ruins" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
@@ -38,7 +38,7 @@ I photographed the afterlife of things: wrappers, rust, plastic, paper—objects
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/photos/R0021129.JPG" title="In suspension" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/photos/R0021129.JPG" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
@@ -58,7 +58,7 @@ I photographed the afterlife of things: wrappers, rust, plastic, paper—objects
     {% include figure.liquid loading="eager" path="assets/img/photos/R0021145.JPG" class="img-fluid rounded z-depth-1" %}
   </div>
   <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/photos/R0021146.JPG" title="In suspension" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/photos/R0021146.JPG" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
