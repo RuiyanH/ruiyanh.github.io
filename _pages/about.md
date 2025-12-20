@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Stats & Data Science @ Yale · Climate ML · Systems + storytelling
+subtitle: <a href='#'>Stats & Data Science @ Yale · ML · Climate · Systems · Design
 
 profile:
   align: right
