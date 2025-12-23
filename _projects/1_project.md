@@ -5,6 +5,7 @@ description: Forecasting cooling energy + refrigerant emissions and building aba
 img: assets/img/12.jpg
 importance: 1
 category: ML
+tags: [Time Series Forcasting, Emission Abatements, Cost-benefit Analysis]
 related_publications: true
 ---
 

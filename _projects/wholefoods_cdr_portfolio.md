@@ -5,6 +5,7 @@ description: Carbon removals portfolio recommendation and executive memo for Who
 img: assets/img/wf_cover.jpg
 importance: 5
 category: climate
+tags: [climate, carbon-removal, portfolio, memo, whole-foods]
 ---
 
 ## Overview
