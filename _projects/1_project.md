@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Emissions Model & Cost Curve
+title: Commerical Cooling Emissions Model & Cost Curve
 description: Forecasting cooling energy + refrigerant emissions and building abatement cost curves.
 img: assets/img/12.jpg
 importance: 1

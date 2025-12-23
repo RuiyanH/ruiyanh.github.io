@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Probabilistic Load & Renewable Generation Forecasting (Germany)
+title: Renewable Generation Forecasting
 description: Point and probabilistic forecasts for Germany’s hourly electricity load with optional renewables and weather predictors.
 img: assets/img/renewable.jpg
 importance: 4
