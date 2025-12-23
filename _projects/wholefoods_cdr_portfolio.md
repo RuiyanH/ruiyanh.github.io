@@ -3,9 +3,9 @@ layout: page
 title: Whole Foods CDR Portfolio & Memo
 description: Carbon removals portfolio recommendation and executive memo for Whole Foods Market.
 img: assets/img/wf_cover.jpg
-importance: 5
+importance: 4
 category: climate
-tags: [climate, carbon-removal, portfolio, memo, whole-foods]
+tags: [Climate, Carbon-Removal, Risk, Budget]
 ---
 
 ## Overview

@@ -5,6 +5,7 @@ description:
 img: assets/img/4.JPG
 importance: 3
 category: art
+tags: [Graphic Design, Typography, Photography, Poetry]
 ---
 <!--  -->
 

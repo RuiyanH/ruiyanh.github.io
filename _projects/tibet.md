@@ -2,9 +2,10 @@
 layout: page
 title: Where the Sky Touches — Landscapes
 description: High-altitude light, prayer flags, and the feeling of far.
-img: assets/img/photos/IMG_3169.JPG
+img: assets/img/photos/mount3.JPG
 importance: 6
 category: art
+tags: [Photography]
 ---
 
 ## Tibet
