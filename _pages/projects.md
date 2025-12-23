@@ -49,6 +49,21 @@ horizontal: false
     margin-right: 0.5rem;
     font-weight: 600;
   }
+  .tag-filter-section {
+    width: 100%;
+    margin-top: 0.25rem;
+  }
+  .tag-filter-group-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    opacity: 0.85;
+    margin: 0.25rem 0;
+  }
+  .tag-filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
   .tag-filter {
     cursor: pointer;
     user-select: none;
@@ -72,10 +87,10 @@ horizontal: false
   .is-hidden {
     display: none !important;
   }
-  /* Consistent 3:4 cover crop for card images */
+  /* Consistent 3:2 cover crop for card images */
   .projects .card-img-top {
     width: 100%;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 3 / 2;
     object-fit: cover;
   }
   /* Optional: clamp description to reduce height variance */
@@ -103,11 +118,77 @@ horizontal: false
   <!-- Tag filter bar -->
   <div class="tag-filter-bar">
     <span class="tag-filter-title">Filter by tags:</span>
+    {% comment %} Group tags into sections {% endcomment %}
+    {% assign energy_climate_names = '|climate|energy|carbon-removal|carbon removal|renewables|erw|biochar|mineralization|dac|refrigerants|cooling|sustainability|' %}
+    {% assign art_names = '|art|design|photography|graphic|book|' %}
+    {% assign dsml_names = '|ml|machine learning|data science|forecasting|vision|nlp|graph|time-series|statistics|python|pytorch|tensorflow|' %}
+    {% assign energy_climate_tags = '' %}
+    {% assign art_tags = '' %}
+    {% assign dsml_tags = '' %}
+    {% assign other_tags = '' %}
     {% for t in tags_array %}
       {% if t != "" %}
-        <span class="tag-filter" data-tag="{{ t | downcase }}">{{ t }}</span>
+        {% assign t_l = t | downcase %}
+        {% assign needle = '|' | append: t_l | append: '|' %}
+        {% if energy_climate_names contains needle %}
+          {% assign energy_climate_tags = energy_climate_tags | append: t | append: '|' %}
+        {% elsif art_names contains needle %}
+          {% assign art_tags = art_tags | append: t | append: '|' %}
+        {% elsif dsml_names contains needle %}
+          {% assign dsml_tags = dsml_tags | append: t | append: '|' %}
+        {% else %}
+          {% assign other_tags = other_tags | append: t | append: '|' %}
+        {% endif %}
       {% endif %}
     {% endfor %}
+    {% assign energy_climate_array = energy_climate_tags | split: '|' | uniq | sort %}
+    {% assign dsml_array = dsml_tags | split: '|' | uniq | sort %}
+    {% assign art_array = art_tags | split: '|' | uniq | sort %}
+    {% assign other_array = other_tags | split: '|' | uniq | sort %}
+
+    <div class="tag-filter-section">
+      <div class="tag-filter-group-title">Energy / Climate</div>
+      <div class="tag-filter-group">
+        {% for t in energy_climate_array %}
+          {% if t != "" %}
+            <span class="tag-filter" data-tag="{{ t | downcase }}">{{ t }}</span>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="tag-filter-section">
+      <div class="tag-filter-group-title">Data Science & ML</div>
+      <div class="tag-filter-group">
+        {% for t in dsml_array %}
+          {% if t != "" %}
+            <span class="tag-filter" data-tag="{{ t | downcase }}">{{ t }}</span>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="tag-filter-section">
+      <div class="tag-filter-group-title">Art</div>
+      <div class="tag-filter-group">
+        {% for t in art_array %}
+          {% if t != "" %}
+            <span class="tag-filter" data-tag="{{ t | downcase }}">{{ t }}</span>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="tag-filter-section">
+      <div class="tag-filter-group-title">Other</div>
+      <div class="tag-filter-group">
+        {% for t in other_array %}
+          {% if t != "" %}
+            <span class="tag-filter" data-tag="{{ t | downcase }}">{{ t }}</span>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
     <span class="tag-filter-clear" id="clear-tag-filters" role="button">Clear</span>
   </div>
 
