@@ -188,6 +188,11 @@ ninja.data = [{
           description: "A quiet archive of what we throw away.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/trash_museum/";
+            },},{id: "projects-whole-foods-cdr-portfolio-amp-memo",
+          title: 'Whole Foods CDR Portfolio &amp;amp; Memo',
+          description: "Carbon removals portfolio recommendation and executive memo for Whole Foods Market.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/wholefoods_cdr_portfolio/";
             },},{
         id: 'social-email',
         title: 'email',
