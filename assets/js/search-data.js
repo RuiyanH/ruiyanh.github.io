@@ -163,9 +163,9 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
-            },},{id: "projects-",
-          title: '',
-          description: "",
+            },},{id: "projects-street-protraits",
+          title: 'Street/Protraits',
+          description: "A walk through streets and markets—color, motion, and everyday architectures.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/guatemala_town/";
             },},{id: "projects-rooted-photo-essay",
