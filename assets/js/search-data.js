@@ -143,8 +143,8 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-commercial-cooling-emissions-model-amp-abatement-cost-curve",
-          title: 'Commercial Cooling Emissions Model &amp;amp; Abatement Cost Curve',
+          section: "News",},{id: "projects-emissions-model-amp-cost-curve",
+          title: 'Emissions Model &amp;amp; Cost Curve',
           description: "Forecasting cooling energy + refrigerant emissions and building abatement cost curves.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
@@ -163,9 +163,9 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
-            },},{id: "projects-street-protraits",
-          title: 'Street/Protraits',
-          description: "A walk through streets and markets—color, motion, and everyday architectures.",
+            },},{id: "projects-",
+          title: '',
+          description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/guatemala_town/";
             },},{id: "projects-rooted-photo-essay",
