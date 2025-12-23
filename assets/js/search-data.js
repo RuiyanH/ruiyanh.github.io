@@ -150,7 +150,7 @@ ninja.data = [{
               window.location.href = "/projects/1_project/";
             },},{id: "projects-snow-leopard-individual-identification",
           title: 'Snow Leopard Individual Identification',
-          description: "Snow Leopard Individual Identification Using Computer Vision and Machine Learning",
+          description: "Snow Leopard Individual Identification Using Computer Vision",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
             },},{id: "projects-slack-clone-react-flask",
