@@ -5,7 +5,7 @@ description: Carbon removals portfolio recommendation and executive memo for Who
 img: assets/img/wf_cover.jpg
 importance: 4
 category: climate
-tags: [Carbon removal, Corporate strategy, Risk assessment, Budget, Cost-effectiveness analysis, Decarbonization, Time-series forecasting, Scenario analysis]
+tags: [Carbon removal, Corporate strategy, Risk assessment, Cost-effectiveness analysis, Decarbonization, Time-series forecasting, Scenario analysis]
 ---
 
 ## Overview

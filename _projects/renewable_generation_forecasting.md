@@ -5,15 +5,14 @@ description: Point and probabilistic forecasts for Germany’s hourly electricit
 img: assets/img/renewable.jpg
 importance: 4
 category: ML
-tags: [Machine Learning, Energy, Time-series forcasting, Random forest, Regression, Model evaluation]
+tags: [Machine Learning, Energy, Time-series forcasting, Model evaluation]
 github: https://github.com/RuiyanH/Renewable-Generation-Forecasting
 ---
 
 ## Overview
+High-renewables power systems require not only accurate point forecasts of demand and generation, but also well-calibrated uncertainty estimates, especially around rare but critical events. This project aims to build **point and probabilistic forecasts** for Germany’s hourly **electricity load** and **solar/wind generation** using open grid and weather data. 
 
-This project builds point and probabilistic forecasts for Germany’s hourly electricity load, with optional renewables and weather predictors. It emphasizes practical, open‑data workflows and well‑calibrated uncertainty around rare but system‑critical events.
-
-I compare linear models, tree‑based methods, and neural networks, then wrap them in quantile and conformal prediction frameworks to produce full predictive distributions. Models are evaluated by both accuracy and calibration, especially on extreme events like peak load days and low‑renewables periods—to better support dispatch, storage, and investment decisions in high‑renewables grids.
+I compare **linear models**, **tree-based methods**, and **neural networks**, then wrap them in quantile and conformal prediction frameworks to produce full predictive distributions. I evaluate models by accuracy and calibration, especially on extreme events like peak load days and low-renewable periods, to show how probabilistic forecasts can better support dispatch, storage, and investment decisions in high-renewables grids.
 
 ## Methods (brief)
 
@@ -28,6 +27,9 @@ I compare linear models, tree‑based methods, and neural networks, then wrap th
 
 - Region: Germany (hourly, 2020–2025)
 - Sources: open grid and weather datasets (see repository README for instructions)
+
+### Result Summaries
+For 1-hour-ahead load forecasting, the gradient-boosted model reduces RMSE by approximately 64% and MAE by 63% relative to a persistence baseline, and also outperforms the same-hour-last-week heuristic. Direct quantile regression yields 80% prediction intervals whose empirical coverage is close to the nominal level (about 80%) with relatively narrow average widths, while conformal prediction achieves roughly (target-level) coverage for 90% intervals at the cost of somewhat wider bands.
 
 ## Links
 

@@ -14,6 +14,10 @@ horizontal: false
   .project-tags {
     margin-top: 0.5rem;
   }
+  .project-tags.collapsed {
+    max-height: 2.2em; /* ~2 lines of badges */
+    overflow: hidden;
+  }
   .tag-badge {
     display: inline-block;
     padding: 0.2rem 0.5rem;
@@ -25,6 +29,13 @@ horizontal: false
     background: #f5f5f5;
     color: #333;
     white-space: nowrap;
+  }
+  .project-tags-toggle {
+    display: inline-block;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    cursor: pointer;
+    text-decoration: underline;
   }
   /* Filter bar */
   .tag-filter-bar {
@@ -197,7 +208,10 @@ horizontal: false
     function applyFilter() {
       var cards = document.querySelectorAll('.projects .card');
       if (selected.size === 0) {
-        cards.forEach(function(card) { card.parentElement.parentElement.classList.remove('is-hidden'); });
+        cards.forEach(function(card) {
+          var col = card.closest('.col') || card.parentElement.parentElement;
+          if (col) col.classList.remove('is-hidden');
+        });
         return;
       }
       cards.forEach(function(card) {
@@ -207,8 +221,10 @@ horizontal: false
         selected.forEach(function(t) {
           if (tags.indexOf(t) === -1) { show = false; }
         });
-        var col = card.parentElement.parentElement; // .col wrapper
-        if (show) col.classList.remove('is-hidden'); else col.classList.add('is-hidden');
+        var col = card.closest('.col') || card.parentElement.parentElement; // .col wrapper
+        if (col) {
+          if (show) col.classList.remove('is-hidden'); else col.classList.add('is-hidden');
+        }
       });
     }
 
@@ -232,6 +248,32 @@ horizontal: false
       applyFilter();
     }
 
+    function setupTagCollapsers() {
+      var MAX_TAGS_VISIBLE = 6;
+      var groups = document.querySelectorAll('.project-tags');
+      groups.forEach(function(group) {
+        var badges = group.querySelectorAll('.tag-badge');
+        if (badges.length > MAX_TAGS_VISIBLE) {
+          group.classList.add('collapsed');
+          // Add toggle
+          var toggle = document.createElement('span');
+          toggle.className = 'project-tags-toggle';
+          toggle.textContent = 'Show more';
+          toggle.addEventListener('click', function() {
+            var collapsed = group.classList.contains('collapsed');
+            if (collapsed) {
+              group.classList.remove('collapsed');
+              toggle.textContent = 'Show less';
+            } else {
+              group.classList.add('collapsed');
+              toggle.textContent = 'Show more';
+            }
+          });
+          group.parentElement.appendChild(toggle);
+        }
+      });
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
       paintBadges('.project-tags .tag-badge');
       paintFilters('.tag-filter-bar .tag-filter');
@@ -251,6 +293,7 @@ horizontal: false
           applyFilter();
         });
       }
+      setupTagCollapsers();
     });
   })();
 </script>

@@ -1,6 +1,13 @@
 <div class="col">
   <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">
-    <div class="card h-100 hoverable" {% if project.tags %}data-tags="{{ project.tags | join: '|' | downcase }}"{% endif %}>
+    {% capture tags_attr %}
+      {% if project.tags and project.tags.size > 0 %}
+        {{ project.tags | join: '|' }}
+      {% elsif project.category %}
+        {{ project.category }}
+      {% endif %}
+    {% endcapture %}
+    <div class="card h-100 hoverable" data-tags="{{ tags_attr | strip | downcase }}">
       {% if project.img %}
         {%
           include figure.liquid
