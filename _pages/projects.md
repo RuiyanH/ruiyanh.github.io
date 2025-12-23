@@ -4,7 +4,7 @@ title: projects
 permalink: /projects/
 description: A growing collection of my passion projects!
 nav: true
-nav_order: 3
+nav_order: 2
 horizontal: false
 ---
 
@@ -71,6 +71,19 @@ horizontal: false
   /* Hide helper for filtering */
   .is-hidden {
     display: none !important;
+  }
+  /* Consistent 3:4 cover crop for card images */
+  .projects .card-img-top {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+  }
+  /* Optional: clamp description to reduce height variance */
+  .projects .card-body > p.card-text:first-of-type {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 </style>
 
@@ -217,9 +230,10 @@ horizontal: false
       cards.forEach(function(card) {
         var raw = (card.getAttribute('data-tags') || '').split('|').filter(Boolean);
         var tags = raw.map(function(t){ return t.trim().toLowerCase(); });
-        var show = true;
+        // OR semantics: show if project has ANY selected tag
+        var show = false;
         selected.forEach(function(t) {
-          if (tags.indexOf(t) === -1) { show = false; }
+          if (tags.indexOf(t) !== -1) { show = true; }
         });
         var col = card.closest('.col') || card.parentElement.parentElement; // .col wrapper
         if (col) {
@@ -259,7 +273,8 @@ horizontal: false
           var toggle = document.createElement('span');
           toggle.className = 'project-tags-toggle';
           toggle.textContent = 'Show more';
-          toggle.addEventListener('click', function() {
+          toggle.addEventListener('click', function(event) {
+            if (event) { event.preventDefault(); event.stopPropagation(); }
             var collapsed = group.classList.contains('collapsed');
             if (collapsed) {
               group.classList.remove('collapsed');

@@ -5,7 +5,7 @@ description: Point and probabilistic forecasts for Germany’s hourly electricit
 img: assets/img/renewable.jpg
 importance: 4
 category: ML
-tags: [Machine Learning, Energy, Time-series forcasting, Model evaluation]
+tags: [Machine learning, Energy, Time-series forecasting, Model evaluation]
 github: https://github.com/RuiyanH/Renewable-Generation-Forecasting
 ---
 
