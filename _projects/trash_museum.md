@@ -5,6 +5,7 @@ description: A quiet archive of what we throw away.
 img: assets/img/photos/R0021217.JPG
 importance: 5
 category: art
+tags: [Photography]
 ---
 
 ## Tender Ruins

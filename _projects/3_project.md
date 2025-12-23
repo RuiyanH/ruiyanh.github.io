@@ -5,7 +5,7 @@ description: "Real-time chat app with auth, channels, DMs, and message history."
 img: /assets/img/chatapp.png
 importance: 3
 category: software
-tags: [Software Engineer, Full-Stack, UI/UX, System Design, REST APIs, Python, SQL, Typescript]
+tags: [Software engineer, Full stack, Web app, Database Design, Athentication, UI/UX, System Design, REST APIs]
 ---
 
 Built a full-stack messaging app inspired by Discord/Slack.

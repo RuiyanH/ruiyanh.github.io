@@ -5,6 +5,7 @@ description: Small moments of contact with living structures older than us.
 img: assets/img/photos/IMG_6579.JPG
 importance: 6
 category: art
+tags: [Graphic Design, Typography, Photography, Poetry]
 ---
 
 ## Hugging Trees

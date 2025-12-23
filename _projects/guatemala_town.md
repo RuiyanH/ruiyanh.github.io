@@ -5,6 +5,7 @@ description: A walk through streets and markets—color, motion, and everyday ar
 img: assets/img/photos/guate9.JPG
 importance: 6
 category: art
+tags: [Photography]]
 ---
 
 ## Guatemala — A Town
