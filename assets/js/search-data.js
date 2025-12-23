@@ -143,8 +143,8 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-emissions-model-amp-cost-curve",
-          title: 'Emissions Model &amp;amp; Cost Curve',
+          section: "News",},{id: "projects-commerical-cooling-emissions-model-amp-cost-curve",
+          title: 'Commerical Cooling Emissions Model &amp;amp; Cost Curve',
           description: "Forecasting cooling energy + refrigerant emissions and building abatement cost curves.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
@@ -173,8 +173,8 @@ ninja.data = [{
           description: "Small moments of contact with living structures older than us.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/hugging_trees/";
-            },},{id: "projects-probabilistic-load-amp-renewable-generation-forecasting-germany",
-          title: 'Probabilistic Load &amp;amp; Renewable Generation Forecasting (Germany)',
+            },},{id: "projects-renewable-generation-forecasting",
+          title: 'Renewable Generation Forecasting',
           description: "Point and probabilistic forecasts for Germany’s hourly electricity load with optional renewables and weather predictors.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/renewable_generation_forecasting/";
