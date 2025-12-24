@@ -143,8 +143,8 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-commerical-cooling-emissions-model-amp-cost-curve",
-          title: 'Commerical Cooling Emissions Model &amp;amp; Cost Curve',
+          section: "News",},{id: "projects-commerical-cooling-emissions-model",
+          title: 'Commerical Cooling Emissions Model',
           description: "Forecasting cooling energy + refrigerant emissions and building abatement cost curves.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
