@@ -14,10 +14,6 @@ horizontal: false
   .project-tags {
     margin-top: 0.5rem;
   }
-  .project-tags.collapsed {
-    max-height: 2.2em; /* ~2 lines of badges */
-    overflow: hidden;
-  }
   .tag-badge {
     display: inline-block;
     padding: 0.2rem 0.5rem;
@@ -29,13 +25,6 @@ horizontal: false
     background: #f5f5f5;
     color: #333;
     white-space: nowrap;
-  }
-  .project-tags-toggle {
-    display: inline-block;
-    font-size: 0.8rem;
-    margin-top: 0.25rem;
-    cursor: pointer;
-    text-decoration: underline;
   }
   /* Filter bar */
   .tag-filter-bar {
@@ -123,7 +112,7 @@ horizontal: false
     position: relative;
   }
   .projects .card.card-collapsed .card-body {
-    max-height: 240px; /* collapsed body height */
+    max-height: 260px; /* collapsed body height */
     overflow: hidden;
   }
   .projects .card .card-fade {
@@ -139,6 +128,8 @@ horizontal: false
   }
   .projects .card.card-collapsed .card-fade {
     display: block;
+    bottom: 2.25rem; 
+    height: 60px; 
   }
   .projects .card .card-expand-btn {
     position: absolute;
@@ -412,33 +403,6 @@ horizontal: false
       applyFilter();
     }
 
-    function setupTagCollapsers() {
-      var MAX_TAGS_VISIBLE = 6;
-      var groups = document.querySelectorAll('.project-tags');
-      groups.forEach(function(group) {
-        var badges = group.querySelectorAll('.tag-badge');
-        if (badges.length > MAX_TAGS_VISIBLE) {
-          group.classList.add('collapsed');
-          // Add toggle
-          var toggle = document.createElement('span');
-          toggle.className = 'project-tags-toggle';
-          toggle.textContent = 'Show more';
-          toggle.addEventListener('click', function(event) {
-            if (event) { event.preventDefault(); event.stopPropagation(); }
-            var collapsed = group.classList.contains('collapsed');
-            if (collapsed) {
-              group.classList.remove('collapsed');
-              toggle.textContent = 'Show less';
-            } else {
-              group.classList.add('collapsed');
-              toggle.textContent = 'Show more';
-            }
-          });
-          group.parentElement.appendChild(toggle);
-        }
-      });
-    }
-
     function setupFilterBarCollapsers() {
       var sections = document.querySelectorAll('.tag-filter-section');
       sections.forEach(function(section) {
@@ -496,7 +460,6 @@ horizontal: false
           applyFilter();
         });
       }
-      setupTagCollapsers();
       setupFilterBarCollapsers();
 
       // Card-level expand/collapse for fixed height
