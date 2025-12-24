@@ -51,3 +51,49 @@ body.sticky-bottom-footer {
 *****************************************************************************/
 
 // TODO: redefine projects layout.
+
+/******************************************************************************
+ * Forestfolio-like Page Layout (hero + content width)
+ ******************************************************************************/
+
+// Page header (hero) with centered title and subtle divider
+.post-header {
+  padding-top: 2.5rem;
+  padding-bottom: 1.25rem;
+  text-align: center;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+.post-title {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.25rem;
+}
+
+.post-description {
+  max-width: 56ch;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--global-text-color-light);
+}
+
+// Comfortable reading width for page/article content
+.post > article {
+  max-width: 72ch;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+
+// Slightly larger spacing between stacked blocks in articles
+.post > article :is(h2, h3, h4) {
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+.post > article p {
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+.post > article ul,
+.post > article ol {
+  margin-bottom: 1rem;
+}

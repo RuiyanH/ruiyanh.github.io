@@ -11,7 +11,12 @@ body {
 // Links
 a,
 table.table a {
-  transition: color 160ms ease, text-decoration-color 160ms ease;
+  transition: color 160ms var(--ease-smooth), text-decoration-color 160ms var(--ease-smooth);
+}
+a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--ring-color);
+  border-radius: 4px;
 }
 
 // Cards
@@ -19,7 +24,7 @@ table.table a {
   border: 1px solid var(--global-divider-color);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
-  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  transition: transform 160ms var(--ease-smooth), box-shadow 160ms var(--ease-smooth), border-color 160ms var(--ease-smooth);
 }
 .card.hoverable:hover {
   transform: translateY(-2px);
@@ -36,8 +41,8 @@ table.table a {
 .publications .links a.btn {
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-sm);
-  transition: color 160ms ease, border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease,
-    transform 160ms ease;
+  transition: color 160ms var(--ease-smooth), border-color 160ms var(--ease-smooth), background-color 160ms var(--ease-smooth), box-shadow 160ms var(--ease-smooth),
+    transform 160ms var(--ease-smooth);
 }
 .publications .links a.btn:hover {
   background-color: var(--global-bg-color);
@@ -52,6 +57,69 @@ table.table a {
 }
 .projects .card:hover {
   box-shadow: var(--shadow-md);
+}
+
+// Buttons & Controls
+.btn,
+button,
+input[type="submit"],
+input[type="button"] {
+  border-radius: var(--radius-sm);
+  transition: transform 160ms var(--ease-smooth), box-shadow 160ms var(--ease-smooth), background-color 160ms var(--ease-smooth), color 160ms var(--ease-smooth);
+}
+.btn:focus-visible,
+button:focus-visible,
+input[type="submit"]:focus-visible,
+input[type="button"]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--ring-color);
+}
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+// Inputs
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="password"],
+textarea,
+select,
+.form-control {
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--global-divider-color);
+  background: var(--global-card-bg-color);
+  color: var(--global-text-color);
+  transition: border-color 160ms var(--ease-smooth), box-shadow 160ms var(--ease-smooth), background-color 160ms var(--ease-smooth);
+}
+input:focus,
+textarea:focus,
+select:focus,
+.form-control:focus {
+  outline: none;
+  border-color: var(--global-theme-color);
+  box-shadow: 0 0 0 3px var(--ring-color);
+}
+
+// Badges & tags
+.tag-badge {
+  border-radius: var(--radius-full);
+  border: 1px solid var(--global-divider-color);
+  background-color: rgba(15, 118, 110, 0.06); /* faint teal by default, JS recolors on projects page */
+}
+
+// Images
+img,
+.card-img-top {
+  border-radius: calc(var(--radius-md) - 2px);
+}
+
+// Navbar links
+.navbar .nav-link {
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
 
