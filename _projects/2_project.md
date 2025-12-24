@@ -2,7 +2,7 @@
 layout: page
 title: Snow Leopard Individual Identification
 description: Snow Leopard Individual Identification Using Computer Vision
-img: assets/img/3.jpg
+img: assets/img/snow.jpg
 importance: 2
 category: ML
 tags: [Machine learning, Computer vision, Model evaluation, Conservation]

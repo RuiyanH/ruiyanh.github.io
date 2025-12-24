@@ -2,7 +2,7 @@
 layout: page
 title: Commerical Cooling Emissions Model & Cost Curve
 description: Forecasting cooling energy + refrigerant emissions and building abatement cost curves.
-img: assets/img/12.jpg
+img: assets/img/Slide1.jpeg
 importance: 1
 category: ML
 tags: [Energy, Emissions modeling, Time-series forecasting, Optimization, Scenario analysis, Building systems, Cost-benefit analysis]
@@ -26,3 +26,6 @@ The **Abatement Cost Curve (ACC)**, based on McKinsey’s framework, was used to
   Download technical report (PDF)
 </a>
 
+<a class="btn btn-sm btn-outline-primary" href="{{ '/assets/pdf/CCLpresent.pdf' | relative_url }}" target="_blank" rel="noopener">
+  Download presentation (PDF)
+</a>
