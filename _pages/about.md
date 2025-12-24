@@ -31,6 +31,7 @@ Whenever I'm not home with my cats or practicing Karate, I’m outside in nature
 
 
 ### Site map
-- selected work across energy/climate, ML/data science, software, and art. Browse everything on [Projects]{% link _pages/projects.md %}.
-- résumé/CV in web + PDF form: [CV]{% link _pages/cv.md %}.
-- [Publications]{% link _pages/publications.md %}., [Bookshelf]{% link _pages/books.md %}., [Blog]{% link _pages/blogs.md %}.
+
+- selected work across energy/climate, ML/data science, software, and art. Browse everything on [Projects]({% link _pages/projects.md %}).
+- résumé/CV in web + PDF form: [CV]({% link _pages/cv.md %}).
+- [Publications]({% link _pages/publications.md %}), [Bookshelf]({% link _pages/books.md %}), [Blog]({{ '/blog/' | relative_url }}).
