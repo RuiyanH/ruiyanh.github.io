@@ -155,6 +155,10 @@ horizontal: false
     font-size: 0.9rem;
     opacity: 0.8;
   }
+  /* Dark mode overlay background */
+  html[data-theme="dark"] .projects .card .card-overlay {
+    background: rgba(16,25,22,0.96);
+  }
 </style>
 
 {% assign all_tags = "" %}

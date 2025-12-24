@@ -1,0 +1,57 @@
+// Forestfolio aesthetic overrides
+// - Rounded corners, soft shadows, teal accents
+// - Minimal motion/hover polish
+
+// Typography
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+// Links
+a,
+table.table a {
+  transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+
+// Cards
+.card {
+  border: 1px solid var(--global-divider-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+.card.hoverable:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+// Navbar
+.navbar {
+  backdrop-filter: saturate(180%) blur(8px);
+  -webkit-backdrop-filter: saturate(180%) blur(8px);
+}
+
+// Publication links → subtle modern buttons
+.publications .links a.btn {
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  transition: color 160ms ease, border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease,
+    transform 160ms ease;
+}
+.publications .links a.btn:hover {
+  background-color: var(--global-bg-color);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+// Project cards quick polish (global part)
+.projects .card {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+.projects .card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+
