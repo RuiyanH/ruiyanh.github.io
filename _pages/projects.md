@@ -133,15 +133,22 @@ horizontal: false
   }
   .projects .card .card-expand-btn {
     position: absolute;
-    right: 0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 0.5rem;
     z-index: 1;
-    font-size: 0.85rem;
-    padding: 0.25rem 0.5rem;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    line-height: 1;
     border: 1px solid rgba(0,0,0,0.15);
-    background: #f8f9fa;
-    border-radius: 999px;
+    background: #ffffff;
+    border-radius: 50%;
     cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
   }
 </style>
 
@@ -488,16 +495,16 @@ horizontal: false
               var btn = document.createElement('button');
               btn.type = 'button';
               btn.className = 'card-expand-btn';
-              btn.textContent = 'Show more';
+              btn.textContent = '▾';
               btn.addEventListener('click', function(event) {
                 if (event) { event.preventDefault(); event.stopPropagation(); }
                 var collapsed = card.classList.contains('card-collapsed');
                 if (collapsed) {
                   card.classList.remove('card-collapsed');
-                  btn.textContent = 'Show less';
+                  btn.textContent = '▴';
                 } else {
                   card.classList.add('card-collapsed');
-                  btn.textContent = 'Show more';
+                  btn.textContent = '▾';
                 }
               });
               card.appendChild(btn);
