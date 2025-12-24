@@ -120,8 +120,8 @@ horizontal: false
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 2.25rem; /* leave room for expand button */
-    height: 60px;
+    bottom: 0; /* extend under the expand arrow */
+    height: 80px;
     background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
     pointer-events: none;
     display: none;
