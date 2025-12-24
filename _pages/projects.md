@@ -52,17 +52,35 @@ horizontal: false
   .tag-filter-section {
     width: 100%;
     margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
   }
   .tag-filter-group-title {
     font-weight: 600;
     font-size: 0.9rem;
     opacity: 0.85;
     margin: 0.25rem 0;
+    white-space: nowrap;
   }
   .tag-filter-group {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    flex: 1 1 auto;
+    overflow: visible;
+  }
+  .tag-filter-group.collapsed {
+    max-height: 2.2em; /* ~1 line of chips */
+    overflow: hidden;
+  }
+  .tag-filter-more {
+    cursor: pointer;
+    user-select: none;
+    font-size: 0.85rem;
+    text-decoration: underline;
+    white-space: nowrap;
   }
   .tag-filter {
     cursor: pointer;
@@ -100,6 +118,40 @@ horizontal: false
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+  /* Fixed-height cards with expandable body */
+  .projects .card {
+    position: relative;
+  }
+  .projects .card.card-collapsed .card-body {
+    max-height: 240px; /* collapsed body height */
+    overflow: hidden;
+  }
+  .projects .card .card-fade {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 2.25rem; /* leave room for expand button */
+    height: 60px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+    pointer-events: none;
+    display: none;
+  }
+  .projects .card.card-collapsed .card-fade {
+    display: block;
+  }
+  .projects .card .card-expand-btn {
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0.5rem;
+    z-index: 1;
+    font-size: 0.85rem;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid rgba(0,0,0,0.15);
+    background: #f8f9fa;
+    border-radius: 999px;
+    cursor: pointer;
+  }
 </style>
 
 {% assign all_tags = "" %}
@@ -119,12 +171,14 @@ horizontal: false
   <div class="tag-filter-bar">
     <span class="tag-filter-title">Filter by tags:</span>
     {% comment %} Group tags into sections {% endcomment %}
-    {% assign energy_climate_names = '|climate|energy|carbon-removal|carbon removal|renewables|erw|biochar|mineralization|dac|refrigerants|cooling|sustainability|' %}
-    {% assign art_names = '|art|design|photography|graphic|book|' %}
-    {% assign dsml_names = '|ml|machine learning|data science|forecasting|vision|nlp|graph|time-series|statistics|python|pytorch|tensorflow|' %}
+    {% assign energy_climate_names = '|climate|energy|carbon removal|Conservation|emissions modeling|decarbonization|building systems|' %}
+    {% assign art_names = '|photography|graphic design|UI/UX|' %}
+    {% assign dsml_names = '|machine learning|computer vision|time-series forecasting|database design|Cost-benefit analysis|model evaluation|optimization|risk assessment|scenario analysis|' %}
+    {% assign swe_names = '|full stack|REST APIs|database design|Software Engineer|system design|UI/UX|' %}
     {% assign energy_climate_tags = '' %}
     {% assign art_tags = '' %}
     {% assign dsml_tags = '' %}
+    {% assign swe_tags = '' %}
     {% assign other_tags = '' %}
     {% for t in tags_array %}
       {% if t != "" %}
@@ -136,20 +190,24 @@ horizontal: false
           {% assign art_tags = art_tags | append: t | append: '|' %}
         {% elsif dsml_names contains needle %}
           {% assign dsml_tags = dsml_tags | append: t | append: '|' %}
+        {% elsif swe_names contains needle %}
+          {% assign swe_tags = swe_tags | append: t | append: '|' %}
         {% else %}
           {% assign other_tags = other_tags | append: t | append: '|' %}
         {% endif %}
       {% endif %}
     {% endfor %}
-    {% assign energy_climate_array = energy_climate_tags | split: '|' | uniq | sort %}
     {% assign dsml_array = dsml_tags | split: '|' | uniq | sort %}
+    {% assign swe_array = swe_tags | split: '|' | uniq | sort %}
+    {% assign energy_climate_array = energy_climate_tags | split: '|' | uniq | sort %}
     {% assign art_array = art_tags | split: '|' | uniq | sort %}
     {% assign other_array = other_tags | split: '|' | uniq | sort %}
 
+
     <div class="tag-filter-section">
-      <div class="tag-filter-group-title">Energy / Climate</div>
+      <div class="tag-filter-group-title">Data Science & ML</div>
       <div class="tag-filter-group">
-        {% for t in energy_climate_array %}
+        {% for t in dsml_array %}
           {% if t != "" %}
             <span class="tag-filter" data-tag="{{ t | downcase }}">{{ t }}</span>
           {% endif %}
@@ -158,9 +216,20 @@ horizontal: false
     </div>
 
     <div class="tag-filter-section">
-      <div class="tag-filter-group-title">Data Science & ML</div>
+      <div class="tag-filter-group-title"> Software Engineering</div>
       <div class="tag-filter-group">
-        {% for t in dsml_array %}
+        {% for t in swe_array %}
+          {% if t != "" %}
+            <span class="tag-filter" data-tag="{{ t | downcase }}">{{ t }}</span>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="tag-filter-section">
+      <div class="tag-filter-group-title">Energy / Climate</div>
+      <div class="tag-filter-group">
+        {% for t in energy_climate_array %}
           {% if t != "" %}
             <span class="tag-filter" data-tag="{{ t | downcase }}">{{ t }}</span>
           {% endif %}
@@ -370,6 +439,44 @@ horizontal: false
       });
     }
 
+    function setupFilterBarCollapsers() {
+      var sections = document.querySelectorAll('.tag-filter-section');
+      sections.forEach(function(section) {
+        var group = section.querySelector('.tag-filter-group');
+        if (!group) return;
+        // Start collapsed to one line
+        group.classList.add('collapsed');
+        // Measure overflow after layout
+        setTimeout(function() {
+          var overflowing = group.scrollHeight > group.clientHeight + 1;
+          if (!overflowing) {
+            group.classList.remove('collapsed');
+            return;
+          }
+          // Add a toggle if not present
+          var existingToggle = section.querySelector('.tag-filter-more');
+          if (!existingToggle) {
+            var more = document.createElement('span');
+            more.className = 'tag-filter-more';
+            more.textContent = 'Show more';
+            more.addEventListener('click', function(event) {
+              if (event) { event.preventDefault(); event.stopPropagation(); }
+              var collapsed = group.classList.contains('collapsed');
+              if (collapsed) {
+                group.classList.remove('collapsed');
+                more.textContent = 'Show less';
+              } else {
+                group.classList.add('collapsed');
+                more.textContent = 'Show more';
+              }
+            });
+            // Insert after group within the same row
+            section.appendChild(more);
+          }
+        }, 0);
+      });
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
       paintBadges('.project-tags .tag-badge');
       paintFilters('.tag-filter-bar .tag-filter');
@@ -390,6 +497,51 @@ horizontal: false
         });
       }
       setupTagCollapsers();
+      setupFilterBarCollapsers();
+
+      // Card-level expand/collapse for fixed height
+      (function setupCardBodyCollapsers() {
+        var cards = document.querySelectorAll('.projects .card');
+        cards.forEach(function(card) {
+          var body = card.querySelector('.card-body');
+          if (!body) return;
+          // Temporarily ensure collapsed to measure overflow
+          card.classList.add('card-collapsed');
+          // Defer measure until layout
+          setTimeout(function() {
+            var overflowing = body.scrollHeight > body.clientHeight + 1;
+            if (!overflowing) {
+              card.classList.remove('card-collapsed');
+              return;
+            }
+            // Add fade overlay if not present
+            if (!card.querySelector('.card-fade')) {
+              var fade = document.createElement('div');
+              fade.className = 'card-fade';
+              card.appendChild(fade);
+            }
+            // Add expand button if not present
+            if (!card.querySelector('.card-expand-btn')) {
+              var btn = document.createElement('button');
+              btn.type = 'button';
+              btn.className = 'card-expand-btn';
+              btn.textContent = 'Show more';
+              btn.addEventListener('click', function(event) {
+                if (event) { event.preventDefault(); event.stopPropagation(); }
+                var collapsed = card.classList.contains('card-collapsed');
+                if (collapsed) {
+                  card.classList.remove('card-collapsed');
+                  btn.textContent = 'Show less';
+                } else {
+                  card.classList.add('card-collapsed');
+                  btn.textContent = 'Show more';
+                }
+              });
+              card.appendChild(btn);
+            }
+          }, 0);
+        });
+      })();
     });
   })();
 </script>
