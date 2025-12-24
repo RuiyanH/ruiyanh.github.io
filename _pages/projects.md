@@ -107,48 +107,53 @@ horizontal: false
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  /* Fixed-height cards with expandable body */
+  /* Card overlay (hover/focus) */
   .projects .card {
     position: relative;
-  }
-  .projects .card.card-collapsed .card-body {
-    max-height: 260px; /* collapsed body height */
     overflow: hidden;
   }
-  .projects .card .card-fade {
-    content: "";
+  .projects .card .card-overlay {
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0; /* extend under the expand arrow */
-    height: 80px;
-    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
-    pointer-events: none;
-    display: none;
-  }
-  .projects .card.card-collapsed .card-fade {
-    display: block;
-    bottom: 2.25rem; 
-    height: 60px; 
-  }
-  .projects .card .card-expand-btn {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0.5rem;
-    z-index: 1;
-    width: 32px;
-    height: 32px;
+    inset: 0;
+    background: rgba(255,255,255,0.96);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 160ms ease, visibility 160ms ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
-    line-height: 1;
-    border: 1px solid rgba(0,0,0,0.15);
-    background: #ffffff;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+    text-align: left;
+    padding: 1rem;
+    pointer-events: none; /* allow click-through to anchor */
+  }
+  .projects .card:hover .card-overlay,
+  .projects .card:focus-within .card-overlay,
+  .projects .card.overlay-active .card-overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+  .projects .card .overlay-content {
+    max-width: 92%;
+  }
+  .projects .card .overlay-title {
+    font-size: 1.1rem;
+    margin: 0 0 0.35rem 0;
+  }
+  .projects .card .overlay-desc {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.95rem;
+    color: #333;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .projects .card .overlay-tags {
+    margin-bottom: 0.5rem;
+  }
+  .projects .card .overlay-cta {
+    font-size: 0.9rem;
+    opacity: 0.8;
   }
 </style>
 
@@ -469,47 +474,21 @@ horizontal: false
       }
       setupFilterBarCollapsers();
 
-      // Card-level expand/collapse for fixed height
-      (function setupCardBodyCollapsers() {
-        var cards = document.querySelectorAll('.projects .card');
-        cards.forEach(function(card) {
-          var body = card.querySelector('.card-body');
-          if (!body) return;
-          // Temporarily ensure collapsed to measure overflow
-          card.classList.add('card-collapsed');
-          // Defer measure until layout
-          setTimeout(function() {
-            var overflowing = body.scrollHeight > body.clientHeight + 1;
-            if (!overflowing) {
-              card.classList.remove('card-collapsed');
-              return;
+      // Touch devices: first tap reveals overlay, second tap navigates
+      (function setupTouchOverlay() {
+        var isTouch = window.matchMedia && window.matchMedia('(hover: none)').matches;
+        if (!isTouch) return;
+        document.querySelectorAll('.projects .card').forEach(function(card) {
+          var anchor = card.parentElement && card.parentElement.tagName === 'A' ? card.parentElement : null;
+          if (!anchor) return;
+          anchor.addEventListener('click', function(e) {
+            if (!card.classList.contains('overlay-active')) {
+              e.preventDefault();
+              card.classList.add('overlay-active');
+              // Auto-hide after a short delay if no second tap
+              setTimeout(function() { card.classList.remove('overlay-active'); }, 2000);
             }
-            // Add fade overlay if not present
-            if (!card.querySelector('.card-fade')) {
-              var fade = document.createElement('div');
-              fade.className = 'card-fade';
-              card.appendChild(fade);
-            }
-            // Add expand button if not present
-            if (!card.querySelector('.card-expand-btn')) {
-              var btn = document.createElement('button');
-              btn.type = 'button';
-              btn.className = 'card-expand-btn';
-              btn.textContent = '▾';
-              btn.addEventListener('click', function(event) {
-                if (event) { event.preventDefault(); event.stopPropagation(); }
-                var collapsed = card.classList.contains('card-collapsed');
-                if (collapsed) {
-                  card.classList.remove('card-collapsed');
-                  btn.textContent = '▴';
-                } else {
-                  card.classList.add('card-collapsed');
-                  btn.textContent = '▾';
-                }
-              });
-              card.appendChild(btn);
-            }
-          }, 0);
+          });
         });
       })();
     });

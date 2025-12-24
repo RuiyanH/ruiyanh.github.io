@@ -25,6 +25,21 @@ latest_posts:
 
 I’m Ruiyan Huang, a Statistics & Data Science student at Yale. I am broadly interested in probabilistic forecasting, graph- and sequence-based models, and how to design machine learning systems that remain reliable under noisy data and changing physical environments.
 
+{% include hero_banner.liquid
+  image="assets/img/12.jpg"
+  title="Ruiyan Huang"
+  subtitle="ML, energy systems, and thoughtful tools at the intersection of data and design."
+  cta_label="View projects"
+  cta_href="/projects/"
+%}
+
+{% include flowing_text.liquid
+  id="follow-arc"
+  text="Build with curiosity — Ship with care — Learn in public"
+  subtext="I share project notes, visual essays, and research updates from time to time."
+  show_socials=true
+%}
+
 My work spans [cooling-emissions forecasting for commercial buildings](/projects/1_project/), [snow leopard re-identification from camera traps](/projects/2_project/), and NLP methods that translate single-cell genomics data into interpretable text.
 
 Whenever I'm not home with my cats or practicing Karate, I’m outside in nature: backpacking, rock climbing, or [making photo essays](/projects/4_project/).

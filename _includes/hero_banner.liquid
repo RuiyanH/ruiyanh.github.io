@@ -1,0 +1,18 @@
+{% assign bg = include.image | default: 'assets/img/12.jpg' %}
+<section class="hero-banner" style="--hero-image: url('{{ bg | relative_url }}')">
+  <div class="hero-media" aria-hidden="true"></div>
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <h1 class="hero-title">{{ include.title | default: site.first_name | append: ' ' | append: site.last_name }}</h1>
+    {% if include.subtitle %}
+      <p class="hero-subtitle">{{ include.subtitle }}</p>
+    {% endif %}
+    <div class="hero-cta">
+      {% if include.cta_href and include.cta_label %}
+        <a class="btn btn-outline-primary btn-lg" href="{{ include.cta_href | relative_url }}">{{ include.cta_label }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+

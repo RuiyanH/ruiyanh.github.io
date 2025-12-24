@@ -48,6 +48,25 @@
           {% endif %}
         </div>
       </div>
+      <!-- Hover/focus overlay -->
+      <div class="card-overlay" aria-hidden="true">
+        <div class="overlay-content">
+          <h3 class="overlay-title">{{ project.title }}</h3>
+          <p class="overlay-desc">{{ project.description }}</p>
+          {% if project.tags and project.tags.size > 0 %}
+            <div class="overlay-tags">
+              {% for tag in project.tags %}
+                <span class="tag-badge" data-tag="{{ tag | downcase }}">{{ tag }}</span>
+              {% endfor %}
+            </div>
+          {% elsif project.category %}
+            <div class="overlay-tags">
+              <span class="tag-badge" data-tag="{{ project.category | downcase }}">{{ project.category }}</span>
+            </div>
+          {% endif %}
+          <div class="overlay-cta">View project →</div>
+        </div>
+      </div>
     </div>
   </a>
 </div>
