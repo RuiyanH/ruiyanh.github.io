@@ -77,9 +77,86 @@ body.sticky-bottom-footer {
   color: var(--global-text-color-light);
 }
 
+// About (hero) editorial look
+.post.about .post-header {
+  text-align: left;
+  border-bottom: none;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+}
+.post.about .post-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+  margin-bottom: 0.75rem;
+}
+.post.about .post-title {
+  font-weight: 800;
+  line-height: 1.06;
+  font-size: clamp(2.4rem, 6vw, 4.25rem);
+}
+.post.about .post-description {
+  max-width: 48ch;
+  margin-left: 0;
+  margin-right: 0;
+}
+.post.about .about-actions {
+  margin-top: 1.25rem;
+}
+.post.about .about-actions .btn {
+  border-radius: 9999px;
+  background-color: #9C524D !important;  /* slate green */
+  border-color: #814641 !important;
+  color: #fff;
+}
+.post.about .about-actions .btn:hover {
+  background-color: #884843 !important; /* darker */
+  border-color: #943e38 !important;
+}
+.post.about .about-actions .link {
+  color: var(--global-text-color);
+  opacity: 0.85;
+}
+
+// Align article content with header on About page
+.post.about .post-header,
+.post.about > article {
+  max-width: 90ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Actions (CTA buttons/links)
+.post .actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+}
+.post .actions .btn {
+  padding: 0.5rem 0.9rem;
+}
+.post .actions .link {
+  color: var(--global-text-color);
+  text-decoration: underline;
+}
+
+// About page-specific actions: left-aligned and larger
+.post .about-actions {
+  justify-content: flex-start;
+}
+.post .about-actions .btn {
+  padding: 0.75rem 1.25rem;
+  font-size: 1.05rem;
+}
+.post .about-actions .link {
+  font-size: 1.05rem;
+}
 // Comfortable reading width for page/article content
 .post > article {
-  max-width: 72ch;
+  max-width: 90ch;
   margin: 0 auto;
   padding-top: 2rem;
 }

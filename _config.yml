@@ -3,13 +3,14 @@
 # -----------------------------------------------------------------------------
 
 title: "Ruiyan Huang" # the website title (if blank, full name will be used instead)
+header_title: "Ruiyan' Field Notes" # custom text for navbar brand (leftmost)
 first_name: Ruiyan
 middle_name:
 last_name: Huang
 contact_note: >
   Let’s connect! Code, climate, or coffee.
 description: > 
-  Statistics & Data Science @ Yale. I build ML tools for climate + biology.
+  Statistics & Data Science @ Yale. I build ML tools for energy + biology.
 footer_text: >
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: data science, machine learning, climate tech, energy systems, computer vision, statistics  # add your own keywords or leave empty
@@ -52,7 +53,7 @@ posts_in_search: true
 bib_search: true
 
 # Dimensions
-max_width: 1100px
+max_width: 1300px
 
 # TODO: add layout settings (single page vs. multi-page)
 

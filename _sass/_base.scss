@@ -245,9 +245,9 @@ ul.task-list input[type="checkbox"] {
 
 .navbar {
   box-shadow: none;
-  border-bottom: 1px solid var(--global-divider-color);
-  background-color: var(--global-bg-color);
-  opacity: 0.95;
+  border-bottom: none;
+  background-color: var(--navbar-bg-color, var(--global-bg-color));
+  opacity: 1;
 }
 
 .navbar .dropdown-menu {
@@ -284,24 +284,24 @@ ul.task-list input[type="checkbox"] {
   }
 
   .navbar-brand {
-    color: var(--global-text-color);
+    color: var(--navbar-text-color, var(--global-text-color));
   }
 
   .navbar-nav .nav-item .nav-link {
-    color: var(--global-text-color);
+    color: var(--navbar-text-color, var(--global-text-color));
 
     &:hover {
-      color: var(--global-hover-color);
+      color: var(--global-theme-color);
     }
   }
 
   .navbar-nav .nav-item.active > .nav-link {
     background-color: inherit;
-    font-weight: bolder;
+    font-weight: 700;
     color: var(--global-theme-color);
 
     &:hover {
-      color: var(--global-hover-color);
+      color: var(--global-theme-color);
     }
   }
 
@@ -330,13 +330,13 @@ ul.task-list input[type="checkbox"] {
       }
 
       i::before {
-        color: var(--global-text-color);
+        color: var(--navbar-text-color, var(--global-text-color));
         transition-property: all 0.2s ease-in-out;
       }
 
       &:hover {
         i::before {
-          color: var(--global-theme-color);
+          color: var(--navbar-text-color, var(--global-text-color));
         }
       }
     }
@@ -348,7 +348,7 @@ ul.task-list input[type="checkbox"] {
     display: block;
     width: 22px;
     height: 2px;
-    background-color: var(--global-text-color);
+    background-color: var(--navbar-text-color, var(--global-text-color));
     border-radius: 1px;
     margin-bottom: 4px;
     transition: all 0.2s;
@@ -388,10 +388,10 @@ ul.task-list input[type="checkbox"] {
   padding: 0;
   border: 0;
   background-color: inherit;
-  color: var(--global-text-color);
+  color: var(--navbar-text-color, var(--global-text-color));
 
   &:hover {
-    color: var(--global-hover-color);
+    color: var(--navbar-text-color, var(--global-text-color));
   }
 }
 
@@ -961,7 +961,7 @@ progress {
   background-color: transparent;
 
   /* Progress bar value for IE10  */
-  color: var(--global-theme-color);
+  color: var(--progress-bar-color, var(--global-theme-color));
 }
 
 progress::-webkit-progress-bar {
@@ -969,11 +969,11 @@ progress::-webkit-progress-bar {
 }
 
 progress::-webkit-progress-value {
-  background-color: var(--global-theme-color);
+  background-color: var(--progress-bar-color, var(--global-theme-color));
 }
 
 progress::-moz-progress-bar {
-  background-color: var(--global-theme-color);
+  background-color: var(--progress-bar-color, var(--global-theme-color));
 }
 
 .progress-container {
@@ -987,7 +987,7 @@ progress::-moz-progress-bar {
 }
 
 .progress-bar {
-  background-color: var(--global-theme-color);
+  background-color: var(--progress-bar-color, var(--global-theme-color));
   width: 0%;
   display: block;
   height: inherit;

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Street/Protraits
+title: Street/Portraits
 description: A walk through streets and markets—color, motion, and everyday architectures.
 img: assets/img/photos/guate9.JPG
 importance: 6

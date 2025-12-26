@@ -21,38 +21,15 @@
       <div class="card-body">
         <h2 class="card-title">{{ project.title }}</h2>
         <p class="card-text">{{ project.description }}</p>
-        {% if project.tags and project.tags.size > 0 %}
-          <div class="project-tags">
-            {% for tag in project.tags %}
-              <span class="tag-badge" data-tag="{{ tag | downcase }}">{{ tag }}</span>
-            {% endfor %}
-          </div>
-        {% elsif project.category %}
-          <div class="project-tags">
-            <span class="tag-badge" data-tag="{{ project.category | downcase }}">{{ project.category }}</span>
-          </div>
-        {% endif %}
-        <div class="row ml-1 mr-1 p-0">
-          {% if project.github %}
-            <div class="github-icon">
-              <div class="icon" data-toggle="tooltip" title="Code Repository">
-                <a href="{{ project.github }}"><i class="fa-brands fa-github gh-icon"></i></a>
-              </div>
-              {% if project.github_stars %}
-                <span class="stars" data-toggle="tooltip" title="GitHub Stars">
-                  <i class="fa-solid fa-star"></i>
-                  <span id="{{ project.github_stars }}-stars"></span>
-                </span>
-              {% endif %}
-            </div>
-          {% endif %}
-        </div>
       </div>
       <!-- Hover/focus overlay -->
       <div class="card-overlay" aria-hidden="true">
         <div class="overlay-content">
-          <h3 class="overlay-title">{{ project.title }}</h3>
-          <p class="overlay-desc">{{ project.description }}</p>
+          {% if project.description %}
+            <p class="overlay-desc">{{ project.description }}</p>
+          {% else %}
+            <h3 class="overlay-title">{{ project.title }}</h3>
+          {% endif %}
           {% if project.tags and project.tags.size > 0 %}
             <div class="overlay-tags">
               {% for tag in project.tags %}
@@ -64,7 +41,6 @@
               <span class="tag-badge" data-tag="{{ project.category | downcase }}">{{ project.category }}</span>
             </div>
           {% endif %}
-          <div class="overlay-cta">View project →</div>
         </div>
       </div>
     </div>

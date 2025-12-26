@@ -1,6 +1,6 @@
 ---
 layout: page
-title: projects
+title: PROJECTS
 permalink: /projects/
 description: A growing collection of my passion projects!
 nav: true
@@ -10,6 +10,31 @@ horizontal: false
 
 <!-- pages/projects.md -->
 <style>
+  /* Projects page header background */
+  .post .post-header {
+    background-color:rgb(125, 138, 117);
+    border-bottom: none;
+    border-radius: 0;
+    /* Full-bleed across viewport */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    /* Pull up to the very top (behind fixed navbar) */
+    margin-top: calc(-56px - 3rem); /* 56px navbar offset + .container.mt-5 (≈3rem) */
+    /* Comfortable vertical spacing */
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: calc(2rem + 56px); /* add back space under the fixed navbar */
+    padding-bottom: 1.5rem;
+  }
+  .post .post-header .post-title,
+  .post .post-header .post-description {
+    color: #F5F5F5;
+  }
+
   /* Tag badges in cards */
   .project-tags {
     margin-top: 0.5rem;
@@ -97,7 +122,7 @@ horizontal: false
   /* Consistent 3:2 cover crop for card images */
   .projects .card-img-top {
     width: 100%;
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 4 / 3; /* slightly taller/larger photo */
     object-fit: cover;
   }
   /* Optional: clamp description to reduce height variance */
@@ -110,6 +135,7 @@ horizontal: false
   /* Card overlay (hover/focus) */
   .projects .card {
     position: relative;
+    border: none; /* remove card border */
     overflow: hidden;
   }
   .projects .card .card-overlay {
@@ -125,6 +151,38 @@ horizontal: false
     text-align: left;
     padding: 1rem;
     pointer-events: none; /* allow click-through to anchor */
+  }
+
+  /* Tighter horizontal gaps between cards (scoped to projects) */
+  .projects .row {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+  .projects .row > [class*="col"] {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  /* Title under photo: smaller and left-aligned, with compact spacing */
+  .projects .card-body {
+    padding: 0.6rem 0.6rem 0.9rem;
+    text-align: left;
+  }
+  .projects .card .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0.25rem 0 0;
+    text-align: left;
+  }
+  .projects .card .card-text {
+    font-size: 0.9rem;
+    margin: 0.25rem 0 0;
+    color: #444;
+  }
+
+  /* More vertical space between rows (not columns) */
+  .projects .row > [class*="col"] {
+    margin-bottom: 1.1rem;
   }
   .projects .card:hover .card-overlay,
   .projects .card:focus-within .card-overlay,
@@ -323,30 +381,23 @@ horizontal: false
 
 <script>
   (function() {
-    function stringHash(str) {
-      var hash = 0, i, chr;
-      if (str.length === 0) return hash;
-      for (i = 0; i < str.length; i++) {
-        chr = str.charCodeAt(i);
-        hash = ((hash << 5) - hash) + chr;
-        hash |= 0;
+    function getThemeColor() {
+      try {
+        var val = getComputedStyle(document.documentElement)
+          .getPropertyValue('--global-theme-color')
+          .trim();
+        return val || '#9C524D';
+      } catch (e) {
+        return '#9C524D';
       }
-      return Math.abs(hash);
     }
-    var palette = [
-      '#2563eb', '#16a34a', '#ca8a04', '#db2777', '#7c3aed',
-      '#0ea5e9', '#22c55e', '#f59e0b', '#ef4444', '#a855f7',
-      '#14b8a6', '#e11d48', '#1d4ed8', '#059669', '#b45309'
-    ];
-    function colorForTag(tag) {
-      var idx = stringHash(tag) % palette.length;
-      return palette[idx];
+    function colorForTag(_tag) {
+      return getThemeColor();
     }
     function paintBadges(selector) {
       var elems = document.querySelectorAll(selector);
       elems.forEach(function(el) {
-        var tag = (el.getAttribute('data-tag') || el.textContent || '').trim().toLowerCase();
-        var color = colorForTag(tag);
+        var color = colorForTag();
         el.style.backgroundColor = hexToRgba(color, 0.12);
         el.style.color = color;
         el.style.borderColor = hexToRgba(color, 0.35);
@@ -355,8 +406,7 @@ horizontal: false
     function paintFilters(selector) {
       var elems = document.querySelectorAll(selector);
       elems.forEach(function(el) {
-        var tag = (el.getAttribute('data-tag') || el.textContent || '').trim().toLowerCase();
-        var color = colorForTag(tag);
+        var color = colorForTag();
         el.dataset.color = color;
         el.style.borderColor = hexToRgba(color, 0.35);
       });
@@ -459,6 +509,7 @@ horizontal: false
 
     document.addEventListener('DOMContentLoaded', function() {
       paintBadges('.project-tags .tag-badge');
+      paintBadges('.overlay-tags .tag-badge');
       paintFilters('.tag-filter-bar .tag-filter');
       document.querySelectorAll('.tag-filter-bar .tag-filter').forEach(function(el) {
         el.addEventListener('click', function() { toggleFilter(el); });

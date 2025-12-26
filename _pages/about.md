@@ -1,8 +1,8 @@
 ---
 layout: about
-title: about
+title: ABOUT
 permalink: /
-subtitle: <a href='#'>Stats & Data Science @ Yale · ML · Climate · Systems · Design
+subtitle: <a href='#'>Stats & Data Science @ Yale · ML · Energy · Systems · Design
 
 profile:
   align: right
@@ -30,8 +30,4 @@ My work spans [cooling-emissions forecasting for commercial buildings](/projects
 Whenever I'm not home with my cats or practicing Karate, I’m outside in nature: backpacking, rock climbing, or [making photo essays](/projects/4_project/).
 
 
-### Site map
-
-- selected work across energy/climate, ML/data science, software, and art. Browse everything on [Projects]({% link _pages/projects.md %}).
-- résumé/CV in web + PDF form: [CV]({% link _pages/cv.md %}).
-- [Publications]({% link _pages/publications.md %}), [Bookshelf]({% link _pages/books.md %}), [Blog]({{ '/blog/' | relative_url }}).
+<!-- Site map removed in favor of header action buttons -->
