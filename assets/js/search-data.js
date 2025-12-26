@@ -4,20 +4,20 @@ const ninja = document.querySelector('ninja-keys');
 // add the home and posts menu items
 ninja.data = [{
     id: "nav-about",
-    title: "about",
+    title: "ABOUT",
     section: "Navigation",
     handler: () => {
       window.location.href = "/";
     },
   },{id: "nav-projects",
-          title: "projects",
+          title: "PROJECTS",
           description: "A growing collection of my passion projects!",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
           },
         },{id: "nav-cv",
-          title: "cv",
+          title: "CV",
           description: "",
           section: "Navigation",
           handler: () => {
@@ -163,8 +163,8 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
-            },},{id: "projects-street-protraits",
-          title: 'Street/Protraits',
+            },},{id: "projects-street-portraits",
+          title: 'Street/Portraits',
           description: "A walk through streets and markets—color, motion, and everyday architectures.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/guatemala_town/";
