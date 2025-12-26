@@ -19,7 +19,7 @@ _styles: |
     margin-top: calc(-56px - 3rem);
     padding-left: 1.25rem;
     padding-right: 1.25rem;
-    padding-top: calc(2rem + 56px);
+    padding-top: calc(6rem + 56px);
     padding-bottom: 1.5rem;
   }
   .post .post-header .post-title,

@@ -27,7 +27,7 @@ horizontal: false
     /* Comfortable vertical spacing */
     padding-left: 1.25rem;
     padding-right: 1.25rem;
-    padding-top: calc(2rem + 56px); /* add back space under the fixed navbar */
+    padding-top: calc(6rem + 56px); /* add back extra space under the fixed navbar */
     padding-bottom: 1.5rem;
   }
   .post .post-header .post-title,
