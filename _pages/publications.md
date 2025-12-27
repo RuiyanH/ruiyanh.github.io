@@ -19,10 +19,10 @@ nav: false
     margin-left: -50vw;
     margin-right: -50vw;
     width: 100vw;
-    margin-top: calc(-56px - 3rem);
+    margin-top: calc(-3rem);
     padding-left: 1.25rem;
     padding-right: 1.25rem;
-    padding-top: calc(6rem + 56px);
+    padding-top: 6rem;
     padding-bottom: 1.5rem;
   }
   .post .post-header .post-title,

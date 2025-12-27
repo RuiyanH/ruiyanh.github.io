@@ -22,12 +22,12 @@ horizontal: false
     margin-left: -50vw;
     margin-right: -50vw;
     width: 100vw;
-    /* Pull up to the very top (behind fixed navbar) */
-    margin-top: calc(-56px - 3rem); /* 56px navbar offset + .container.mt-5 (≈3rem) */
+    /* Pull out of container margins but stay below fixed navbar */
+    margin-top: calc(-3rem); /* negate .container.mt-5 only */
     /* Comfortable vertical spacing */
     padding-left: 1.25rem;
     padding-right: 1.25rem;
-    padding-top: calc(6rem + 56px); /* add back extra space under the fixed navbar */
+    padding-top: 6rem; /* generous buffer below navbar */
     padding-bottom: 1.5rem;
   }
   .post .post-header .post-title,
