@@ -150,7 +150,7 @@ ninja.data = [{
               window.location.href = "/projects/1_project/";
             },},{id: "projects-snow-leopard-individual-identification",
           title: 'Snow Leopard Individual Identification',
-          description: "Snow Leopard Individual Identification Using Computer Vision",
+          description: "Embedding-based image retrieval to support human-in-the-loop snow leopard re-identification from camera-trap images.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
             },},{id: "projects-slack-clone-react-flask",
