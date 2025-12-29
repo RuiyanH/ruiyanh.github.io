@@ -1,46 +1,69 @@
 ---
 layout: page
 title: Snow Leopard Individual Identification
-description: Snow Leopard Individual Identification Using Computer Vision
+description: Embedding-based image retrieval to support human-in-the-loop snow leopard re-identification from camera-trap images.
 img: assets/img/snow.jpg
 importance: 2
 category: ML
-tags: [Machine learning, Computer vision, Model evaluation, Conservation]
+tags: [Machine learning, Computer vision, Model evaluation]
 ---
 
-## Overview
+# Snow Leopard Individual Identification Using Computer Vision
 
-Snow leopards are one of the most elusive and endangered big cats in the world. Traditional methods for monitoring their populations, such as tagging or manual image annotation, are labor-intensive and often intrusive. This project aims to apply cutting-edge computer vision and machine learning techniques to automatically identify individual snow leopards from camera trap images, enabling more effective and non-invasive wildlife monitoring.
+## Overview
+Snow leopards are among the most elusive and endangered big cats. Conservation teams often rely on camera-trap images to monitor individuals over time, but manual matching across large galleries is slow and difficult.  
+
+This project builds a computer vision system that returns a ranked shortlist of candidate matches for **human verification**.
 
 ## Problem Statement
-
-Effective conservation of snow leopards requires accurate tracking of individual animals over time and across locations. However, their secretive behavior and rugged habitat make population monitoring challenging. Automated individual identification from photos can significantly reduce manual effort and improve the accuracy of population estimates.
+A core conservation workflow is answering: “Is this the same individual we’ve seen before?”
+Automated individual identification can reduce manual effort, improve consistency, and support downstream ecological analyses (e.g., encounter histories, movement patterns, population estimation).
 
 ## Approach
+### 1) Retrieval-based re-identification (Re-ID)
+Instead of directly predicting an ID, SpotID learns an embedding space where images of the same individual are close together.  
+Given a query camera-trap image, the system retrieves a ranked **Top-K** list from a gallery using similarity in embedding space. A reviewer confirms the match (“same individual” / “no match”).
 
-- **Data Collection**: Curated a dataset of snow leopard images captured via camera traps in various natural habitats.
-- **Image Preprocessing**: Applied image enhancement and normalization techniques using OpenCV to improve feature extraction.
-- **Model Architecture**: Developed a convolutional neural network (CNN) combined with a Siamese network framework to learn discriminative features that distinguish individual animals.
-- **Training & Validation**: Used metric learning approaches to train the model on labeled pairs of images (same vs different individuals), enabling the system to identify new individuals accurately.
-- **Evaluation**: Measured model performance using precision, recall, and accuracy on a held-out test set.
+### 2) Preprocessing (optional depending on use case)
+- Bounding-box cropping (focus on the animal)
+- Background suppression / masking (reduce clutter)
+- Standard normalization + augmentations for robustness
 
-## Tech Stack
+### 3) Model & training
+- Backbone: EfficientNetV2 (via `timm`)
+- Objective: metric-learning with CosFace (margin-based loss on normalized embeddings)
+- Output: L2-normalized embeddings used for cosine-similarity retrieval
 
-- **Languages & Frameworks**: Python, TensorFlow, PyTorch
-- **Libraries**: OpenCV, Scikit-learn, NumPy, Matplotlib
-- **Environment**: Jupyter Notebooks for experimentation and visualization
-- **Data**: Camera trap image datasets sourced from conservation partners and open repositories
+## Dataset (current)
+- 132 labeled images
+- 9 individuals
+- Small-data regime; evaluation uses identity-separated splits to avoid train/test identity leakage.
+
+## Evaluation
+Primary metrics are retrieval-style (re-ID):
+- Top-K match rate: whether a correct match appears within the Top-K retrieved results
 
 ## Results & Impact
+- Built a working human-in-the-loop tool that surfaces Top-3 candidate matches per query, narrowing manual search from the full gallery to a short ranked list.
+- Improved annotation workflow efficiency by reducing search and review effort (final identification remains human-confirmed).
 
-- Achieved over **72% accuracy** in correctly identifying individual snow leopards.
-- Significantly reduced manual annotation time for conservation teams.
-- Provided a scalable, automated pipeline to support ongoing snow leopard monitoring and conservation efforts.
+## Data sensitivity & release policy
+> **Code, data, and exact location metadata are not publicly released** to protect conservation partners and reduce the risk of exposing sensitive snow leopard habitat information.  
+> If you are a conservation practitioner or researcher and would like to discuss collaboration, access may be possible under appropriate agreements and safeguards.
+
+## Tech Stack
+- **ML:** Python, PyTorch, `timm`
+- **Data processing:** OpenCV, NumPy
+- **Evaluation & visualization:** scikit-learn, matplotlib
+- **Tooling:** Git/GitHub (local UI/tooling for reviewer workflow)
 
 ## Future Work
+A next step I've been excited about and experimenting is to use human confirmations to continuously improve retrieval quality, without removing the human decision from the loop. Each reviewer interaction can be treated as high-value supervision: a confirmed match becomes a positive pair, and rejected near-misses become “hard negatives.” By logging these actions, you can periodically fine-tune the embedding model with metric-learning objectives (contrastive, triplet, or CosFace), which is especially effective in a small-data regime where every verified example carries a lot of signal.
 
-- Expand the dataset with additional images from diverse geographic regions.
-- Integrate the model into a real-time camera trap system for instant identification.
-- Develop explainability features to visualize what the model “sees” for each identification, increasing trust for field researchers.
-- Explore transfer learning for related species identification tasks.
+To make reviewer time go further, you can add an active learning layer that prioritizes the most informative cases for human review. In practice, this means surfacing queries where the model is uncertain—when the similarity gap between the top candidates is small, when overall similarity scores are low, or when retrieval results are inconsistent under simple augmentations. Focusing verification on these hard cases can improve the model faster than labeling easy, obvious matches.
 
+We could also apply an RL component in the interface and decision layer. A lightweight contextual bandit can learn policies for choices like whether to show Top-3 versus Top-10, when to trigger a “no match” option based on thresholds, or how to triage which queries should be reviewed first. For the reward signal, successful matches confirmed within the presented shortlist—balanced against the cost of reviewer effort. This can reduce manual workload while keeping the system conservative and human-confirmed.
+
+As the system grows, it’s also important to strengthen generalization and robustness evaluation. That can include designing harder test splits (new camera sites or seasons, if metadata allows) and running systematic error analysis on known failure modes like night/IR imagery, occlusions, partial views, and extreme pose changes. These analyses not only guide the next modeling improvements, but also help set appropriate expectations for field deployment.
+
+Finally, interpretability. It would be helpful to show the nearest-neighbor evidence, highlighting why certain candidates are similar, or providing confidence/uncertainty cues, to help reviewers make quicker, more reliable decisions and reduces the risk of erroneous automatic merges.
