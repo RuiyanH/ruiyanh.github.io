@@ -87,11 +87,6 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/any_human_heart/";
-            },},{id: "books-sustainable-energy-without-the-hot-air",
-          title: 'Sustainable Energy – Without the Hot Air',
-          description: "",
-          section: "Books",handler: () => {
-              window.location.href = "/books/sustainable_energy_without_the_hot_air/";
             },},{id: "books-pattern-recognition-and-machine-learning",
           title: 'Pattern Recognition and Machine Learning',
           description: "",
@@ -127,6 +122,16 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/bayesian_data_analysis/";
+            },},{id: "books-",
+          title: '',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/renewable_energy_finance_raikar_adamson/";
+            },},{id: "books-sustainable-energy-without-the-hot-air",
+          title: 'Sustainable Energy – Without the Hot Air',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/sustainable_energy_without_the_hot_air/";
             },},{id: "books-the-godfather",
           title: 'The Godfather',
           description: "",
