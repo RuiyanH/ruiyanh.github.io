@@ -12,7 +12,7 @@ layout: page
       Helper snippet to render a group by a predicate on categories
     {%- endcomment -%}
     {% assign data_printed = false %}
-    <h2>Data / AI / ML</h2>
+    <h2>Data, AI &amp; Machine Learning</h2>
     <ul>
     {% for item in books %}
       {% assign cats_str = ' ' | append: (item.categories | join: ' ' | downcase) | append: ' ' %}
@@ -43,11 +43,11 @@ layout: page
     {% endfor %}
     </ul>
 
-    <h2>Energy / Climate / Society</h2>
+    <h2>Energy, Climate &amp; Infrastructure</h2>
     <ul>
     {% for item in books %}
       {% assign cats_str = ' ' | append: (item.categories | join: ' ' | downcase) | append: ' ' %}
-      {% if cats_str contains ' energy ' or cats_str contains ' climate ' or cats_str contains ' environment ' or cats_str contains ' society ' %}
+      {% if cats_str contains ' energy ' or cats_str contains ' climate ' or cats_str contains ' environment ' or cats_str contains ' infrastructure ' or cats_str contains ' grid ' or cats_str contains ' power ' %}
         <figure class="cover">
           <a class="cover-link" href="{{ item.url | relative_url }}">
             {% if item.cover %}
@@ -74,11 +74,11 @@ layout: page
     {% endfor %}
     </ul>
 
-    <h2>Literature</h2>
+    <h2>Literature &amp; Essays</h2>
     <ul>
     {% for item in books %}
       {% assign cats_str = ' ' | append: (item.categories | join: ' ' | downcase) | append: ' ' %}
-      {% if cats_str contains ' literature ' or cats_str contains ' fiction ' or cats_str contains ' novel ' %}
+      {% if cats_str contains ' literature ' or cats_str contains ' fiction ' or cats_str contains ' novel ' or cats_str contains ' essays ' or cats_str contains ' essay ' %}
         <figure class="cover">
           <a class="cover-link" href="{{ item.url | relative_url }}">
             {% if item.cover %}
@@ -105,14 +105,11 @@ layout: page
     {% endfor %}
     </ul>
 
-    <h2>Other</h2>
+    <h2>Economics, Policy &amp; Society</h2>
     <ul>
     {% for item in books %}
       {% assign cats_str = ' ' | append: (item.categories | join: ' ' | downcase) | append: ' ' %}
-      {% assign is_data = cats_str contains ' machine-learning ' or cats_str contains ' deep-learning ' or cats_str contains ' ai ' or cats_str contains ' ml ' or cats_str contains ' data ' or cats_str contains ' statistics ' %}
-      {% assign is_energy = cats_str contains ' energy ' or cats_str contains ' climate ' or cats_str contains ' environment ' or cats_str contains ' society ' %}
-      {% assign is_lit = cats_str contains ' literature ' or cats_str contains ' fiction ' or cats_str contains ' novel ' %}
-      {% unless is_data or is_energy or is_lit %}
+      {% if cats_str contains ' economics ' or cats_str contains ' economy ' or cats_str contains ' policy ' or cats_str contains ' finance ' or cats_str contains ' business ' or cats_str contains ' society ' or cats_str contains ' governance ' %}
         <figure class="cover">
           <a class="cover-link" href="{{ item.url | relative_url }}">
             {% if item.cover %}
@@ -135,7 +132,7 @@ layout: page
             {% endif %}
           </a>
         </figure>
-      {% endunless %}
+      {% endif %}
     {% endfor %}
     </ul>
   {% endif %}
