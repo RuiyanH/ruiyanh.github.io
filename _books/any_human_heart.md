@@ -3,7 +3,7 @@ layout: book-review
 title: Any Human Heart
 author: William Boyd
 categories: literature novels
-tags: fiction
+tags: literature
 isbn: 0141044178
 released: 2002
 status: Finished

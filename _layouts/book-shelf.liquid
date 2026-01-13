@@ -3,7 +3,7 @@ layout: page
 ---
 {{ content }}
 
-{% if page.collection and page.collection.size > 0 %}
+{% if page.collection %}
   {% assign books = site[page.collection] %}
   {% if books and books.size > 0 %}
     {% assign groups = "Data / AI / ML|Energy / Climate / Society|Literature|Other" | split: "|" %}
