@@ -2,7 +2,7 @@
   type: map
   contents:
     - name: Full Name
-      value: Ruiyan Huang
+      value: Rae Huang
     - name: Contact
       value: ruiyan.huang@outlook.com
     - name: Languages
@@ -11,6 +11,11 @@
 - title: EDUCATION
   type: time_table
   contents:
+    - title: M.S., Computer Science
+      institution: Stanford University
+      year: 09.2026 - Present
+      description:
+        - "Incoming — starting Fall 2026"
     - title: B.S., Statistics & Data Science
       institution: Yale University
       year: 09.2021 - 05.2026
@@ -23,12 +28,12 @@
 - title: RESEARCH EXPERIENCE
   type: time_table
   contents:
-    - title: NLP Research Assistant
-      institution: Yale NLP & Genomics Lab
+    - title: ML Research Assistant
+      institution: van Dijk Lab, Yale
       year: 10.2025 - Present
       description:
-        - Benchmarked methods translating high-dimensional single-cell RNA-seq data into textual descriptions using large language models.
-        - Assisted with prompt design, training/evaluation pipelines, and data preprocessing.
+        - Benchmarked large language models on question-answering tasks in the medical domain.
+        - Evaluated model performance across clinical QA datasets; assisted with prompt design, evaluation pipelines, and data preprocessing.
     - title: Machine Learning Researcher
       institution: Shan Shui Conservation Center
       year: 04.2025 - 08.2025

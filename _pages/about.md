@@ -2,7 +2,7 @@
 layout: about
 title: ABOUT
 permalink: /
-subtitle: <a href='#'>Stats & Data Science @ Yale · ML · Energy · Systems · Design
+subtitle: <a href='#'>ML · Data Science · Yale
 
 profile:
   align: right
@@ -23,11 +23,11 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I’m Ruiyan Huang, a Statistics & Data Science student at Yale. I am broadly interested in probabilistic forecasting, graph- and sequence-based models, and how to design machine learning systems that remain reliable under noisy data and changing physical environments.
+I'm Rae Huang, a Statistics & Data Science student at Yale. I'm broadly interested in probabilistic forecasting, sequence models, and how to build ML systems that hold up against noisy, real-world data.
 
-My work spans [cooling-emissions forecasting for commercial buildings](/projects/1_project/), [snow leopard re-identification from camera traps](/projects/2_project/), and NLP methods that translate single-cell genomics data into interpretable text.
+My work spans [cooling-emissions forecasting for commercial buildings](/projects/1_project/), [snow leopard re-identification from camera traps](/projects/2_project/), and applying ML methods to medical AI tasks. I'm drawn to problems where rigorous methods meet messy data — whether the system is an energy grid, an ecosystem, or a hospital record.
 
-Whenever I'm not home with my cats or practicing Karate, I’m outside in nature: backpacking, rock climbing, or [making photo essays](/projects/4_project/).
+Outside of research: Karate brown belt, backpacking, and [photo essays](/projects/4_project/) about things people leave behind.
 
 
 <!-- Site map removed in favor of header action buttons -->
