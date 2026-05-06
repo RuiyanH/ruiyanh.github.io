@@ -168,26 +168,21 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
-            },},{id: "projects-street-portraits",
-          title: 'Street/Portraits',
-          description: "A walk through streets and markets—color, motion, and everyday architectures.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/guatemala_town/";
             },},{id: "projects-rooted-photo-essay",
           title: 'Rooted — Photo Essay',
           description: "Small moments of contact with living structures older than us.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/hugging_trees/";
+            },},{id: "projects-ml-methods-for-medical-ai",
+          title: 'ML Methods for Medical AI',
+          description: "Applying machine learning to methylation data in a medical context. Details coming soon.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/methylation/";
             },},{id: "projects-renewable-generation-forecasting",
           title: 'Renewable Generation Forecasting',
           description: "Point and probabilistic forecasts for Germany’s hourly electricity load with optional renewables and weather predictors.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/renewable_generation_forecasting/";
-            },},{id: "projects-where-the-sky-touches-landscapes",
-          title: 'Where the Sky Touches — Landscapes',
-          description: "High-altitude light, prayer flags, and the feeling of far.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/tibet/";
             },},{id: "projects-tender-ruins-photo-essay",
           title: 'Tender Ruins — Photo Essay',
           description: "A quiet archive of what we throw away.",
@@ -198,6 +193,11 @@ ninja.data = [{
           description: "Carbon removals portfolio recommendation and executive memo for Whole Foods Market.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/wholefoods_cdr_portfolio/";
+            },},{id: "projects-wind-farm-project-finance",
+          title: 'Wind Farm Project Finance',
+          description: "A case study in renewable energy project financing — modeling capital structure, risk, and returns for wind infrastructure. Details coming soon.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/wind_farm_finance/";
             },},{
         id: 'social-email',
         title: 'email',
