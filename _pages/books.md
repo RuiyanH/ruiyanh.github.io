@@ -7,7 +7,7 @@ collection: books
 _styles: |
   /* Full-bleed header like Projects */
   .post .post-header {
-    background-color: rgb(125, 138, 117);
+    background-color: #3366CC;
     border-bottom: none;
     border-radius: 0;
     position: relative;

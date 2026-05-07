@@ -12,7 +12,7 @@ horizontal: false
 <style>
   /* Projects page header background */
   .post .post-header {
-    background-color:rgb(125, 138, 117);
+    background-color: #3366CC;
     border-bottom: none;
     border-radius: 0;
     /* Full-bleed across viewport */
