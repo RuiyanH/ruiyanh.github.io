@@ -2,7 +2,7 @@
 layout: page
 title: Snow Leopard Individual Identification
 description: Embedding-based image retrieval to support human-in-the-loop snow leopard re-identification from camera-trap images.
-img: assets/img/snow.jpg
+img: assets/img/snow.png
 importance: 2
 category: ML
 tags: [Machine learning, Computer vision, Model evaluation]

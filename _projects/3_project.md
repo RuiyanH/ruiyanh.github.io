@@ -2,7 +2,7 @@
 layout: page
 title: "Slack Clone (React + Flask)"
 description: "Real-time chat app with auth, channels, DMs, and message history."
-img: /assets/img/chatapp.png
+img: /assets/img/slack.png
 importance: 3
 category: software
 tags: [Software engineer, Full stack, Database Design, UI/UX, System Design, REST APIs]

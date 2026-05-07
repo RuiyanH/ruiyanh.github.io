@@ -2,7 +2,7 @@
 layout: page
 title: MethylLLM
 description: Fine-tuning small open-source LLMs to compete with frontier models on specialized scientific QA — a benchmark study on DNA methylation literature.
-img: assets/img/placeholder.jpg
+img: assets/img/methyl.png
 importance: 1
 category: ML
 tags: [Machine learning, LLMs, Medical AI, Benchmarking, Fine-tuning, NLP]
