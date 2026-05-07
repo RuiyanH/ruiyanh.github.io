@@ -9,21 +9,21 @@
   --global-bg-color: #F5F5F5;
   --global-code-bg-color: #{$code-bg-color-light};
   --global-text-color: #121212;
-  --global-text-color-light: #838B7F;
-  --global-theme-color: #9C524D;
-  --global-hover-color: #9C524D;
+  --global-text-color-light: #6B8EAF;
+  --global-theme-color: #0D7AD4;
+  --global-hover-color: #0D7AD4;
   --global-hover-text-color: #{$white-color};
-  --navbar-bg-color: rgb(125, 136, 119);
+  --navbar-bg-color: #0D7AD4;
   --navbar-text-color: #F5F5F5;
   --global-footer-bg-color: #EAE6E2;
-  --global-footer-text-color: #838B7F;
-  --global-footer-link-color: #838B7F;
-  --global-distill-app-color: #838B7F;
+  --global-footer-text-color: #6B8EAF;
+  --global-footer-link-color: #6B8EAF;
+  --global-distill-app-color: #6B8EAF;
   --global-divider-color: rgba(0, 0, 0, 0.1);
   --global-card-bg-color: #F5F5F5;
   --global-highlight-color: #{$red-color-dark};
-  --ring-color: rgba(156, 82, 77, 0.35);
-  --progress-bar-color: #838B7F;
+  --ring-color: rgba(13, 122, 212, 0.35);
+  --progress-bar-color: #6B8EAF;
   --global-back-to-top-bg-color: rgba(
     #{color.channel($black-color, "red", $space: rgb)},
     #{color.channel($black-color, "green", $space: rgb)},
@@ -85,19 +85,19 @@ html[data-theme="dark"] {
   --global-bg-color: #121212;
   --global-code-bg-color: #{$code-bg-color-dark};
   --global-text-color: #EAE6E2;
-  --global-text-color-light: #838B7F;
-  --global-theme-color: #9C524D;
-  --global-hover-color: #9C524D;
+  --global-text-color-light: #6B8EAF;
+  --global-theme-color: #0D7AD4;
+  --global-hover-color: #0D7AD4;
   --global-hover-text-color: #{$white-color};
-  --navbar-bg-color: #838B7F;
+  --navbar-bg-color: #0A62AB;
   --navbar-text-color: #F5F5F5;
   --global-footer-bg-color: #121212;
   --global-footer-text-color: #EAE6E2;
   --global-footer-link-color: #EAE6E2;
-  --global-distill-app-color: #838B7F;
+  --global-distill-app-color: #6B8EAF;
   --global-divider-color: #424246;
   --global-card-bg-color: #1A1A1A;
-  --progress-bar-color: #838B7F;
+  --progress-bar-color: #6B8EAF;
   --global-back-to-top-bg-color: rgba(
     #{color.channel($white-color, "red", $space: rgb)},
     #{color.channel($white-color, "green", $space: rgb)},
