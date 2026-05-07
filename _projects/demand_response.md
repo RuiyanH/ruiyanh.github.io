@@ -75,3 +75,7 @@ Site load profiles, event-day curtailment plots, and cross-site performance comp
 ---
 
 *Built as a case study. Methodology follows standard ISO/RTO demand response settlement protocols.*
+
+<a class="btn btn-sm btn-outline-primary" href="https://github.com/RuiyanH/Demand_Response_Case_Study" target="_blank" rel="noopener">
+  View on GitHub
+</a>
