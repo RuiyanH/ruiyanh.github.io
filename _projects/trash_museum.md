@@ -3,7 +3,7 @@ layout: page
 title: Tender Ruins — Photo Essay
 description: A quiet archive of what we throw away.
 img: assets/img/photos/R0021217.JPG
-importance: 5
+importance: 6
 category: art
 tags: [Photography]
 ---

@@ -23,11 +23,11 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I'm Rae Huang, a Statistics & Data Science student at Yale. I'm broadly interested in probabilistic forecasting, sequence models, and how to build ML systems that hold up against noisy, real-world data.
+I'm Rae, a Statistics & Data Science student at Yale. I'm broadly interested in probabilistic forecasting, sequence models, and how to build ML systems that hold up against noisy, real-world data.
 
-My work spans [cooling-emissions forecasting for commercial buildings](/projects/1_project/), [snow leopard re-identification from camera traps](/projects/2_project/), and applying ML methods to medical AI tasks. I'm drawn to problems where rigorous methods meet messy data — whether the system is an energy grid, an ecosystem, or a hospital record.
+My work spans [applying ML methods to medical AI tasks](/projects/methylation), [snow leopard re-identification from camera traps](/projects/2_project/), and [cooling-emissions forecasting for commercial buildings](/projects/1_project/). I'm drawn to problems where rigorous methods meet messy data — whether the system is an energy grid, an ecosystem, or a hospital record.
 
-Outside of research: Karate brown belt, backpacking, and [photo essays](/projects/4_project/) about things people leave behind.
+Outside of research: Karate, backpacking, and [photo essays](/projects/4_project/).
 
 
 <!-- Site map removed in favor of header action buttons -->

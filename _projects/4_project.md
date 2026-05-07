@@ -3,7 +3,7 @@ layout: page
 title: In suspension - graphic design project
 description: 
 img: assets/img/art/suspension.JPG
-importance: 3
+importance: 5
 category: art
 tags: [Graphic Design, Photography]
 ---
