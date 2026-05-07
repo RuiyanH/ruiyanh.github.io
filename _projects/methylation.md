@@ -1,15 +1,17 @@
 ---
 layout: page
-title: ML Methods for Medical AI
-description: Applying machine learning to methylation data in a medical context. Details coming soon.
+title: MethylLLM
+description: Fine-tuning small open-source LLMs to compete with frontier models on specialized scientific QA — a benchmark study on DNA methylation literature.
 img: assets/img/placeholder.jpg
 importance: 3
 category: ML
-tags: [Machine learning, Medical AI, Data Science]
+tags: [Machine learning, LLMs, Medical AI, Benchmarking, Fine-tuning, NLP]
 ---
 
 ## Overview
 
-*Details coming soon.*
+DNA methylation is a fast-moving area of biology — chemical marks on DNA that act like switches for genes, shift with age, and carry signals about disease risk. But it's also a small slice of the biomedical literature that LLMs are trained on, which means even strong general-purpose models can be unreliable when researchers actually need them for this work.
 
-This project applies ML methods to a medical domain dataset. Work conducted at van Dijk Lab, Yale.
+**MethylLLM** is my senior project exploring whether a small open-source model can be fine-tuned to compete with frontier models on this domain. I built a 400-question benchmark from the methylation literature, tested eight model configurations, and found that a two-stage fine-tuned Qwen3-1.7B reached 74.3% accuracy — beating Qwen3-8B in thinking mode despite being roughly one-fifth the size, and closing most of the gap to Gemini 2.5 Flash (78.2%). The takeaway: for specialized scientific QA, how you fine-tune can matter more than model scale.
+
+<a href="{{ '/assets/pdf/Senior_project_report_final.pdf' | relative_url }}" target="_blank" rel="noopener">📄 Full report (PDF)</a> &nbsp;·&nbsp; <a href="{{ '/assets/pdf/poster_final.pdf' | relative_url }}" target="_blank" rel="noopener">🖼️ Poster (PDF)</a>
