@@ -173,9 +173,9 @@ ninja.data = [{
           description: "Small moments of contact with living structures older than us.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/hugging_trees/";
-            },},{id: "projects-ml-methods-for-medical-ai",
-          title: 'ML Methods for Medical AI',
-          description: "Applying machine learning to methylation data in a medical context. Details coming soon.",
+            },},{id: "projects-methylllm",
+          title: 'MethylLLM',
+          description: "Fine-tuning small open-source LLMs to compete with frontier models on specialized scientific QA — a benchmark study on DNA methylation literature.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/methylation/";
             },},{id: "projects-renewable-generation-forecasting",
