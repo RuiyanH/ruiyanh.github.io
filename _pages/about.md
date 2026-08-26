@@ -2,7 +2,7 @@
 layout: about
 title: HOME
 permalink: /
-subtitle: ML Engineering · LLM Evaluation · Computer Vision · Forecasting
+subtitle: Machine Learning Engineering · Data Science · LLM Evaluation
 
 profile:
   align: right
