@@ -2,8 +2,9 @@
 layout: page
 permalink: /publications/
 title: PUBLICATIONS
-description: 
-nav: false
+description: Peer-reviewed mathematics research.
+nav: true
+nav_order: 3
 ---
 
 <!-- _pages/publications.md -->

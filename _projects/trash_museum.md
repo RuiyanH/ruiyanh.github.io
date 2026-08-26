@@ -6,6 +6,7 @@ img: assets/img/photos/R0021217.JPG
 importance: 6
 category: art
 tags: [Photography]
+project_group: other
 ---
 
 ## Tender Ruins
@@ -62,7 +63,6 @@ I photographed the afterlife of things: wrappers, rust, plastic, paper—objects
         {% include figure.liquid loading="eager" path="assets/img/photos/R0021146.JPG" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
-
 
 
 

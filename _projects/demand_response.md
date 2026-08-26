@@ -2,10 +2,15 @@
 layout: page
 title: Demand Response Event Analysis
 description: Event-level performance and financial analysis for a 5-site commercial DR portfolio during the June 2022 Midwest heat wave.
-img: assets/img/placeholder.jpg
-importance: 4
+img: assets/img/cooling.png
+importance: 3
 category: climate
 tags: [Energy, Demand response, Financial analysis, Data Science, Python, Time-series forecasting]
+featured: true
+project_type: Energy Data
+project_group: technical
+project_subcategory: Forecasting & Energy Data
+result: "Modeled curtailment and settlement economics for a 5-site commercial DR portfolio."
 ---
 
 ## Overview

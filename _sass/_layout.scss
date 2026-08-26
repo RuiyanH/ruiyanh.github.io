@@ -97,18 +97,30 @@ body.sticky-bottom-footer {
   font-size: clamp(2.4rem, 6vw, 4.25rem);
 }
 .post.about .post-description {
-  max-width: 48ch;
+  max-width: 58ch;
   margin-left: 0;
   margin-right: 0;
+  font-size: 1.2rem;
+  color: var(--global-text-color);
 }
 .post.about .about-actions {
-  margin-top: 1.25rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
 }
 .post.about .about-actions .btn {
-  border-radius: 9999px;
+  border-radius: 8px;
   background-color: #3366CC !important;
   border-color: #2952A3 !important;
   color: #fff;
+}
+.post.about .about-actions .btn-outline-primary {
+  background-color: transparent !important;
+  color: #3366CC !important;
+  border-color: #3366CC !important;
+}
+.post.about .about-actions .btn-outline-primary:hover {
+  background-color: #3366CC !important;
+  color: #fff !important;
 }
 .post.about .about-actions .btn:hover {
   background-color: #2952A3 !important;
@@ -118,13 +130,127 @@ body.sticky-bottom-footer {
   color: var(--global-text-color);
   opacity: 0.85;
 }
+.post.about .about-actions .link:hover {
+  color: var(--global-theme-color);
+  opacity: 1;
+}
 
 // Align article content with header on About page
 .post.about .post-header,
 .post.about > article {
-  max-width: 90ch;
+  max-width: 96ch;
   margin-left: auto;
   margin-right: auto;
+}
+
+.post.about .clearfix > p:first-child {
+  max-width: 68ch;
+  font-size: 1.08rem;
+  line-height: 1.72;
+}
+
+.recruiter-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.proof-point {
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
+  padding: 0.9rem;
+  background: var(--global-card-bg-color);
+}
+
+.proof-metric,
+.proof-label {
+  display: block;
+}
+
+.proof-metric {
+  color: var(--global-theme-color);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
+}
+
+.proof-label {
+  color: var(--global-text-color);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.featured-projects {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.featured-project {
+  display: flex;
+  min-height: 13rem;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 1rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
+  color: var(--global-text-color);
+  background: var(--global-card-bg-color);
+  text-decoration: none;
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.featured-project:hover {
+  color: var(--global-text-color);
+  border-color: var(--global-theme-color);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.featured-project strong {
+  font-size: 1.08rem;
+}
+
+.featured-project span:last-child {
+  color: var(--global-text-color-light);
+  line-height: 1.55;
+}
+
+.project-kicker {
+  color: var(--global-theme-color);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.skills-grid > div {
+  border-top: 3px solid var(--global-theme-color);
+  padding-top: 0.7rem;
+}
+
+.skills-grid strong,
+.skills-grid span {
+  display: block;
+}
+
+.skills-grid strong {
+  margin-bottom: 0.35rem;
+}
+
+.skills-grid span {
+  color: var(--global-text-color-light);
+  line-height: 1.55;
 }
 
 // Actions (CTA buttons/links)
@@ -153,6 +279,30 @@ body.sticky-bottom-footer {
 }
 .post .about-actions .link {
   font-size: 1.05rem;
+}
+
+@media (max-width: 900px) {
+  .recruiter-proof-grid,
+  .featured-projects,
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-project {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 575px) {
+  .post.about .about-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .post.about .about-actions .btn,
+  .post.about .about-actions .link {
+    text-align: center;
+  }
 }
 // Comfortable reading width for page/article content
 .post > article {

@@ -6,9 +6,10 @@ img: assets/img/photos/IMG_6579.JPG
 importance: 6
 category: art
 tags: [Graphic Design, Photography]
+project_group: other
 ---
 
-## Hugging Trees
+## Rooted
 
 
 
@@ -53,5 +54,4 @@ For a minute, my body becomes quiet. The tree stays. I leave—lighter, still.
         {% include figure.liquid loading="eager" path="assets/img/photos/IMG_5895.JPG" title="In suspension" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
-
 

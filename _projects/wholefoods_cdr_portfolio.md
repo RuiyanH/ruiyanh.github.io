@@ -6,6 +6,7 @@ img: assets/img/CDR.png
 importance: 4
 category: climate
 tags: [Carbon removal, Corporate strategy, Risk assessment, Cost-benefit analysis, Decarbonization, Time-series forecasting, Scenario analysis]
+project_group: other
 ---
 
 ## Overview
@@ -21,5 +22,4 @@ A concise portfolio and memo outlining a high‑integrity carbon removals strate
 <a class="btn btn-sm btn-outline-primary" href="{{ '/assets/pdf/wfmemo.pdf' | relative_url }}" target="_blank" rel="noopener">
   Read memo: Whole Foods CDR Portfolio (PDF)
 </a>
-
 

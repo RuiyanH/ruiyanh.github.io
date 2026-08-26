@@ -5,7 +5,12 @@ description: Embedding-based image retrieval to support human-in-the-loop snow l
 img: assets/img/snow.png
 importance: 2
 category: ML
-tags: [Machine learning, Computer vision, Model evaluation]
+tags: [Machine learning, Computer vision, Retrieval, Metric learning, Model evaluation, PyTorch]
+featured: true
+project_type: Computer Vision
+project_group: technical
+project_subcategory: ML Systems
+result: "Built a Top-K retrieval workflow for human-confirmed individual re-identification."
 ---
 
 # Snow Leopard Individual Identification Using Computer Vision
@@ -58,9 +63,9 @@ Primary metrics are retrieval-style (re-ID):
 - **Tooling:** Git/GitHub (local UI/tooling for reviewer workflow)
 
 ## Future Work
-A next step I've been excited about and experimenting is to use human confirmations to continuously improve retrieval quality, without removing the human decision from the loop. Each reviewer interaction can be treated as high-value supervision: a confirmed match becomes a positive pair, and rejected near-misses become “hard negatives.” By logging these actions, you can periodically fine-tune the embedding model with metric-learning objectives (contrastive, triplet, or CosFace), which is especially effective in a small-data regime where every verified example carries a lot of signal.
+A next step I've been excited about is using human confirmations to continuously improve retrieval quality, without removing the human decision from the loop. Each reviewer interaction can be treated as high-value supervision: a confirmed match becomes a positive pair, and rejected near-misses become hard negatives. By logging these actions, you can periodically fine-tune the embedding model with metric-learning objectives, which is especially effective in a small-data regime where every verified example carries a lot of signal.
 
-To make reviewer time go further, you can add an active learning layer that prioritizes the most informative cases for human review. In practice, this means surfacing queries where the model is uncertain—when the similarity gap between the top candidates is small, when overall similarity scores are low, or when retrieval results are inconsistent under simple augmentations. Focusing verification on these hard cases can improve the model faster than labeling easy, obvious matches.
+To make reviewer time go further, an active learning layer could prioritize the most informative cases for human review. In practice, this means surfacing queries where the model is uncertain, such as when the similarity gap between the top candidates is small, overall similarity scores are low, or retrieval results are inconsistent under simple augmentations.
 
 We could also apply an RL component in the interface and decision layer. A lightweight contextual bandit can learn policies for choices like whether to show Top-3 versus Top-10, when to trigger a “no match” option based on thresholds, or how to triage which queries should be reviewed first. For the reward signal, successful matches confirmed within the presented shortlist—balanced against the cost of reviewer effort. This can reduce manual workload while keeping the system conservative and human-confirmed.
 

@@ -2,550 +2,321 @@
 layout: page
 title: PROJECTS
 permalink: /projects/
-description: A growing collection of my passion projects!
+description: Selected ML, data, and software work across model evaluation, retrieval, forecasting, applied analytics, and product systems.
 nav: true
 nav_order: 2
 horizontal: false
 ---
 
-<!-- pages/projects.md -->
 <style>
-  /* Projects page header background */
   .post .post-header {
-    background-color: #3366CC;
+    background-color: #3366cc;
     border-bottom: none;
     border-radius: 0;
-    /* Full-bleed across viewport */
-    position: relative;
     left: 50%;
-    right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
+    margin-top: calc(-3rem);
+    padding: 5.35rem 1.25rem 1.35rem;
+    position: relative;
+    right: 50%;
     width: 100vw;
-    /* Pull out of container margins but stay below fixed navbar */
-    margin-top: calc(-3rem); /* negate .container.mt-5 only */
-    /* Comfortable vertical spacing */
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-    padding-top: 6rem; /* generous buffer below navbar */
-    padding-bottom: 1.5rem;
   }
   .post .post-header .post-title,
   .post .post-header .post-description {
-    color: #F5F5F5;
+    color: #f5f5f5;
   }
 
-  /* Tag badges in cards */
-  .project-tags {
-    margin-top: 0.5rem;
+  .projects {
+    --project-accent: #3366cc;
   }
-  .tag-badge {
-    display: inline-block;
-    padding: 0.2rem 0.5rem;
-    margin: 0 0.25rem 0.25rem 0;
-    border-radius: 999px;
-    font-size: 0.8rem;
-    line-height: 1;
-    border: 1px solid rgba(0,0,0,0.1);
-    background: #f5f5f5;
-    color: #333;
-    white-space: nowrap;
+  .project-focus-strip {
+    border-bottom: 1px solid var(--global-divider-color);
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 0 0 2rem;
+    padding-bottom: 1rem;
   }
-  /* Filter bar */
-  .tag-filter-bar {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-  .tag-filter-title {
-    margin-right: 0.5rem;
-    font-weight: 600;
-  }
-  .tag-filter-section {
-    width: 100%;
-    margin-top: 0.25rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-wrap: nowrap;
-  }
-  .tag-filter-group-title {
-    font-weight: 600;
+  .project-focus-item {
+    border-left: 3px solid var(--project-accent);
+    color: var(--global-text-color-light);
     font-size: 0.9rem;
-    opacity: 0.85;
-    margin: 0.25rem 0;
-    white-space: nowrap;
+    line-height: 1.45;
+    margin: 0;
+    padding-left: 0.85rem;
   }
-  .tag-filter-group {
+  .project-focus-item strong {
+    color: var(--global-text-color);
+    display: block;
+    font-size: 0.84rem;
+    margin-bottom: 0.2rem;
+    text-transform: uppercase;
+  }
+  .project-section {
+    margin-top: 2.5rem;
+  }
+  .project-section:first-of-type {
+    margin-top: 0;
+  }
+  .project-section-header {
+    align-items: end;
+    border-bottom: 1px solid var(--global-divider-color);
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    flex: 1 1 auto;
-    overflow: visible;
+    gap: 1rem;
+    justify-content: space-between;
+    margin-bottom: 1.15rem;
+    padding-bottom: 0.7rem;
   }
-  .tag-filter-group.collapsed {
-    max-height: 2.2em; /* ~1 line of chips */
-    overflow: hidden;
+  .project-section-header h2 {
+    font-size: 1.35rem;
+    margin: 0;
   }
-  .tag-filter-more {
-    cursor: pointer;
-    user-select: none;
-    font-size: 0.85rem;
-    text-decoration: underline;
-    white-space: nowrap;
+  .project-section-header p {
+    color: var(--global-text-color-light);
+    font-size: 0.94rem;
+    margin: 0;
+    max-width: 34rem;
   }
-  .tag-filter {
-    cursor: pointer;
-    user-select: none;
-    padding: 0.3rem 0.6rem;
-    border-radius: 999px;
-    border: 1px solid rgba(0,0,0,0.12);
-    background: #f8f9fa;
-    font-size: 0.85rem;
+  .project-subsection {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 11rem minmax(0, 1fr);
+    margin-top: 1.2rem;
   }
-  .tag-filter.active {
-    color: #fff;
-    border-color: transparent;
+  .project-subsection h3 {
+    color: var(--global-text-color);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.3;
+    margin: 0.35rem 0 0;
   }
-  .tag-filter-clear {
-    margin-left: auto;
-    font-size: 0.85rem;
-    text-decoration: underline;
-    cursor: pointer;
-  }
-  /* Hide helper for filtering */
-  .is-hidden {
-    display: none !important;
-  }
-  /* Consistent 3:2 cover crop for card images */
-  .projects .card-img-top {
-    width: 100%;
-    aspect-ratio: 4 / 3; /* slightly taller/larger photo */
-    object-fit: cover;
-  }
-  /* Optional: clamp description to reduce height variance */
-  .projects .card-body > p.card-text:first-of-type {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  /* Card overlay (hover/focus) */
-  .projects .card {
-    position: relative;
-    border: none; /* remove card border */
-    overflow: hidden;
-  }
-  .projects .card .card-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(255,255,255,0.96);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 160ms ease, visibility 160ms ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-    padding: 1rem;
-    pointer-events: none; /* allow click-through to anchor */
-  }
-
-  /* Tighter horizontal gaps between cards (scoped to projects) */
   .projects .row {
-    margin-left: -0.5rem;
-    margin-right: -0.5rem;
+    margin-left: -0.45rem;
+    margin-right: -0.45rem;
   }
   .projects .row > [class*="col"] {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    margin-bottom: 0.9rem;
+    padding-left: 0.45rem;
+    padding-right: 0.45rem;
   }
-
-  /* Title under photo: smaller and left-aligned, with compact spacing */
+  .projects a,
+  .projects a:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+  .projects .card {
+    background:
+      linear-gradient(180deg, rgba(51,102,204,0.055), rgba(51,102,204,0) 5rem),
+      var(--global-card-bg-color, #fff);
+    border: 1px solid var(--global-divider-color);
+    border-radius: 8px;
+    box-shadow: none;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+  }
+  .projects .card::before {
+    background: var(--project-accent);
+    content: "";
+    height: 3px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .projects .card:hover,
+  .projects .card:focus-within {
+    border-color: rgba(51,102,204,0.55);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    transform: translateY(-2px);
+  }
   .projects .card-body {
-    padding: 0.6rem 0.6rem 0.9rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 17rem;
+    padding: 1rem;
     text-align: left;
   }
+  .projects .card .project-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 0.7rem;
+  }
+  .projects .card .project-card-pill {
+    align-items: center;
+    background: rgba(51,102,204,0.1);
+    border-radius: 999px;
+    color: var(--global-theme-color);
+    display: inline-flex;
+    font-size: 0.68rem;
+    font-weight: 700;
+    line-height: 1;
+    min-height: 1.35rem;
+    padding: 0.15rem 0.48rem;
+    text-transform: uppercase;
+  }
   .projects .card .card-title {
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 0.25rem 0 0;
+    color: var(--global-text-color);
+    font-size: 1.02rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin: 0;
     text-align: left;
   }
   .projects .card .card-text {
+    color: var(--global-text-color-light);
     font-size: 0.9rem;
-    margin: 0.25rem 0 0;
-    color: #444;
+    line-height: 1.52;
+    margin: 0.55rem 0 0;
+  }
+  .projects .card .project-result {
+    color: var(--global-text-color);
+    font-weight: 650;
+  }
+  .projects .card .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-top: 0.85rem;
+  }
+  .tag-badge {
+    background: rgba(15,23,42,0.045);
+    border: 1px solid rgba(15,23,42,0.08);
+    border-radius: 999px;
+    color: var(--global-text-color-light);
+    display: inline-block;
+    font-size: 0.7rem;
+    line-height: 1;
+    margin: 0;
+    padding: 0.28rem 0.5rem;
+    white-space: nowrap;
+  }
+  .projects .card .project-card-action {
+    color: var(--global-theme-color);
+    display: inline-block;
+    font-size: 0.86rem;
+    font-weight: 700;
+    margin-top: auto;
+    padding-top: 1rem;
+  }
+  .project-section-other .project-subsection {
+    display: block;
+  }
+  .project-section-other .card {
+    background: var(--global-card-bg-color, #fff);
+  }
+  .project-section-other .card::before {
+    background: var(--global-divider-color);
+  }
+  .project-section-other .card .project-tags,
+  .project-section-other .card .project-result {
+    display: none;
+  }
+  .project-section-other .card-body {
+    min-height: 11.5rem;
   }
 
-  /* More vertical space between rows (not columns) */
-  .projects .row > [class*="col"] {
-    margin-bottom: 1.1rem;
+  html[data-theme="dark"] .projects .card {
+    background:
+      linear-gradient(180deg, rgba(88,135,230,0.12), rgba(88,135,230,0) 5rem),
+      var(--global-card-bg-color, #111827);
   }
-  .projects .card:hover .card-overlay,
-  .projects .card:focus-within .card-overlay,
-  .projects .card.overlay-active .card-overlay {
-    opacity: 1;
-    visibility: visible;
+  html[data-theme="dark"] .tag-badge {
+    background: rgba(255,255,255,0.055);
+    border-color: rgba(255,255,255,0.09);
   }
-  .projects .card .overlay-content {
-    max-width: 92%;
+
+  @media (max-width: 900px) {
+    .project-focus-strip,
+    .project-subsection {
+      grid-template-columns: 1fr;
+    }
+    .project-subsection h3 {
+      margin-top: 0;
+    }
+    .project-section-header {
+      align-items: start;
+      display: block;
+    }
+    .project-section-header p {
+      margin-top: 0.25rem;
+    }
   }
-  .projects .card .overlay-title {
-    font-size: 1.1rem;
-    margin: 0 0 0.35rem 0;
-  }
-  .projects .card .overlay-desc {
-    margin: 0 0 0.5rem 0;
-    font-size: 0.95rem;
-    color: #333;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .projects .card .overlay-tags {
-    margin-bottom: 0.5rem;
-  }
-  .projects .card .overlay-cta {
-    font-size: 0.9rem;
-    opacity: 0.8;
-  }
-  /* Dark mode overlay background */
-  html[data-theme="dark"] .projects .card .card-overlay {
-    background: rgba(16,25,22,0.96);
+  @media (max-width: 640px) {
+    .post .post-header {
+      padding-bottom: 1.35rem;
+      padding-top: 5.2rem;
+    }
+    .project-focus-strip {
+      margin-bottom: 1.6rem;
+    }
+    .projects .card-body {
+      min-height: 0;
+    }
   }
 </style>
 
-{% assign all_tags = "" %}
-{% for project in site.projects %}
-  {% if project.tags %}
-    {% for t in project.tags %}
-      {% assign all_tags = all_tags | append: t | append: '|' %}
-    {% endfor %}
-  {% elsif project.category %}
-    {% assign all_tags = all_tags | append: project.category | append: '|' %}
-  {% endif %}
-{% endfor %}
-{% assign tags_array = all_tags | split: '|' | uniq | sort %}
-
 <div class="projects">
-  <!-- Tag filter bar -->
-  <div class="tag-filter-bar">
-    <span class="tag-filter-title">Filter by tags:</span>
-    {% comment %} Group tags into sections {% endcomment %}
-    {% assign energy_climate_names = '|climate|energy|carbon removal|Conservation|emissions modeling|decarbonization|building systems|' %}
-    {% assign art_names = '|photography|graphic design|UI/UX|' %}
-    {% assign dsml_names = '|machine learning|computer vision|time-series forecasting|database design|Cost-benefit analysis|model evaluation|optimization|risk assessment|scenario analysis|' %}
-    {% assign swe_names = '|full stack|REST APIs|database design|Software Engineer|system design|UI/UX|' %}
-    {% assign energy_climate_tags = '' %}
-    {% assign art_tags = '' %}
-    {% assign dsml_tags = '' %}
-    {% assign swe_tags = '' %}
-    {% assign other_tags = '' %}
-    {% for t in tags_array %}
-      {% if t != "" %}
-        {% assign t_l = t | downcase %}
-        {% assign needle = '|' | append: t_l | append: '|' %}
-        {% if energy_climate_names contains needle %}
-          {% assign energy_climate_tags = energy_climate_tags | append: t | append: '|' %}
-        {% elsif art_names contains needle %}
-          {% assign art_tags = art_tags | append: t | append: '|' %}
-        {% elsif dsml_names contains needle %}
-          {% assign dsml_tags = dsml_tags | append: t | append: '|' %}
-        {% elsif swe_names contains needle %}
-          {% assign swe_tags = swe_tags | append: t | append: '|' %}
-        {% else %}
-          {% assign other_tags = other_tags | append: t | append: '|' %}
-        {% endif %}
+  <div class="project-focus-strip">
+    <p class="project-focus-item"><strong>ML systems</strong>LLM evaluation, fine-tuning, retrieval, and metric learning.</p>
+    <p class="project-focus-item"><strong>Applied data</strong>Forecasting, energy analytics, uncertainty, and scenario modeling.</p>
+    <p class="project-focus-item"><strong>Product engineering</strong>React, Flask, APIs, databases, and reproducible workflows.</p>
+  </div>
+
+  {% assign sorted_projects = site.projects | sort: "importance" %}
+  {% assign technical_subcategories = "ML Systems|Forecasting & Energy Data|Full-Stack Systems" | split: "|" %}
+
+  <section class="project-section">
+    <div class="project-section-header">
+      <h2>ML / Data / Software Projects</h2>
+      <p>Technical work grouped by the capability each project best demonstrates.</p>
+    </div>
+
+    {% for subcategory in technical_subcategories %}
+      {% capture subsection_cards %}
+        {% for project in sorted_projects %}
+          {% if project.project_group == "technical" and project.published != false %}
+            {% if project.project_subcategory == subcategory or project.project_subcategories contains subcategory %}
+              {% include projects.liquid %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endcapture %}
+      {% assign subsection_cards_clean = subsection_cards | strip %}
+      {% if subsection_cards_clean != "" %}
+        <div class="project-subsection">
+          <h3>{{ subcategory }}</h3>
+          <div class="row row-cols-1 row-cols-md-2">
+            {{ subsection_cards_clean }}
+          </div>
+        </div>
       {% endif %}
     {% endfor %}
-    {% assign dsml_array = dsml_tags | split: '|' | uniq | sort %}
-    {% assign swe_array = swe_tags | split: '|' | uniq | sort %}
-    {% assign energy_climate_array = energy_climate_tags | split: '|' | uniq | sort %}
-    {% assign art_array = art_tags | split: '|' | uniq | sort %}
-    {% assign other_array = other_tags | split: '|' | uniq | sort %}
+  </section>
 
-
-    <div class="tag-filter-section">
-      <div class="tag-filter-group-title">Data Science & ML</div>
-      <div class="tag-filter-group">
-        {% for t in dsml_array %}
-          {% if t != "" %}
-            <span class="tag-filter" data-tag="{{ t | downcase }}">{{ t }}</span>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-
-    <div class="tag-filter-section">
-      <div class="tag-filter-group-title"> Software Engineering</div>
-      <div class="tag-filter-group">
-        {% for t in swe_array %}
-          {% if t != "" %}
-            <span class="tag-filter" data-tag="{{ t | downcase }}">{{ t }}</span>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-
-    <div class="tag-filter-section">
-      <div class="tag-filter-group-title">Energy / Climate</div>
-      <div class="tag-filter-group">
-        {% for t in energy_climate_array %}
-          {% if t != "" %}
-            <span class="tag-filter" data-tag="{{ t | downcase }}">{{ t }}</span>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-
-    <div class="tag-filter-section">
-      <div class="tag-filter-group-title">Art</div>
-      <div class="tag-filter-group">
-        {% for t in art_array %}
-          {% if t != "" %}
-            <span class="tag-filter" data-tag="{{ t | downcase }}">{{ t }}</span>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-
-    <div class="tag-filter-section">
-      <div class="tag-filter-group-title">Other</div>
-      <div class="tag-filter-group">
-        {% for t in other_array %}
-          {% if t != "" %}
-            <span class="tag-filter" data-tag="{{ t | downcase }}">{{ t }}</span>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-    <span class="tag-filter-clear" id="clear-tag-filters" role="button">Clear</span>
-  </div>
-
-{% if site.enable_project_categories and page.display_categories %}
-  <!-- Display categorized projects -->
-  {% for category in page.display_categories %}
-  <a id="{{ category }}" href=".#{{ category }}">
-    <h2 class="category">{{ category }}</h2>
-  </a>
-  {% assign categorized_projects = site.projects | where: "category", category %}
-  {% assign sorted_projects = categorized_projects | sort: "importance" %}
-  <!-- Generate cards for each project -->
-  {% if page.horizontal %}
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
+  {% capture other_cards %}
     {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
+      {% if project.project_group != "technical" and project.published != false %}
+        {% include projects.liquid %}
+      {% endif %}
     {% endfor %}
-    </div>
-  </div>
-  {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
-    {% for project in sorted_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
+  {% endcapture %}
+  {% assign other_cards_clean = other_cards | strip %}
+  {% if other_cards_clean != "" %}
+    <section class="project-section project-section-other">
+      <div class="project-section-header">
+        <h2>Other</h2>
+        <p>Selected strategy, climate, design, and photo work.</p>
+      </div>
+      <div class="project-subsection">
+        <div class="row row-cols-1 row-cols-md-3">
+          {{ other_cards_clean }}
+        </div>
+      </div>
+    </section>
   {% endif %}
-  {% endfor %}
-
-{% else %}
-
-<!-- Display projects without categories -->
-
-{% assign sorted_projects = site.projects | sort: "importance" %}
-
-  <!-- Generate cards for each project -->
-
-{% if page.horizontal %}
-
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
-    {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
-    {% endfor %}
-    </div>
-  </div>
-  {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
-    {% for project in sorted_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
-  {% endif %}
-{% endif %}
 </div>
-
-<script>
-  (function() {
-    function getThemeColor() {
-      try {
-        var val = getComputedStyle(document.documentElement)
-          .getPropertyValue('--global-theme-color')
-          .trim();
-        return val || '#9C524D';
-      } catch (e) {
-        return '#9C524D';
-      }
-    }
-    function colorForTag(_tag) {
-      return getThemeColor();
-    }
-    function paintBadges(selector) {
-      var elems = document.querySelectorAll(selector);
-      elems.forEach(function(el) {
-        var color = colorForTag();
-        el.style.backgroundColor = hexToRgba(color, 0.12);
-        el.style.color = color;
-        el.style.borderColor = hexToRgba(color, 0.35);
-      });
-    }
-    function paintFilters(selector) {
-      var elems = document.querySelectorAll(selector);
-      elems.forEach(function(el) {
-        var color = colorForTag();
-        el.dataset.color = color;
-        el.style.borderColor = hexToRgba(color, 0.35);
-      });
-    }
-    function hexToRgba(hex, alpha) {
-      var c = hex.replace('#','');
-      if (c.length === 3) {
-        c = c.split('').map(function(ch){ return ch + ch; }).join('');
-      }
-      var num = parseInt(c, 16);
-      var r = (num >> 16) & 255;
-      var g = (num >> 8) & 255;
-      var b = num & 255;
-      return 'rgba(' + r + ',' + g + ',' + b + ',' + (alpha == null ? 1 : alpha) + ')';
-    }
-
-    var selected = new Set();
-
-    function applyFilter() {
-      var cards = document.querySelectorAll('.projects .card');
-      if (selected.size === 0) {
-        cards.forEach(function(card) {
-          var col = card.closest('.col') || card.parentElement.parentElement;
-          if (col) col.classList.remove('is-hidden');
-        });
-        return;
-      }
-      cards.forEach(function(card) {
-        var raw = (card.getAttribute('data-tags') || '').split('|').filter(Boolean);
-        var tags = raw.map(function(t){ return t.trim().toLowerCase(); });
-        // OR semantics: show if project has ANY selected tag
-        var show = false;
-        selected.forEach(function(t) {
-          if (tags.indexOf(t) !== -1) { show = true; }
-        });
-        var col = card.closest('.col') || card.parentElement.parentElement; // .col wrapper
-        if (col) {
-          if (show) col.classList.remove('is-hidden'); else col.classList.add('is-hidden');
-        }
-      });
-    }
-
-    function toggleFilter(el) {
-      var tag = (el.getAttribute('data-tag') || '').trim().toLowerCase();
-      if (!tag) return;
-      if (selected.has(tag)) {
-        selected.delete(tag);
-        el.classList.remove('active');
-        el.style.backgroundColor = '';
-        el.style.color = '';
-        el.style.borderColor = el.dataset.color ? hexToRgba(el.dataset.color, 0.35) : '';
-      } else {
-        selected.add(tag);
-        var color = el.dataset.color || '#2563eb';
-        el.classList.add('active');
-        el.style.backgroundColor = color;
-        el.style.color = '#fff';
-        el.style.borderColor = color;
-      }
-      applyFilter();
-    }
-
-    function setupFilterBarCollapsers() {
-      var sections = document.querySelectorAll('.tag-filter-section');
-      sections.forEach(function(section) {
-        var group = section.querySelector('.tag-filter-group');
-        if (!group) return;
-        // Start collapsed to one line
-        group.classList.add('collapsed');
-        // Measure overflow after layout
-        setTimeout(function() {
-          var overflowing = group.scrollHeight > group.clientHeight + 1;
-          if (!overflowing) {
-            group.classList.remove('collapsed');
-            return;
-          }
-          // Add a toggle if not present
-          var existingToggle = section.querySelector('.tag-filter-more');
-          if (!existingToggle) {
-            var more = document.createElement('span');
-            more.className = 'tag-filter-more';
-            more.textContent = 'Show more';
-            more.addEventListener('click', function(event) {
-              if (event) { event.preventDefault(); event.stopPropagation(); }
-              var collapsed = group.classList.contains('collapsed');
-              if (collapsed) {
-                group.classList.remove('collapsed');
-                more.textContent = 'Show less';
-              } else {
-                group.classList.add('collapsed');
-                more.textContent = 'Show more';
-              }
-            });
-            // Insert after group within the same row
-            section.appendChild(more);
-          }
-        }, 0);
-      });
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      paintBadges('.project-tags .tag-badge');
-      paintBadges('.overlay-tags .tag-badge');
-      paintFilters('.tag-filter-bar .tag-filter');
-      document.querySelectorAll('.tag-filter-bar .tag-filter').forEach(function(el) {
-        el.addEventListener('click', function() { toggleFilter(el); });
-      });
-      var clear = document.getElementById('clear-tag-filters');
-      if (clear) {
-        clear.addEventListener('click', function() {
-          selected.clear();
-          document.querySelectorAll('.tag-filter-bar .tag-filter').forEach(function(el) {
-            el.classList.remove('active');
-            el.style.backgroundColor = '';
-            el.style.color = '';
-            el.style.borderColor = el.dataset.color ? hexToRgba(el.dataset.color, 0.35) : '';
-          });
-          applyFilter();
-        });
-      }
-      setupFilterBarCollapsers();
-
-      // Touch devices: first tap reveals overlay, second tap navigates
-      (function setupTouchOverlay() {
-        var isTouch = window.matchMedia && window.matchMedia('(hover: none)').matches;
-        if (!isTouch) return;
-        document.querySelectorAll('.projects .card').forEach(function(card) {
-          var anchor = card.parentElement && card.parentElement.tagName === 'A' ? card.parentElement : null;
-          if (!anchor) return;
-          anchor.addEventListener('click', function(e) {
-            if (!card.classList.contains('overlay-active')) {
-              e.preventDefault();
-              card.classList.add('overlay-active');
-              // Auto-hide after a short delay if no second tap
-              setTimeout(function() { card.classList.remove('overlay-active'); }, 2000);
-            }
-          });
-        });
-      })();
-    });
-  })();
-</script>

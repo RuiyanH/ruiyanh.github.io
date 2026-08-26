@@ -1,5 +1,6 @@
 ---
 layout: page
+published: false
 title: Renewable Generation Forecasting
 description: Point and probabilistic forecasts for Germany’s hourly electricity load with optional renewables and weather predictors.
 img: assets/img/renewable.jpg
@@ -17,7 +18,7 @@ I compare **linear models**, **tree-based methods**, and **neural networks**, th
 ## Project writeup
 
 ### What I built
-You developed a reproducible pipeline for Germany’s hourly electricity load forecasting
+I developed a reproducible pipeline for Germany’s hourly electricity load forecasting
 that produces both point estimates and calibrated predictive intervals at short
 (1-hour-ahead) and day-ahead (24-hour-ahead) horizons. The work emphasizes practical
 feature engineering, strong baselines, and uncertainty quantification via quantile

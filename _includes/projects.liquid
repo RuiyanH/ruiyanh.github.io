@@ -8,40 +8,36 @@
       {% endif %}
     {% endcapture %}
     <div class="card h-100 hoverable" data-tags="{{ tags_attr | strip | downcase }}">
-      {% if project.img %}
-        {%
-          include figure.liquid
-          loading="eager"
-          path=project.img
-          sizes = "250px"
-          alt="project thumbnail"
-          class="card-img-top"
-        %}
-      {% endif %}
       <div class="card-body">
-        <h2 class="card-title">{{ project.title }}</h2>
-        <p class="card-text">{{ project.description }}</p>
-      </div>
-      <!-- Hover/focus overlay -->
-      <div class="card-overlay" aria-hidden="true">
-        <div class="overlay-content">
-          {% if project.description %}
-            <p class="overlay-desc">{{ project.description }}</p>
-          {% else %}
-            <h3 class="overlay-title">{{ project.title }}</h3>
+        <div class="project-card-meta">
+          {% if project.featured %}
+            <span class="project-card-pill">Featured</span>
           {% endif %}
-          {% if project.tags and project.tags.size > 0 %}
-            <div class="overlay-tags">
-              {% for tag in project.tags %}
-                <span class="tag-badge" data-tag="{{ tag | downcase }}">{{ tag }}</span>
-              {% endfor %}
-            </div>
+          {% if project.project_type %}
+            <span class="project-card-pill">{{ project.project_type }}</span>
           {% elsif project.category %}
-            <div class="overlay-tags">
-              <span class="tag-badge" data-tag="{{ project.category | downcase }}">{{ project.category }}</span>
-            </div>
+            <span class="project-card-pill">{{ project.category }}</span>
           {% endif %}
         </div>
+        <h2 class="card-title">{{ project.title }}</h2>
+        <p class="card-text">{{ project.description }}</p>
+        {% if project.result %}
+          <p class="card-text project-result">{{ project.result }}</p>
+        {% endif %}
+        {% if project.tags and project.tags.size > 0 %}
+          <div class="project-tags" aria-label="Project skills">
+            {% for tag in project.tags limit: 4 %}
+              <span class="tag-badge" data-tag="{{ tag | downcase }}">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+        <span class="project-card-action">
+          {% if project.github %}
+            GitHub + writeup
+          {% else %}
+            View project
+          {% endif %}
+        </span>
       </div>
     </div>
   </a>

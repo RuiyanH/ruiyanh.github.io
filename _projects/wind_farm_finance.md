@@ -1,5 +1,6 @@
 ---
 layout: page
+published: false
 title: Wind Farm Project Finance
 description: A case study in renewable energy project financing — modeling capital structure, risk, and returns for wind infrastructure. Details coming soon.
 img: assets/img/windfarm.png

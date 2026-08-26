@@ -1,11 +1,12 @@
 ---
 layout: page
-title: In suspension - graphic design project
-description: 
+title: In Suspension — Graphic Design
+description: A handmade booklet on memory, transit, and the state of in-between.
 img: assets/img/art/suspension.JPG
 importance: 5
 category: art
 tags: [Graphic Design, Photography]
+project_group: other
 ---
 <!--  -->
 

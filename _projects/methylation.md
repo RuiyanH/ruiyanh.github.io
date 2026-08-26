@@ -6,6 +6,11 @@ img: assets/img/methyl.png
 importance: 1
 category: ML
 tags: [Machine learning, LLMs, Medical AI, Benchmarking, Fine-tuning, NLP]
+featured: true
+project_type: LLM Evaluation
+project_group: technical
+project_subcategory: ML Systems
+result: "Two-stage fine-tuned Qwen3-1.7B reached 74.3% on a 400-question benchmark."
 ---
 
 ## Overview

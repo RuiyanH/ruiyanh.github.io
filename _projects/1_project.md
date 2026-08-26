@@ -1,11 +1,15 @@
 ---
 layout: page
-title: Commerical Cooling Emissions Model
+title: Commercial Cooling Emissions Model
 description: Forecasting cooling energy + refrigerant emissions and building abatement cost curves.
 img: assets/img/cooling.png
-importance: 3
+importance: 4
 category: ML
 tags: [Energy, Emissions modeling, Time-series forecasting, Optimization, Scenario analysis, Building systems, Cost-benefit analysis]
+project_type: Forecasting
+project_group: technical
+project_subcategory: Forecasting & Energy Data
+result: "Built scenario logic for cooling energy, refrigerant leakage, and abatement cost curves."
 related_publications: true
 ---
 

@@ -2,9 +2,11 @@
   type: map
   contents:
     - name: Full Name
-      value: Rae Huang
+      value: Ruiyan (Rae) Huang
     - name: Contact
       value: ruiyan.huang@outlook.com
+    - name: Focus
+      value: Machine learning engineering, applied ML, climate data systems, computer vision
     - name: Languages
       value: English, Chinese, Spanish, German
 
@@ -13,7 +15,7 @@
   contents:
     - title: M.S., Computer Science
       institution: Stanford University
-      year: 09.2026 - Present
+      year: Incoming Fall 2026
       description:
         - "Incoming — starting Fall 2026"
     - title: B.S., Statistics & Data Science
@@ -22,7 +24,7 @@
       description:
         - "GPA: 3.93/4.0"
         - "Minor: Climate Sciences and Solutions"
-        - "Coursework: Machine Learning, Data Structures, Algorithms, Multivariate Statistics, Probability, Casual Inference, Renewable Energy Finance, Full-Stack Web Development; Intensive Real Analysis"
+        - "Coursework: Machine Learning, Data Structures, Algorithms, Multivariate Statistics, Probability, Causal Inference, Renewable Energy Finance, Full-Stack Web Development; Intensive Real Analysis"
         - "Teaching Assistant for: Linear Models, Applied Machine Learning & Causal Inference"
 
 - title: RESEARCH EXPERIENCE
@@ -63,9 +65,27 @@
       description:
         - Benchmarked ESG performance versus global competitors using sustainability ratings, climate disclosures, value-chain risks, and governance metrics.
 
+- title: TECHNICAL SKILLS
+  type: list
+  contents:
+    - <u>Programming:</u> Python, SQL, R, JavaScript, TypeScript
+    - <u>Machine Learning:</u> PyTorch, scikit-learn, XGBoost, Hugging Face, OpenCV, computer vision, embeddings, model evaluation, prompt evaluation
+    - <u>Data:</u> pandas, NumPy, geospatial analysis, data cleaning, preprocessing, statistical modeling, causal inference, time-series forecasting
+    - <u>Software:</u> Git, Flask, React, REST APIs, reproducible analysis pipelines, full-stack web development
+
 - title: PROJECTS & PUBLICATIONS
   type: time_table
   contents:
+    - title: Renewable Generation Forecasting
+      year: "2025"
+      description:
+        - Built machine-learning baselines for renewable generation forecasting using weather and power data.
+        - Evaluated model performance across temporal splits and feature sets for operational forecasting use cases.
+    - title: Demand Response Case Study
+      year: "2025"
+      description:
+        - Developed a data analysis workflow for demand-response strategy evaluation.
+        - Produced reproducible code and visualizations for energy-system decision support.
     - title: Independent Research (Graph Theory)
       year: 2022 - 2023
       description:

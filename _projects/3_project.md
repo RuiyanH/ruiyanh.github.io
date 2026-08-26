@@ -3,9 +3,13 @@ layout: page
 title: "Slack Clone (React + Flask)"
 description: "Real-time chat app with auth, channels, DMs, and message history."
 img: /assets/img/slack.png
-importance: 3
+importance: 5
 category: software
-tags: [Software engineer, Full stack, Database Design, UI/UX, System Design, REST APIs]
+tags: [Software engineer, Full stack, Database Design, System Design, REST APIs, React, Flask]
+project_type: Full Stack
+project_group: technical
+project_subcategory: Full-Stack Systems
+result: "Implemented auth, channels, DMs, APIs, and message history in a React + Flask app."
 ---
 
 Built a full-stack messaging app inspired by Discord/Slack.
