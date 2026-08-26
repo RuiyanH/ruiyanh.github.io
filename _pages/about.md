@@ -23,7 +23,9 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I'm Rae Huang, an incoming Stanford M.S. Computer Science student (Fall 2026) with a B.S. in Statistics & Data Science from Yale ('26). I build and evaluate ML systems across scientific QA, recommender systems, conservation computer vision, and energy forecasting, with a focus on models that hold up when data is sparse, messy, or high-stakes.
+I'm Rae Huang — incoming Stanford M.S. in Computer Science (Fall 2026), B.S. in Statistics & Data Science from Yale ('26). I'm targeting **machine learning engineering and data science roles**.
+
+I work across the full ML lifecycle: fine-tuning and benchmarking LLMs against frontier baselines, training metric-learning models for image retrieval, building a two-stage recommender with point-in-time-correct feature pipelines on 32M transactions, and shipping forecasts with calibrated uncertainty. I care most about the parts that make models actually work in production — data pipelines, evaluation design, error analysis, and connecting model outputs to decisions.
 
 <div class="recruiter-proof-grid" aria-label="Selected ML engineering proof points">
   <div class="proof-point">
@@ -77,7 +79,7 @@ I'm Rae Huang, an incoming Stanford M.S. Computer Science student (Fall 2026) wi
   </div>
 </div>
 
-I'm drawn to problems where rigorous methods meet messy data - whether the system is an energy grid, an ecosystem, or a biomedical literature corpus. If you're hiring for ML engineering or applied research work, I'd love to talk: [ruiyan.huang@outlook.com](mailto:ruiyan.huang@outlook.com) · [GitHub](https://github.com/RuiyanH) · [Resume (PDF)]({{ '/assets/pdf/Ruiyan Huang_resume.pdf' | relative_url }})
+I'm drawn to problems where rigorous methods meet messy data - whether the system is an energy grid, an ecosystem, or a biomedical literature corpus. If you're hiring for ML engineering or data science roles, I'd love to talk: [ruiyan.huang@outlook.com](mailto:ruiyan.huang@outlook.com) · [GitHub](https://github.com/RuiyanH) · [Resume (PDF)]({{ '/assets/pdf/Ruiyan Huang_resume.pdf' | relative_url }})
 
 
 <!-- Site map removed in favor of header action buttons -->
