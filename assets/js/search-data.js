@@ -3,48 +3,34 @@ const ninja = document.querySelector('ninja-keys');
 
 // add the home and posts menu items
 ninja.data = [{
-    id: "nav-about",
-    title: "ABOUT",
+    id: "nav-home",
+    title: "HOME",
     section: "Navigation",
     handler: () => {
       window.location.href = "/";
     },
   },{id: "nav-projects",
           title: "PROJECTS",
-          description: "A growing collection of my passion projects!",
+          description: "Selected ML, data, and software work across model evaluation, retrieval, forecasting, applied analytics, and product systems.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "nav-cv",
-          title: "CV",
+        },{id: "nav-publications",
+          title: "PUBLICATIONS",
+          description: "Peer-reviewed mathematics research.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-resume",
+          title: "RESUME",
           description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "dropdown-publications",
-              title: "publications",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/publications/";
-              },
-            },{id: "dropdown-bookshelf",
-              title: "bookshelf",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/books/";
-              },
-            },{id: "dropdown-blog",
-              title: "blog",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/blog/";
-              },
-            },{id: "post-the-role-of-carbon-markets-in-achieving-net-zero-emissions",
+        },{id: "post-the-role-of-carbon-markets-in-achieving-net-zero-emissions",
         
           title: "The Role of Carbon Markets in Achieving Net-Zero Emissions",
         
@@ -148,8 +134,8 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-commerical-cooling-emissions-model",
-          title: 'Commerical Cooling Emissions Model',
+          section: "News",},{id: "projects-commercial-cooling-emissions-model",
+          title: 'Commercial Cooling Emissions Model',
           description: "Forecasting cooling energy + refrigerant emissions and building abatement cost curves.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
@@ -163,9 +149,9 @@ ninja.data = [{
           description: "Real-time chat app with auth, channels, DMs, and message history.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
-            },},{id: "projects-in-suspension-graphic-design-project",
-          title: 'In suspension - graphic design project',
-          description: "",
+            },},{id: "projects-in-suspension-graphic-design",
+          title: 'In Suspension — Graphic Design',
+          description: "A handmade booklet on memory, transit, and the state of in-between.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
             },},{id: "projects-demand-response-event-analysis",
@@ -183,11 +169,11 @@ ninja.data = [{
           description: "Fine-tuning small open-source LLMs to compete with frontier models on specialized scientific QA — a benchmark study on DNA methylation literature.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/methylation/";
-            },},{id: "projects-renewable-generation-forecasting",
-          title: 'Renewable Generation Forecasting',
-          description: "Point and probabilistic forecasts for Germany’s hourly electricity load with optional renewables and weather predictors.",
+            },},{id: "projects-promorank",
+          title: 'PromoRank',
+          description: "Lakehouse → two-stage recommender → budget-constrained promotion allocation on 32M H&amp;M transactions, evaluated counterfactually.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/renewable_generation_forecasting/";
+              window.location.href = "/projects/promorank/";
             },},{id: "projects-tender-ruins-photo-essay",
           title: 'Tender Ruins — Photo Essay',
           description: "A quiet archive of what we throw away.",
@@ -198,11 +184,6 @@ ninja.data = [{
           description: "Carbon removals portfolio recommendation and executive memo for Whole Foods Market.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/wholefoods_cdr_portfolio/";
-            },},{id: "projects-wind-farm-project-finance",
-          title: 'Wind Farm Project Finance',
-          description: "A case study in renewable energy project financing — modeling capital structure, risk, and returns for wind infrastructure. Details coming soon.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/wind_farm_finance/";
             },},{
         id: 'social-email',
         title: 'email',
@@ -216,20 +197,6 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://github.com/RuiyanH", "_blank");
-        },
-      },{
-        id: 'social-instagram',
-        title: 'Instagram',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://instagram.com/ruiy_augen", "_blank");
-        },
-      },{
-        id: 'social-unsplash',
-        title: 'Unsplash',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://unsplash.com/@riah215", "_blank");
         },
       },{
       id: 'light-theme',
