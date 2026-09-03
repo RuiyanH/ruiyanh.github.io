@@ -45,6 +45,11 @@ I work across the full ML lifecycle: fine-tuning and benchmarking LLMs against f
 ## Featured ML Work
 
 <div class="featured-projects">
+  <a class="featured-project" href="/projects/cooperboard/">
+    <span class="project-kicker">AI Agents + Team Systems</span>
+    <strong>CooperBoard</strong>
+    <span>Built a privacy-preserving macOS + Slack coordination agent with evidence-linked findings, bounded interventions, and a public interactive replay.</span>
+  </a>
   <a class="featured-project" href="/projects/methylation/">
     <span class="project-kicker">LLM Evaluation + Fine-tuning</span>
     <strong>MethylLLM</strong>

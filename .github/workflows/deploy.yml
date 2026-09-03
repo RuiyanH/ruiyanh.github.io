@@ -92,6 +92,10 @@ jobs:
         run: |
           node --check marketrank-workbench/app.js
           node bin/check-marketrank-workbench.mjs
+      - name: Validate CooperBoard public demo 🔎
+        run: |
+          node --check cooperboard/app.js
+          node bin/check-cooperboard-demo.mjs
       - name: Install and Build 🔧
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick
