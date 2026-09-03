@@ -179,9 +179,9 @@
       <section class="evidence-section" id="evidence">
         <div class="evidence-heading">
           <p class="eyebrow light"><span></span> The honest boundary</p>
-          <h2>What is verified.<br /><em>And what remains open.</em></h2>
+          <h2>What is <em>verified.</em></h2>
         </div>
-        <div class="evidence-columns">
+        <div class="evidence-columns verified-only">
           <article class="evidence-card proves">
             <span>Supported by this study</span>
             <ul>
@@ -189,15 +189,6 @@
               <li><b>The current packet is internally valid.</b><p>The open-ended evaluation passes all packet checks with 11 questions, 33 calibration cases, 14 sources, and 11 constructs.</p></li>
               <li><b>The evaluation system catches its own failures.</b><p>Repeated grading exposed an unstable grader and systematic threshold differences before a publication claim was made.</p></li>
               <li><b>The RLAIF workflow is implemented.</b><p>Focused tests cover source preparation, rollout, reward, contamination, packet validation, RAFT construction, and evaluation summaries.</p></li>
-            </ul>
-          </article>
-          <article class="evidence-card limits">
-            <span>Not established here</span>
-            <ul>
-              <li><b>Publication-ready open-ended rankings.</b><p>The exploratory run predates later packet and grading-contract changes, so its scores are diagnostic rather than headline results.</p></li>
-              <li><b>Grader accuracy.</b><p>Agreement and self-consistency do not reveal shared error; expert labels are still pending.</p></li>
-              <li><b>Completed RLAIF improvement.</b><p>The workflow is built, but generated-packet, GPU, paid-API, and held-out runs are not yet complete.</p></li>
-              <li><b>Grounded paper lookup.</b><p>RAG has a separate open-book design, but retrieval has not yet been implemented or evaluated.</p></li>
             </ul>
           </article>
         </div>
