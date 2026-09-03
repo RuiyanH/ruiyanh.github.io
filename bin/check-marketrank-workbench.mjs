@@ -2,8 +2,12 @@ import { readFile } from "node:fs/promises";
 
 const releasePath = new URL("../marketrank-workbench/data/demo-release.json", import.meta.url);
 const projectPath = new URL("../_projects/promorank.md", import.meta.url);
+const homepagePath = new URL("../_pages/about.md", import.meta.url);
+const projectCardPath = new URL("../_includes/projects.liquid", import.meta.url);
 const release = JSON.parse(await readFile(releasePath, "utf8"));
 const project = await readFile(projectPath, "utf8");
+const homepage = await readFile(homepagePath, "utf8");
+const projectCard = await readFile(projectCardPath, "utf8");
 
 const fail = (message) => {
   throw new Error(`MarketRank public demo: ${message}`);
@@ -42,4 +46,7 @@ const inspect = (value) => {
 inspect(release);
 
 if (!project.includes('href="/marketrank-workbench/"')) fail("portfolio project link missing");
+if (!project.includes("demo_url: /marketrank-workbench/")) fail("demo-first project destination missing");
+if (!homepage.includes('class="featured-project" href="/marketrank-workbench/"')) fail("demo-first homepage link missing");
+if (!projectCard.includes("project.demo_url")) fail("demo-first project card support missing");
 console.log("MarketRank public demo checks passed");

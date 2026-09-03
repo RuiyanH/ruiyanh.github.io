@@ -45,7 +45,7 @@ I work across the full ML lifecycle: fine-tuning and benchmarking LLMs against f
 ## Featured ML Work
 
 <div class="featured-projects">
-  <a class="featured-project" href="/projects/cooperboard/">
+  <a class="featured-project" href="/cooperboard/">
     <span class="project-kicker">AI Agents + Team Systems</span>
     <strong>CooperBoard</strong>
     <span>Built a privacy-preserving macOS + Slack coordination agent with evidence-linked findings, bounded interventions, and a public interactive replay.</span>
@@ -60,7 +60,7 @@ I work across the full ML lifecycle: fine-tuning and benchmarking LLMs against f
     <strong>Snow Leopard Re-ID</strong>
     <span>Built an embedding-based image retrieval system for sparse camera-trap data with human-in-the-loop verification.</span>
   </a>
-  <a class="featured-project" href="/projects/promorank/">
+  <a class="featured-project" href="/marketrank-workbench/">
     <span class="project-kicker">ML Systems + Recommenders</span>
     <strong>PromoRank</strong>
     <span>Built a lakehouse-to-recommender pipeline on 32M transactions with budget-constrained promotion allocation, evaluated counterfactually.</span>

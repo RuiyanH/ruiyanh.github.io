@@ -9,6 +9,7 @@ tags: [AI agents, LLM evaluation, TypeScript, PostgreSQL, Slack, SwiftUI]
 project_type: AI Systems
 project_group: technical
 project_subcategory: ML Systems
+demo_url: /cooperboard/
 result: "Built and internally validated a local-first macOS + Slack coordination agent with evidence-linked findings and audited actions."
 ---
 

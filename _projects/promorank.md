@@ -9,6 +9,7 @@ tags: [Recommender systems, Data systems, Spark, Iceberg, dbt, PyTorch, Causal i
 project_type: Recommender Systems
 project_group: technical
 project_subcategory: ML Systems
+demo_url: /marketrank-workbench/
 github: https://github.com/RuiyanH/promorank
 result: "Diagnosed a two-tower that lost to its baseline and recovered the shipped candidate-set recall ceiling to 11.93%."
 mermaid:
