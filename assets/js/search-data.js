@@ -154,6 +154,11 @@ ninja.data = [{
           description: "A handmade booklet on memory, transit, and the state of in-between.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
+            },},{id: "projects-cooperboard",
+          title: 'CooperBoard',
+          description: "A privacy-preserving AI coordination system that turns fragmented team activity into evidence-linked, policy-bounded interventions.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/cooperboard/";
             },},{id: "projects-demand-response-event-analysis",
           title: 'Demand Response Event Analysis',
           description: "Event-level performance and financial analysis for a 5-site commercial DR portfolio during the June 2022 Midwest heat wave.",
