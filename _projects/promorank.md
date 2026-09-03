@@ -33,6 +33,14 @@ actual marketplace ML work, and each link requires the one before it.
 <p><strong>Status: in progress</strong> — data platform and retrieval built, ranker and decision layer next. Last updated 2026-08-26.</p>
 
 <a class="btn btn-sm btn-outline-primary" href="https://github.com/RuiyanH/promorank" target="_blank" rel="noopener">GitHub repo</a>
+<a class="btn btn-sm btn-primary" href="/marketrank-workbench/">Open historical workbench</a>
+
+The public workbench is a static, de-identified demonstration of the complete
+five-source historical artifact. It exposes eight demo views and reports the
+reproducible full-cohort candidate recall ceiling of **10.78%** as of
+2020-08-12. It is not a live recommender, trained ranker, or business-uplift
+claim. The 11.93% result discussed below belongs to a separate experimental
+configuration, not the public workbench release.
 
 ## Honest framing, up front
 
