@@ -53,7 +53,7 @@ I work across the full ML lifecycle: fine-tuning and benchmarking LLMs against f
   <a class="featured-project" href="/methylation/">
     <span class="project-kicker">LLM Evaluation + Fine-tuning</span>
     <strong>MethylLLM</strong>
-    <span>Extended a 400-question MCQ study into Jenel v3 open-ended evaluation and a hash-scoped RLAIF training pipeline.</span>
+    <span>Extended a 400-question MCQ study into an 11-item open-ended evaluation and a hash-scoped RLAIF training pipeline.</span>
   </a>
   <a class="featured-project" href="/projects/2_project/">
     <span class="project-kicker">Computer Vision + Retrieval</span>
