@@ -7,7 +7,7 @@
     <title>MethylLLM — From benchmark to reliable scientific reasoning</title>
     <meta
       name="description"
-      content="An interactive walkthrough of MethylLLM's progress from a 400-question MCQ study to the validated Jenel v3 open-ended benchmark and a hash-scoped RLAIF pipeline."
+      content="An interactive walkthrough of MethylLLM's progress from a 400-question MCQ study to a validated 11-item open-ended evaluation and a hash-scoped RLAIF pipeline."
     />
     <link rel="stylesheet" href="/methylation/styles.css" />
   </head>
@@ -27,7 +27,7 @@
     <main id="experience">
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow"><span></span> Scientific QA · Jenel v3 validated snapshot</p>
+          <p class="eyebrow"><span></span> Scientific QA · validated open-ended snapshot</p>
           <h1>From a leaderboard to <em>reliable reasoning.</em></h1>
           <p class="hero-lede">
             The original study pushed Qwen3-1.7B to <strong>74.3% accuracy</strong> on 400 multiple-choice questions. The current work goes deeper: open-ended items, atomic rubrics, explicit failure checks, grader diagnostics, and a reproducible RLAIF pipeline.
@@ -40,7 +40,7 @@
 
         <div class="result-board" aria-label="Current research snapshot">
           <div class="model-row winner">
-            <div><span>Current item bank</span><strong>Jenel v3 open-ended evaluation</strong></div>
+            <div><span>Current item bank</span><strong>Open-ended scientific reasoning evaluation</strong></div>
             <b>11</b>
           </div>
           <div class="model-row">
@@ -58,19 +58,19 @@
       <section class="preview-section" id="quiz">
         <div class="section-heading">
           <div>
-            <p class="eyebrow light"><span></span> Four current reasoning traps</p>
-            <h2>Can you spot the mistake?</h2>
+            <p class="eyebrow light"><span></span> The complete 11-item evaluation</p>
+            <h2>How would you reason through it?</h2>
           </div>
           <p>
-            Four multiple-choice adaptations of the current Jenel v3 open-ended prompts. The real benchmark scores complete explanations against atomic rubrics—not answer letters.
+            Answer each original open-ended prompt in your own words, then compare your reasoning with the validated reference answer and scoring contract.
           </p>
         </div>
 
         <div class="quiz-shell" aria-live="polite">
           <div class="quiz-progress">
             <div>
-              <span id="progress-label">Question 1 of 4</span>
-              <strong id="score-label">Score · 0/0</strong>
+              <span id="progress-label">Question 1 of 11</span>
+              <strong id="reviewed-label">Reviewed · 0/11</strong>
             </div>
             <div class="progress-track" aria-hidden="true"><i id="progress-bar"></i></div>
           </div>
@@ -79,13 +79,18 @@
             <article class="question-panel">
               <div class="question-meta">
                 <span id="question-category">Clock interpretation</span>
-                <small id="question-count">Jenel v3 · item 1 of 11</small>
+                <small id="question-count">Open-ended evaluation · item 1 of 11</small>
               </div>
-              <p class="provenance">Derived preview · current Jenel v3 source item</p>
+              <p class="provenance">Original prompt · current validated evaluation</p>
               <h3 id="question-text"></h3>
-              <div id="answer-list" class="answer-list" role="group" aria-label="Answer choices"></div>
+              <div class="response-composer">
+                <label for="visitor-answer">Your reasoning</label>
+                <textarea id="visitor-answer" rows="8" placeholder="Explain what the evidence supports, what it does not support, and what you would check next."></textarea>
+                <p id="response-hint">Write a response to unlock the evaluation guide.</p>
+                <button id="review-answer" class="review-button" type="button" disabled>Compare with reference answer <span>→</span></button>
+              </div>
               <div class="question-actions">
-                <button id="next-question" class="next-button" type="button" hidden>Next category <span>→</span></button>
+                <button id="next-question" class="next-button" type="button" hidden>Next open-ended item <span>→</span></button>
                 <button id="restart-quiz" class="quiet-button" type="button">Start over</button>
               </div>
             </article>
@@ -93,7 +98,7 @@
             <aside class="reveal-panel" id="reveal-panel">
               <div class="waiting-state" id="waiting-state">
                 <span class="cell-cluster" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-                <p>Choose the best interpretation. The reveal shows the reasoning boundary and the structure of the underlying open-ended item.</p>
+                <p>Write your answer first. The reveal then shows the validated reference response and the structure used to evaluate a full chain of reasoning.</p>
               </div>
               <div class="answer-reveal" id="answer-reveal" hidden>
                 <p class="result-kicker" id="answer-status"></p>
@@ -102,25 +107,25 @@
                 <div class="category-performance">
                   <div class="performance-title">
                     <span>Open-ended item contract</span>
-                    <small>Validated Jenel v3 snapshot</small>
+                    <small>Validated evaluation snapshot</small>
                   </div>
                   <div id="performance-bars"></div>
                 </div>
-                <p class="trace-note">The choices are portfolio adaptations, not model outputs. The research item is open-ended and grades the full chain of reasoning.</p>
+                <p class="trace-note">This is a deterministic comparison, not automated grading. Your text is not stored or sent anywhere.</p>
               </div>
               <div class="quiz-complete" id="quiz-complete" hidden>
                 <p class="result-kicker">Evaluation complete</p>
                 <strong id="final-score"></strong>
                 <h4 id="final-heading"></h4>
-                <p>These four adaptations sample a larger 11-item open-ended snapshot. They demonstrate the reasoning traps, not a model leaderboard or publication result.</p>
-                <button id="replay-quiz" class="next-button" type="button">Try all four again <span>↺</span></button>
+                <p>You worked through all 11 original open-ended prompts. The reference answers expose the intended reasoning boundaries; they do not turn this into a model leaderboard or publication result.</p>
+                <button id="replay-quiz" class="next-button" type="button">Try all 11 again <span>↺</span></button>
               </div>
             </aside>
           </div>
         </div>
 
         <p class="quiz-footnote">
-          Each prompt is adapted from a current Jenel v3 item. Answer choices and shortened explanations were authored for this portfolio demo; they are not part of the scored packet and are not model-generated responses.
+          All 11 prompts and reference answers come from the current validated evaluation artifact. This portfolio page does not automatically score free text, and it does not display untraceable per-question model answers.
         </p>
       </section>
 
@@ -181,7 +186,7 @@
             <span>Supported by this study</span>
             <ul>
               <li><b>The original fine-tuning effect is real within its study.</b><p>Two-stage training improved Qwen3-1.7B by 18.5 points over base on the 400-question MCQ split.</p></li>
-              <li><b>The current packet is internally valid.</b><p>Jenel v3 passes all packet checks with 11 questions, 33 calibration cases, 14 sources, and 11 constructs.</p></li>
+              <li><b>The current packet is internally valid.</b><p>The open-ended evaluation passes all packet checks with 11 questions, 33 calibration cases, 14 sources, and 11 constructs.</p></li>
               <li><b>The evaluation system catches its own failures.</b><p>Repeated grading exposed an unstable grader and systematic threshold differences before a publication claim was made.</p></li>
               <li><b>The RLAIF workflow is implemented.</b><p>Focused tests cover source preparation, rollout, reward, contamination, packet validation, RAFT construction, and evaluation summaries.</p></li>
             </ul>
@@ -189,7 +194,7 @@
           <article class="evidence-card limits">
             <span>Not established here</span>
             <ul>
-              <li><b>Publication-ready Jenel v3 rankings.</b><p>The exploratory run predates later packet and grading-contract changes, so its scores are diagnostic rather than headline results.</p></li>
+              <li><b>Publication-ready open-ended rankings.</b><p>The exploratory run predates later packet and grading-contract changes, so its scores are diagnostic rather than headline results.</p></li>
               <li><b>Grader accuracy.</b><p>Agreement and self-consistency do not reveal shared error; expert labels are still pending.</p></li>
               <li><b>Completed RLAIF improvement.</b><p>The workflow is built, but generated-packet, GPU, paid-API, and held-out runs are not yet complete.</p></li>
               <li><b>Grounded paper lookup.</b><p>RAG has a separate open-book design, but retrieval has not yet been implemented or evaluated.</p></li>
