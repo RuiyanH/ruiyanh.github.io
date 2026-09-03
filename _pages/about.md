@@ -30,7 +30,7 @@ I work across the full ML lifecycle: fine-tuning and benchmarking LLMs against f
 <div class="recruiter-proof-grid" aria-label="Selected ML engineering proof points">
   <div class="proof-point">
     <span class="proof-metric">74.3%</span>
-    <span class="proof-label">accuracy from two-stage fine-tuning of Qwen3-1.7B on methylation QA</span>
+    <span class="proof-label">accuracy in the completed 400-question methylation MCQ study; now extended with open-ended evaluation</span>
   </div>
   <div class="proof-point">
     <span class="proof-metric">32M</span>
@@ -50,10 +50,10 @@ I work across the full ML lifecycle: fine-tuning and benchmarking LLMs against f
     <strong>CooperBoard</strong>
     <span>Built a privacy-preserving macOS + Slack coordination agent with evidence-linked findings, bounded interventions, and a public interactive replay.</span>
   </a>
-  <a class="featured-project" href="/projects/methylation/">
+  <a class="featured-project" href="/methylation/">
     <span class="project-kicker">LLM Evaluation + Fine-tuning</span>
     <strong>MethylLLM</strong>
-    <span>Built a 400-question scientific QA benchmark and fine-tuned small open-source LLMs to compete with larger frontier models.</span>
+    <span>Extended a 400-question MCQ study into Jenel v3 open-ended evaluation and a hash-scoped RLAIF training pipeline.</span>
   </a>
   <a class="featured-project" href="/projects/2_project/">
     <span class="project-kicker">Computer Vision + Retrieval</span>

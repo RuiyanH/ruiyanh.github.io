@@ -1,22 +1,37 @@
 ---
 layout: page
 title: MethylLLM
-description: Fine-tuning small open-source LLMs to compete with frontier models on specialized scientific QA — a benchmark study on DNA methylation literature.
+description: Building reliable evaluation and training pipelines for scientific reasoning about DNA methylation — from a 400-question MCQ study to Jenel v3 and RLAIF.
 img: assets/img/methyl.png
 importance: 1
 category: ML
-tags: [Machine learning, LLMs, Medical AI, Benchmarking, Fine-tuning, NLP]
+tags: [Machine learning, LLMs, Medical AI, Benchmarking, RLAIF, Scientific reasoning]
 featured: true
+demo_url: /methylation/
 project_type: LLM Evaluation
 project_group: technical
 project_subcategory: ML Systems
-result: "Two-stage fine-tuned Qwen3-1.7B reached 74.3% on a 400-question benchmark."
+result: "Validated Jenel v3's 11 open-ended items and implemented a hash-scoped RLAIF workflow."
 ---
 
 ## Overview
 
-DNA methylation is a fast-moving area of biology — chemical marks on DNA that act like switches for genes, shift with age, and carry signals about disease risk. But it's also a small slice of the biomedical literature that LLMs are trained on, which means even strong general-purpose models can be unreliable when researchers actually need them for this work.
+DNA methylation is a fast-moving area of biology — chemical marks on DNA that influence gene regulation, shift with age, and carry signals about disease risk. It is also a narrow scientific domain where fluent answers can still hide causal, statistical, or measurement errors.
 
-**MethylLLM** is my senior project exploring whether a small open-source model can be fine-tuned to compete with frontier models on this domain. I built a 400-question benchmark from the methylation literature, tested eight model configurations, and found that a two-stage fine-tuned Qwen3-1.7B reached 74.3% accuracy — beating Qwen3-8B in thinking mode despite being roughly one-fifth the size, and closing most of the gap to Gemini 2.5 Flash (78.2%). The takeaway: for specialized scientific QA, how you fine-tune can matter more than model scale.
+**MethylLLM** began as my senior project on small-model specialization. I built a 400-question multiple-choice benchmark, tested eight model configurations, and found that two-stage fine-tuning raised Qwen3-1.7B from 55.8% to 74.3%. That completed study remains useful evidence that training order and task alignment matter, but its QA-level split does not establish generalization to unseen papers.
 
-<a href="{{ '/assets/pdf/Senior_project_report_final.pdf' | relative_url }}" target="_blank" rel="noopener">📄 Full report (PDF)</a> &nbsp;·&nbsp; <a href="{{ '/assets/pdf/poster_final.pdf' | relative_url }}" target="_blank" rel="noopener">🖼️ Poster (PDF)</a>
+The project has since become an evaluation-systems effort. The current **Jenel v3** snapshot contains 11 open-ended questions covering 11 reasoning constructs, with 67 required claims, 32 explicit failure checks, 33 calibration cases, and 14 linked sources. It tests whether a model can interpret epigenetic clocks, preserve units and uncertainty, separate bulk-tissue composition from within-cell change, challenge false premises, and keep biomarker movement distinct from causal or clinical benefit.
+
+## Current status · September 2026
+
+- **Jenel v3 packet:** passes the repository's full packet validator with no errors or warnings. Its first 55-answer exploratory run was used to diagnose the measurement system, not to publish a leaderboard; the packet and grading contract changed afterward.
+- **Grader diagnostics:** repeated grading exposed instability and systematic threshold differences. One grader was retired, and expert labels are still required before making grader-accuracy or publication-quality model-ranking claims.
+- **Open-ended RLAIF:** the hash-scoped workflow is implemented for source preparation, paper-disjoint packet generation, cached judging, reward resolution, contamination checks, RAFT dataset construction, training, and held-out evaluation. The focused suite currently has 28 passing tests, alongside 41 existing benchmark-control tests.
+- **Execution boundary:** generated-packet, GPU, and paid-API runs are not yet complete. The source-preparation job is ready to build a balanced 100-paper corpus with 75/10/15 paper-disjoint train/dev/eval splits while excluding Jenel overlap.
+- **RAG:** designed as a separate six-cell open-book experiment. It remains a plan, not an implemented or scored result, and will not be mixed with the closed-book RLAIF numbers.
+
+This progression changed the research question from “can a small model memorize specialized QA?” to “can we measure and train reliable scientific reasoning without hiding uncertainty, leakage, or judge failure?”
+
+<a href="{{ '/methylation/' | relative_url }}"><strong>Try the updated Jenel v3 reasoning demo →</strong></a>
+
+<a href="{{ '/assets/pdf/Senior_project_report_final.pdf' | relative_url }}" target="_blank" rel="noopener">📄 Original study report (PDF)</a> &nbsp;·&nbsp; <a href="{{ '/assets/pdf/poster_final.pdf' | relative_url }}" target="_blank" rel="noopener">🖼️ Original poster (PDF)</a> &nbsp;·&nbsp; <a href="https://github.com/RuiyanH/methyl_benchmark" target="_blank" rel="noopener">💻 Research repository</a>
