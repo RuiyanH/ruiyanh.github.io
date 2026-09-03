@@ -34,4 +34,4 @@ This progression changed the research question from “can a small model memoriz
 
 <a href="{{ '/methylation/' | relative_url }}"><strong>Try the complete open-ended reasoning demo →</strong></a>
 
-<a href="{{ '/assets/pdf/Senior_project_report_final.pdf' | relative_url }}" target="_blank" rel="noopener">📄 Original study report (PDF)</a> &nbsp;·&nbsp; <a href="{{ '/assets/pdf/poster_final.pdf' | relative_url }}" target="_blank" rel="noopener">🖼️ Original poster (PDF)</a> &nbsp;·&nbsp; <a href="https://github.com/RuiyanH/methyl_benchmark" target="_blank" rel="noopener">💻 Research repository</a>
+<a href="{{ '/assets/pdf/Senior_project_report_final.pdf' | relative_url }}" target="_blank" rel="noopener">📄 Original study report (PDF)</a> &nbsp;·&nbsp; <a href="{{ '/assets/pdf/poster_final.pdf' | relative_url }}" target="_blank" rel="noopener">🖼️ Original poster (PDF)</a>
