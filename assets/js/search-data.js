@@ -171,7 +171,7 @@ ninja.data = [{
               window.location.href = "/projects/hugging_trees/";
             },},{id: "projects-methylllm",
           title: 'MethylLLM',
-          description: "Building reliable evaluation and training pipelines for scientific reasoning about DNA methylation — from a 400-question MCQ study to open-ended evaluation and RLAIF.",
+          description: "Building reliable evaluation and training pipelines for scientific reasoning about DNA methylation — from a 2,000-question MCQ test to open-ended evaluation and RLAIF.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/methylation/";
             },},{id: "projects-promorank",
