@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4efe5" />
+    <meta
+      name="description"
+      content="A public, historical MarketRank workbench for inspecting candidate evidence and retrieval quality."
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"
+    />
+    <title>MarketRank Historical Workbench</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#workspace">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="#/overview" aria-label="MarketRank overview">
+        <span class="brand-mark" aria-hidden="true">M</span>
+        <span><strong>MarketRank</strong><small>Historical Workbench</small></span>
+      </a>
+      <nav aria-label="Workbench navigation">
+        <a data-route="overview" href="#/overview">Overview</a>
+        <a data-route="customers" href="#/customers">Customers</a>
+        <a data-route="quality" href="#/quality">Quality</a>
+      </nav>
+      <a class="portfolio-link" href="/projects/promorank/">Project story ↗</a>
+    </header>
+
+    <div class="truth-strip" role="note">
+      <strong>Historical candidate evidence—not live recommendations.</strong>
+      <span>Baseline fusion · no trained ranker · public demo references</span>
+    </div>
+
+    <main id="workspace" tabindex="-1">
+      <div class="loading-state" role="status">
+        <span class="spinner" aria-hidden="true"></span>
+        Loading the reviewed release…
+      </div>
+    </main>
+
+    <dialog id="item-dialog" aria-labelledby="dialog-title">
+      <div id="dialog-content"></div>
+      <form method="dialog"><button class="button secondary">Close</button></form>
+    </dialog>
+
+    <noscript>
+      <div class="fatal-state">This interactive workbench requires JavaScript.</div>
+    </noscript>
+  </body>
+</html>
