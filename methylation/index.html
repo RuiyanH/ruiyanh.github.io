@@ -7,7 +7,7 @@
     <title>MethylLLM — From benchmark to reliable scientific reasoning</title>
     <meta
       name="description"
-      content="An interactive walkthrough of MethylLLM's progress from a 400-question MCQ study to a validated 11-item open-ended evaluation and a hash-scoped RLAIF pipeline."
+      content="An interactive walkthrough of MethylLLM's progress from a 2,000-question MCQ test to a validated 11-item open-ended evaluation and a hash-scoped RLAIF pipeline."
     />
     <link rel="stylesheet" href="/methylation/styles.css" />
   </head>
@@ -30,7 +30,7 @@
           <p class="eyebrow"><span></span> Scientific QA · validated open-ended snapshot</p>
           <h1>From a leaderboard to <em>reliable reasoning.</em></h1>
           <p class="hero-lede">
-            The original study pushed Qwen3-1.7B to <strong>74.3% accuracy</strong> on 400 multiple-choice questions. The current work goes deeper: open-ended items, atomic rubrics, explicit failure checks, grader diagnostics, and a reproducible RLAIF pipeline.
+            The original study pushed Qwen3-1.7B to <strong>74.3% accuracy</strong> on a 2,000-question multiple-choice test. The current work goes deeper: open-ended items, atomic rubrics, explicit failure checks, grader diagnostics, and a reproducible RLAIF pipeline.
           </p>
           <div class="hero-actions">
             <a class="primary-button" href="#quiz">Try the evaluation <span>↓</span></a>
@@ -169,7 +169,7 @@
           <p>The project now separates the completed MCQ study, the current open-ended measurement work, and the next training experiments.</p>
         </div>
         <ol class="method-flow">
-          <li><span>01 · completed study</span><strong>400 MCQs</strong><p>Eight model configurations on one QA-level held-out split; Qwen3-1.7B two-stage reached 74.3%.</p></li>
+          <li><span>01 · completed study</span><strong>2,000 MCQs</strong><p>Eight model configurations on the QA-level test; Qwen3-1.7B two-stage reached 74.3%.</p></li>
           <li><span>02 · current packet</span><strong>11 OEQs</strong><p>67 required claims and 32 explicit failure checks spanning 11 reasoning constructs.</p></li>
           <li><span>03 · diagnostics</span><strong>55 answers</strong><p>Five answerers in an exploratory run used to find grader and rubric failure modes—not to publish a ranking.</p></li>
           <li><span>04 · training system</span><strong>28 tests</strong><p>Hash-scoped source prep, rollouts, judging, rewards, contamination checks, RAFT construction, and evaluation.</p></li>
@@ -185,7 +185,7 @@
           <article class="evidence-card proves">
             <span>Supported by this study</span>
             <ul>
-              <li><b>The original fine-tuning effect is real within its study.</b><p>Two-stage training improved Qwen3-1.7B by 18.5 points over base on the 400-question MCQ split.</p></li>
+              <li><b>The original fine-tuning effect is real within its study.</b><p>Two-stage training improved Qwen3-1.7B by 18.5 points over base on the 2,000-question MCQ test.</p></li>
               <li><b>The current packet is internally valid.</b><p>The open-ended evaluation passes all packet checks with 11 questions, 33 calibration cases, 14 sources, and 11 constructs.</p></li>
               <li><b>The evaluation system catches its own failures.</b><p>Repeated grading exposed an unstable grader and systematic threshold differences before a publication claim was made.</p></li>
               <li><b>The RLAIF workflow is implemented.</b><p>Focused tests cover source preparation, rollout, reward, contamination, packet validation, RAFT construction, and evaluation summaries.</p></li>

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: MethylLLM
-description: Building reliable evaluation and training pipelines for scientific reasoning about DNA methylation — from a 400-question MCQ study to open-ended evaluation and RLAIF.
+description: Building reliable evaluation and training pipelines for scientific reasoning about DNA methylation — from a 2,000-question MCQ test to open-ended evaluation and RLAIF.
 img: assets/img/methyl.png
 importance: 1
 category: ML
@@ -18,7 +18,7 @@ result: "Validated an 11-item open-ended evaluation and implemented a hash-scope
 
 DNA methylation is a fast-moving area of biology — chemical marks on DNA that influence gene regulation, shift with age, and carry signals about disease risk. It is also a narrow scientific domain where fluent answers can still hide causal, statistical, or measurement errors.
 
-**MethylLLM** began as my senior project on small-model specialization. I built a 400-question multiple-choice benchmark, tested eight model configurations, and found that two-stage fine-tuning raised Qwen3-1.7B from 55.8% to 74.3%. That completed study remains useful evidence that training order and task alignment matter, but its QA-level split does not establish generalization to unseen papers.
+**MethylLLM** began as my senior project on small-model specialization. I built a 2,000-question multiple-choice test, evaluated eight model configurations, and found that two-stage fine-tuning raised Qwen3-1.7B from 55.8% to 74.3%. That completed study remains useful evidence that training order and task alignment matter, but its QA-level test does not establish generalization to unseen papers.
 
 The project has since become an evaluation-systems effort. The current **open-ended evaluation** contains 11 questions covering 11 reasoning constructs, with 67 required claims, 32 explicit failure checks, 33 calibration cases, and 14 linked sources. It tests whether a model can interpret epigenetic clocks, preserve units and uncertainty, separate bulk-tissue composition from within-cell change, challenge false premises, and keep biomarker movement distinct from causal or clinical benefit.
 
