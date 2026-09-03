@@ -88,6 +88,10 @@ jobs:
           valueFile: "_config.yml"
           propertyPath: "giscus.repo"
           value: ${{ github.repository }}
+      - name: Validate MarketRank public demo 🔎
+        run: |
+          node --check marketrank-workbench/app.js
+          node bin/check-marketrank-workbench.mjs
       - name: Install and Build 🔧
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick
