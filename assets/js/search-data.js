@@ -171,7 +171,7 @@ ninja.data = [{
               window.location.href = "/projects/hugging_trees/";
             },},{id: "projects-methylllm",
           title: 'MethylLLM',
-          description: "Fine-tuning small open-source LLMs to compete with frontier models on specialized scientific QA — a benchmark study on DNA methylation literature.",
+          description: "Building reliable evaluation and training pipelines for scientific reasoning about DNA methylation — from a 400-question MCQ study to Jenel v3 and RLAIF.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/methylation/";
             },},{id: "projects-promorank",

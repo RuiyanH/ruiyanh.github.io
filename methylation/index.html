@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#15251f" />
+    <title>MethylLLM — From benchmark to reliable scientific reasoning</title>
+    <meta
+      name="description"
+      content="An interactive walkthrough of MethylLLM's progress from a 400-question MCQ study to the validated Jenel v3 open-ended benchmark and a hash-scoped RLAIF pipeline."
+    />
+    <link rel="stylesheet" href="/methylation/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#experience">Skip to the evaluation</a>
+    <header class="site-nav">
+      <a class="brand" href="/" aria-label="Rae Huang home">
+        <span class="brand-mark">M</span>
+        <span>MethylLLM</span>
+      </a>
+      <nav aria-label="Project links">
+        <a href="/projects/methylation/">Project write-up</a>
+        <a href="/assets/pdf/Senior_project_report_final.pdf" target="_blank" rel="noopener">Full report ↗</a>
+      </nav>
+    </header>
+
+    <main id="experience">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Scientific QA · Jenel v3 validated snapshot</p>
+          <h1>From a leaderboard to <em>reliable reasoning.</em></h1>
+          <p class="hero-lede">
+            The original study pushed Qwen3-1.7B to <strong>74.3% accuracy</strong> on 400 multiple-choice questions. The current work goes deeper: open-ended items, atomic rubrics, explicit failure checks, grader diagnostics, and a reproducible RLAIF pipeline.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#quiz">Try the evaluation <span>↓</span></a>
+            <a class="text-link" href="/projects/methylation/">Read how it was built</a>
+          </div>
+        </div>
+
+        <div class="result-board" aria-label="Current research snapshot">
+          <div class="model-row winner">
+            <div><span>Current item bank</span><strong>Jenel v3 open-ended evaluation</strong></div>
+            <b>11</b>
+          </div>
+          <div class="model-row">
+            <div><span>Scoring contract</span><strong>Required reasoning claims</strong></div>
+            <b>67</b>
+          </div>
+          <div class="model-row frontier">
+            <div><span>Training workflow</span><strong>Focused RLAIF tests passing</strong></div>
+            <b>28</b>
+          </div>
+          <p><span>14 linked sources</span><span>11 reasoning constructs</span><span>33 calibration cases</span></p>
+        </div>
+      </section>
+
+      <section class="preview-section" id="quiz">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow light"><span></span> Four current reasoning traps</p>
+            <h2>Can you spot the mistake?</h2>
+          </div>
+          <p>
+            Four multiple-choice adaptations of the current Jenel v3 open-ended prompts. The real benchmark scores complete explanations against atomic rubrics—not answer letters.
+          </p>
+        </div>
+
+        <div class="quiz-shell" aria-live="polite">
+          <div class="quiz-progress">
+            <div>
+              <span id="progress-label">Question 1 of 4</span>
+              <strong id="score-label">Score · 0/0</strong>
+            </div>
+            <div class="progress-track" aria-hidden="true"><i id="progress-bar"></i></div>
+          </div>
+
+          <div class="quiz-grid">
+            <article class="question-panel">
+              <div class="question-meta">
+                <span id="question-category">Clock interpretation</span>
+                <small id="question-count">Jenel v3 · item 1 of 11</small>
+              </div>
+              <p class="provenance">Derived preview · current Jenel v3 source item</p>
+              <h3 id="question-text"></h3>
+              <div id="answer-list" class="answer-list" role="group" aria-label="Answer choices"></div>
+              <div class="question-actions">
+                <button id="next-question" class="next-button" type="button" hidden>Next category <span>→</span></button>
+                <button id="restart-quiz" class="quiet-button" type="button">Start over</button>
+              </div>
+            </article>
+
+            <aside class="reveal-panel" id="reveal-panel">
+              <div class="waiting-state" id="waiting-state">
+                <span class="cell-cluster" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                <p>Choose the best interpretation. The reveal shows the reasoning boundary and the structure of the underlying open-ended item.</p>
+              </div>
+              <div class="answer-reveal" id="answer-reveal" hidden>
+                <p class="result-kicker" id="answer-status"></p>
+                <h4 id="correct-answer"></h4>
+                <p id="answer-explanation"></p>
+                <div class="category-performance">
+                  <div class="performance-title">
+                    <span>Open-ended item contract</span>
+                    <small>Validated Jenel v3 snapshot</small>
+                  </div>
+                  <div id="performance-bars"></div>
+                </div>
+                <p class="trace-note">The choices are portfolio adaptations, not model outputs. The research item is open-ended and grades the full chain of reasoning.</p>
+              </div>
+              <div class="quiz-complete" id="quiz-complete" hidden>
+                <p class="result-kicker">Evaluation complete</p>
+                <strong id="final-score"></strong>
+                <h4 id="final-heading"></h4>
+                <p>These four adaptations sample a larger 11-item open-ended snapshot. They demonstrate the reasoning traps, not a model leaderboard or publication result.</p>
+                <button id="replay-quiz" class="next-button" type="button">Try all four again <span>↺</span></button>
+              </div>
+            </aside>
+          </div>
+        </div>
+
+        <p class="quiz-footnote">
+          Each prompt is adapted from a current Jenel v3 item. Answer choices and shortened explanations were authored for this portfolio demo; they are not part of the scored packet and are not model-generated responses.
+        </p>
+      </section>
+
+      <section class="recipe-section" id="recipe">
+        <div class="recipe-copy">
+          <p class="eyebrow"><span></span> The completed first chapter</p>
+          <h2>The original ablation<br /><em>still matters.</em></h2>
+          <p>Before the open-ended work, four controlled training recipes showed that more domain text was not automatically better—the order and task alignment changed the result.</p>
+        </div>
+
+        <div class="recipe-lab">
+          <div class="recipe-tabs" role="group" aria-label="Training recipe comparison">
+            <button type="button" data-recipe="base" aria-pressed="false"><span>01</span><b>Base</b><strong>55.8%</strong></button>
+            <button type="button" data-recipe="qa" aria-pressed="false"><span>02</span><b>QA-only</b><strong>67.3%</strong></button>
+            <button type="button" data-recipe="mixed" aria-pressed="false"><span>03</span><b>QA + summaries</b><strong>48.0%</strong></button>
+            <button class="active" type="button" data-recipe="twoStage" aria-pressed="true"><span>04</span><b>Two-stage</b><strong>74.3%</strong></button>
+          </div>
+          <div class="recipe-result" aria-live="polite">
+            <div class="recipe-scoreline">
+              <div>
+                <span id="recipe-label">Two-stage</span>
+                <strong id="recipe-score">74.3%</strong>
+              </div>
+              <span id="recipe-delta" class="delta positive">+18.5 pts vs. base</span>
+            </div>
+            <div class="recipe-meter"><i id="recipe-meter" style="--recipe-score:74.3%"></i><span>100%</span></div>
+            <p id="recipe-description">Stage 1 mixed summaries with QA; stage 2 returned to QA-only training. The report’s interpretation is that the second stage restored answer-format alignment while retaining useful domain exposure.</p>
+            <div class="recipe-sequence" id="recipe-sequence">
+              <span>Base Qwen3-1.7B</span><i>→</i><span>QA + summaries</span><i>→</i><strong>QA realignment</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="method-section" id="method">
+        <div class="section-heading ink-heading">
+          <div>
+            <p class="eyebrow"><span></span> The current architecture</p>
+            <h2>From one result to a reliable evaluation system.</h2>
+          </div>
+          <p>The project now separates the completed MCQ study, the current open-ended measurement work, and the next training experiments.</p>
+        </div>
+        <ol class="method-flow">
+          <li><span>01 · completed study</span><strong>400 MCQs</strong><p>Eight model configurations on one QA-level held-out split; Qwen3-1.7B two-stage reached 74.3%.</p></li>
+          <li><span>02 · current packet</span><strong>11 OEQs</strong><p>67 required claims and 32 explicit failure checks spanning 11 reasoning constructs.</p></li>
+          <li><span>03 · diagnostics</span><strong>55 answers</strong><p>Five answerers in an exploratory run used to find grader and rubric failure modes—not to publish a ranking.</p></li>
+          <li><span>04 · training system</span><strong>28 tests</strong><p>Hash-scoped source prep, rollouts, judging, rewards, contamination checks, RAFT construction, and evaluation.</p></li>
+        </ol>
+      </section>
+
+      <section class="evidence-section" id="evidence">
+        <div class="evidence-heading">
+          <p class="eyebrow light"><span></span> The honest boundary</p>
+          <h2>What is verified.<br /><em>And what remains open.</em></h2>
+        </div>
+        <div class="evidence-columns">
+          <article class="evidence-card proves">
+            <span>Supported by this study</span>
+            <ul>
+              <li><b>The original fine-tuning effect is real within its study.</b><p>Two-stage training improved Qwen3-1.7B by 18.5 points over base on the 400-question MCQ split.</p></li>
+              <li><b>The current packet is internally valid.</b><p>Jenel v3 passes all packet checks with 11 questions, 33 calibration cases, 14 sources, and 11 constructs.</p></li>
+              <li><b>The evaluation system catches its own failures.</b><p>Repeated grading exposed an unstable grader and systematic threshold differences before a publication claim was made.</p></li>
+              <li><b>The RLAIF workflow is implemented.</b><p>Focused tests cover source preparation, rollout, reward, contamination, packet validation, RAFT construction, and evaluation summaries.</p></li>
+            </ul>
+          </article>
+          <article class="evidence-card limits">
+            <span>Not established here</span>
+            <ul>
+              <li><b>Publication-ready Jenel v3 rankings.</b><p>The exploratory run predates later packet and grading-contract changes, so its scores are diagnostic rather than headline results.</p></li>
+              <li><b>Grader accuracy.</b><p>Agreement and self-consistency do not reveal shared error; expert labels are still pending.</p></li>
+              <li><b>Completed RLAIF improvement.</b><p>The workflow is built, but generated-packet, GPU, paid-API, and held-out runs are not yet complete.</p></li>
+              <li><b>Grounded paper lookup.</b><p>RAG has a separate open-book design, but retrieval has not yet been implemented or evaluated.</p></li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="future-layer">
+          <div>
+            <span>Next measured steps</span>
+            <h3>Train only after the measurement system earns trust.</h3>
+          </div>
+          <div class="future-statuses">
+            <p><b>Open-ended RLAIF</b><span>Implementation and source-prep automation complete · end-to-end runs pending</span></p>
+            <p><b>Retrieval-augmented QA</b><span>Six-cell experiment designed · implementation waits on the closed-book baseline</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing-section">
+        <p class="eyebrow"><span></span> Follow the progression</p>
+        <h2>The demo makes it tangible.<br />The repository keeps it honest.</h2>
+        <div>
+          <a class="primary-button" href="https://github.com/RuiyanH/methyl_benchmark" target="_blank" rel="noopener">Open the research repository <span>↗</span></a>
+          <a class="text-link" href="/projects/methylation/">Read the project write-up</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand" href="/"><span class="brand-mark">M</span><span>MethylLLM</span></a>
+      <p>Rae Huang · Scientific LLM evaluation &amp; fine-tuning</p>
+      <a href="/">Back to portfolio ↑</a>
+    </footer>
+
+    <noscript><p class="noscript">Enable JavaScript to answer the questions and explore the recipe comparison. All evidence sections remain readable.</p></noscript>
+    <script src="/methylation/app.js"></script>
+  </body>
+</html>
