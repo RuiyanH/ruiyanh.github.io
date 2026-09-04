@@ -1,4 +1,4 @@
-const questions = [
+const openEndedQuestions = [
   {
     category: "Clock interpretation",
     question: "A participant's DunedinPACE decreases from 0.95 to 0.72 six months after beginning an intervention. The investigator concludes that the participant reversed 0.23 years of biological age. Evaluate this interpretation and state what can and cannot be concluded from the two measurements.",
@@ -67,6 +67,61 @@ const questions = [
   },
 ];
 
+const mcqQuestions = [
+  {
+    id: "hist03",
+    category: "Historical context",
+    question: "The shift from first-generation epigenetic clocks (trained on chronological age) to second-generation clocks (trained on mortality or composite biomarkers) was primarily motivated by the observation that:",
+    options: [
+      "Residuals from chronological age clocks predicted mortality independently suggesting biological age deviates meaningfully from calendar age",
+      "Chronological age clocks used too many CpG sites for clinical feasibility",
+      "First-generation clocks could not be applied to non-blood tissues",
+      "Elastic net regularization was unavailable when first-generation clocks were developed",
+    ],
+    answer: 0,
+    explanation: "Residual differences between predicted and chronological age carried mortality information. That motivated later clocks to optimize health- and mortality-related targets rather than chronological age alone.",
+  },
+  {
+    id: "dataset05",
+    category: "Dataset reasoning",
+    question: "When combining methylation datasets from multiple GEO studies to train a clock, which issue is the most critical to address during preprocessing?",
+    options: [
+      "Incompatibility between Illumina BeadChip and Agilent array probe designs",
+      "Differences in genome build annotation between studies",
+      "Batch effects arising from different laboratories and array processing dates",
+      "Variation in patient consent forms across institutions",
+    ],
+    answer: 2,
+    explanation: "Laboratory and processing differences can create systematic methylation shifts that a model mistakes for biology. Cross-study batch structure therefore needs explicit diagnosis and control.",
+  },
+  {
+    id: "clock03",
+    category: "Clock training",
+    question: "When training an epigenetic clock, leave-one-dataset-out cross-validation (across cohorts) is preferred over leave-one-sample-out cross-validation (within a single cohort) because it:",
+    options: [
+      "Avoids the need to tune the elastic net mixing parameter alpha",
+      "Runs faster with fewer cross-validation folds",
+      "Produces higher reported accuracy on the training data",
+      "Better estimates generalization to new populations by testing on entirely unseen cohorts",
+    ],
+    answer: 3,
+    explanation: "Holding out an entire cohort tests whether the clock transfers across study-specific populations and technical conditions. Sample-level splits within one cohort cannot measure that as directly.",
+  },
+  {
+    id: "cutoff03",
+    category: "Knowledge boundaries",
+    question: "A model trained with a 2024 knowledge cutoff is asked about the performance of DunedinPACE in predicting Alzheimer's disease progression. The most responsible model behavior would be to:",
+    options: [
+      "Refuse to answer any question about DunedinPACE",
+      "Hallucinate a specific hazard ratio from a fictitious 2025 trial",
+      "State that it cannot verify post-cutoff clinical validation results and flag uncertainty about recent findings",
+      "Provide a confident answer extrapolating from general aging clock literature",
+    ],
+    answer: 2,
+    explanation: "The model can discuss knowledge available through its cutoff, but it should not invent or confidently extrapolate later clinical evidence. The responsible response makes the verification boundary explicit.",
+  },
+];
+
 const recipes = {
   base: {
     label: "Base",
@@ -102,8 +157,10 @@ const recipes = {
   },
 };
 
+let activeMode = "open";
 let questionIndex = 0;
 let reviewed = 0;
+let score = 0;
 let locked = false;
 
 const els = {
@@ -113,9 +170,12 @@ const els = {
   category: document.querySelector("#question-category"),
   count: document.querySelector("#question-count"),
   question: document.querySelector("#question-text"),
+  provenance: document.querySelector("#question-provenance"),
+  composer: document.querySelector("#response-composer"),
   response: document.querySelector("#visitor-answer"),
   review: document.querySelector("#review-answer"),
   responseHint: document.querySelector("#response-hint"),
+  answerList: document.querySelector("#answer-list"),
   next: document.querySelector("#next-question"),
   restart: document.querySelector("#restart-quiz"),
   waiting: document.querySelector("#waiting-state"),
@@ -128,31 +188,79 @@ const els = {
   finalScore: document.querySelector("#final-score"),
   finalHeading: document.querySelector("#final-heading"),
   replay: document.querySelector("#replay-quiz"),
+  waitingCopy: document.querySelector("#waiting-copy"),
+  performanceTitle: document.querySelector("#performance-title"),
+  performanceSubtitle: document.querySelector("#performance-subtitle"),
+  traceNote: document.querySelector("#trace-note"),
+  finalCopy: document.querySelector("#final-copy"),
+  eyebrow: document.querySelector("#evaluation-eyebrow"),
+  heading: document.querySelector("#evaluation-heading"),
+  intro: document.querySelector("#evaluation-intro"),
+  footnote: document.querySelector("#quiz-footnote"),
 };
 
+function currentQuestions() {
+  return activeMode === "open" ? openEndedQuestions : mcqQuestions;
+}
+
+function updateModeCopy() {
+  const isOpen = activeMode === "open";
+  els.eyebrow.innerHTML = isOpen
+    ? "<span></span> The complete 11-item evaluation"
+    : "<span></span> Four retained MCQ samples";
+  els.heading.textContent = isOpen ? "How would you reason through it?" : "Can you spot the best answer?";
+  els.intro.textContent = isOpen
+    ? "Answer each original open-ended prompt in your own words, then compare your reasoning with the validated reference answer and scoring contract."
+    : "Try one retained sample from each MCQ category. Choose an answer to reveal the original key and a concise explanation.";
+  els.footnote.textContent = isOpen
+    ? "All 11 prompts and reference answers come from the current validated evaluation artifact. This portfolio page does not automatically score free text, and it does not display untraceable per-question model answers."
+    : "These four questions and answer keys are reproduced from the retained MCQ audit artifact, with a fixed shuffled answer order; the short explanations are editorial summaries. They are examples—not the complete 2,000-question test—and no per-question model responses are shown.";
+}
+
 function renderQuestion() {
+  const questions = currentQuestions();
   const item = questions[questionIndex];
+  const isOpen = activeMode === "open";
   locked = false;
   els.progressLabel.textContent = `Question ${questionIndex + 1} of ${questions.length}`;
-  els.reviewedLabel.textContent = `Reviewed · ${reviewed}/${questions.length}`;
+  els.reviewedLabel.textContent = isOpen ? `Reviewed · ${reviewed}/${questions.length}` : `Score · ${score}/${questions.length}`;
   els.progressBar.style.width = `${(questionIndex / questions.length) * 100}%`;
   els.category.textContent = item.category;
-  els.count.textContent = `Open-ended evaluation · item ${questionIndex + 1} of ${questions.length}`;
+  els.count.textContent = isOpen
+    ? `Open-ended evaluation · item ${questionIndex + 1} of ${questions.length}`
+    : `MCQ sample · item ${questionIndex + 1} of ${questions.length}`;
+  els.provenance.textContent = isOpen
+    ? "Original prompt · current validated evaluation"
+    : `Retained MCQ audit artifact · ${item.id}`;
   els.question.textContent = item.question;
-  els.response.value = "";
-  els.response.disabled = false;
-  els.review.disabled = true;
-  els.responseHint.textContent = "Write a response to unlock the evaluation guide.";
+  els.composer.hidden = !isOpen;
+  els.answerList.hidden = isOpen;
+  if (isOpen) {
+    els.response.value = "";
+    els.response.disabled = false;
+    els.review.disabled = true;
+    els.responseHint.textContent = "Write a response to unlock the evaluation guide.";
+    els.answerList.innerHTML = "";
+    els.waitingCopy.textContent = "Write your answer first. The reveal then shows the validated reference response and the structure used to evaluate a full chain of reasoning.";
+  } else {
+    els.answerList.innerHTML = item.options
+      .map((option, index) => `<button type="button" data-answer="${index}"><span>${String.fromCharCode(65 + index)}</span><b>${option}</b></button>`)
+      .join("");
+    els.waitingCopy.textContent = "Choose one answer. The reveal will show the retained answer key and explain why it is the best-supported option.";
+  }
   els.waiting.hidden = false;
   els.reveal.hidden = true;
   els.complete.hidden = true;
   els.next.hidden = true;
-  els.next.innerHTML = questionIndex === questions.length - 1 ? "Finish evaluation <span>→</span>" : "Next open-ended item <span>→</span>";
+  els.next.innerHTML = questionIndex === questions.length - 1
+    ? "Finish evaluation <span>→</span>"
+    : isOpen ? "Next open-ended item <span>→</span>" : "Next MCQ <span>→</span>";
 }
 
 function reviewAnswer() {
   if (locked || !els.response.value.trim()) return;
   locked = true;
+  const questions = currentQuestions();
   const item = questions[questionIndex];
   reviewed += 1;
   els.reviewedLabel.textContent = `Reviewed · ${reviewed}/${questions.length}`;
@@ -167,24 +275,66 @@ function reviewAnswer() {
   els.status.className = "result-kicker correct-status";
   els.correct.textContent = "Compare the reasoning, not exact wording.";
   els.explanation.textContent = item.referenceAnswer;
+  els.performanceTitle.textContent = "Open-ended item contract";
+  els.performanceSubtitle.textContent = "Validated evaluation snapshot";
   els.bars.innerHTML = item.contract
     .map(([name, value]) => `<div class="performance-row"><p><span>${name}</span><b>${value}</b></p></div>`)
     .join("");
+  els.traceNote.textContent = "This is a deterministic comparison, not automated grading. Your text is not stored or sent anywhere.";
+  els.next.hidden = false;
+}
+
+function answerMcq(selected) {
+  if (locked || activeMode !== "mcq") return;
+  const questions = currentQuestions();
+  const item = questions[questionIndex];
+  const isCorrect = selected === item.answer;
+  locked = true;
+  reviewed += 1;
+  if (isCorrect) score += 1;
+  els.reviewedLabel.textContent = `Score · ${score}/${questions.length}`;
+  els.progressBar.style.width = `${((questionIndex + 1) / questions.length) * 100}%`;
+  [...els.answerList.querySelectorAll("button")].forEach((button, index) => {
+    button.disabled = true;
+    if (index === item.answer) button.classList.add("correct");
+    if (index === selected && !isCorrect) button.classList.add("incorrect");
+  });
+  els.waiting.hidden = true;
+  els.reveal.hidden = false;
+  els.status.textContent = isCorrect ? "Correct" : "Not quite";
+  els.status.className = `result-kicker ${isCorrect ? "correct-status" : "incorrect-status"}`;
+  els.correct.textContent = `${String.fromCharCode(65 + item.answer)} · ${item.options[item.answer]}`;
+  els.explanation.textContent = item.explanation;
+  els.performanceTitle.textContent = "Question provenance";
+  els.performanceSubtitle.textContent = "Retained study artifact";
+  els.bars.innerHTML = [
+    ["Artifact ID", item.id],
+    ["Category", item.category],
+    ["Answer key", String.fromCharCode(65 + item.answer)],
+  ].map(([name, value]) => `<div class="performance-row"><p><span>${name}</span><b>${value}</b></p></div>`).join("");
+  els.traceNote.textContent = "The answer key comes from the retained MCQ artifact. No per-question model answer is claimed or displayed.";
   els.next.hidden = false;
 }
 
 function showComplete() {
+  const questions = currentQuestions();
+  const isOpen = activeMode === "open";
   els.waiting.hidden = true;
   els.reveal.hidden = true;
   els.complete.hidden = false;
   els.next.hidden = true;
-  els.finalScore.textContent = `${reviewed} / ${questions.length}`;
-  els.finalHeading.textContent = "You completed the full open-ended evaluation.";
+  els.finalScore.textContent = isOpen ? `${reviewed} / ${questions.length}` : `${score} / ${questions.length}`;
+  els.finalHeading.textContent = isOpen ? "You completed the full open-ended evaluation." : "You completed the MCQ sample.";
+  els.finalCopy.textContent = isOpen
+    ? "You worked through all 11 original open-ended prompts. The reference answers expose the intended reasoning boundaries; they do not turn this into a model leaderboard or publication result."
+    : "You worked through four retained examples—one from each MCQ category. This miniature score is for exploration and is not comparable with the reported 2,000-question model results.";
+  els.replay.innerHTML = isOpen ? "Try all 11 again <span>↺</span>" : "Try the four MCQs again <span>↺</span>";
 }
 
 function resetQuiz() {
   questionIndex = 0;
   reviewed = 0;
+  score = 0;
   renderQuestion();
 }
 
@@ -197,8 +347,13 @@ els.response.addEventListener("input", () => {
 });
 
 els.review.addEventListener("click", reviewAnswer);
+els.answerList.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-answer]");
+  if (button) answerMcq(Number(button.dataset.answer));
+});
 
 els.next.addEventListener("click", () => {
+  const questions = currentQuestions();
   if (questionIndex === questions.length - 1) showComplete();
   else {
     questionIndex += 1;
@@ -208,6 +363,19 @@ els.next.addEventListener("click", () => {
 
 els.restart.addEventListener("click", resetQuiz);
 els.replay.addEventListener("click", resetQuiz);
+
+document.querySelector(".mode-switch").addEventListener("click", (event) => {
+  const button = event.target.closest("[data-mode]");
+  if (!button || button.dataset.mode === activeMode) return;
+  activeMode = button.dataset.mode;
+  document.querySelectorAll("[data-mode]").forEach((tab) => {
+    const active = tab === button;
+    tab.classList.toggle("active", active);
+    tab.setAttribute("aria-selected", String(active));
+  });
+  updateModeCopy();
+  resetQuiz();
+});
 
 document.querySelector(".recipe-tabs").addEventListener("click", (event) => {
   const button = event.target.closest("[data-recipe]");
@@ -228,4 +396,5 @@ document.querySelector(".recipe-tabs").addEventListener("click", (event) => {
   document.querySelector("#recipe-sequence").innerHTML = `<span>${recipe.sequence[0]}</span><i>→</i><span>${recipe.sequence[1]}</span><i>→</i><strong>${recipe.sequence[2]}</strong>`;
 });
 
+updateModeCopy();
 renderQuestion();

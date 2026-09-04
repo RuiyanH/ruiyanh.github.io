@@ -58,15 +58,24 @@
       <section class="preview-section" id="quiz">
         <div class="section-heading">
           <div>
-            <p class="eyebrow light"><span></span> The complete 11-item evaluation</p>
-            <h2>How would you reason through it?</h2>
+            <p class="eyebrow light" id="evaluation-eyebrow"><span></span> The complete 11-item evaluation</p>
+            <h2 id="evaluation-heading">How would you reason through it?</h2>
           </div>
-          <p>
+          <p id="evaluation-intro">
             Answer each original open-ended prompt in your own words, then compare your reasoning with the validated reference answer and scoring contract.
           </p>
         </div>
 
-        <div class="quiz-shell" aria-live="polite">
+        <div class="mode-switch" role="tablist" aria-label="Choose an evaluation format">
+          <button class="active" type="button" role="tab" data-mode="open" aria-selected="true" aria-controls="quiz-shell">
+            <span>01</span><b>Open-ended</b><small>All 11 items</small>
+          </button>
+          <button type="button" role="tab" data-mode="mcq" aria-selected="false" aria-controls="quiz-shell">
+            <span>02</span><b>Sample MCQs</b><small>4 categories</small>
+          </button>
+        </div>
+
+        <div class="quiz-shell" id="quiz-shell" aria-live="polite">
           <div class="quiz-progress">
             <div>
               <span id="progress-label">Question 1 of 11</span>
@@ -81,14 +90,15 @@
                 <span id="question-category">Clock interpretation</span>
                 <small id="question-count">Open-ended evaluation · item 1 of 11</small>
               </div>
-              <p class="provenance">Original prompt · current validated evaluation</p>
+              <p class="provenance" id="question-provenance">Original prompt · current validated evaluation</p>
               <h3 id="question-text"></h3>
-              <div class="response-composer">
+              <div class="response-composer" id="response-composer">
                 <label for="visitor-answer">Your reasoning</label>
                 <textarea id="visitor-answer" rows="8" placeholder="Explain what the evidence supports, what it does not support, and what you would check next."></textarea>
                 <p id="response-hint">Write a response to unlock the evaluation guide.</p>
                 <button id="review-answer" class="review-button" type="button" disabled>Compare with reference answer <span>→</span></button>
               </div>
+              <div class="answer-list" id="answer-list" aria-label="Answer choices" hidden></div>
               <div class="question-actions">
                 <button id="next-question" class="next-button" type="button" hidden>Next open-ended item <span>→</span></button>
                 <button id="restart-quiz" class="quiet-button" type="button">Start over</button>
@@ -98,7 +108,7 @@
             <aside class="reveal-panel" id="reveal-panel">
               <div class="waiting-state" id="waiting-state">
                 <span class="cell-cluster" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-                <p>Write your answer first. The reveal then shows the validated reference response and the structure used to evaluate a full chain of reasoning.</p>
+                <p id="waiting-copy">Write your answer first. The reveal then shows the validated reference response and the structure used to evaluate a full chain of reasoning.</p>
               </div>
               <div class="answer-reveal" id="answer-reveal" hidden>
                 <p class="result-kicker" id="answer-status"></p>
@@ -106,25 +116,25 @@
                 <p id="answer-explanation"></p>
                 <div class="category-performance">
                   <div class="performance-title">
-                    <span>Open-ended item contract</span>
-                    <small>Validated evaluation snapshot</small>
+                    <span id="performance-title">Open-ended item contract</span>
+                    <small id="performance-subtitle">Validated evaluation snapshot</small>
                   </div>
                   <div id="performance-bars"></div>
                 </div>
-                <p class="trace-note">This is a deterministic comparison, not automated grading. Your text is not stored or sent anywhere.</p>
+                <p class="trace-note" id="trace-note">This is a deterministic comparison, not automated grading. Your text is not stored or sent anywhere.</p>
               </div>
               <div class="quiz-complete" id="quiz-complete" hidden>
                 <p class="result-kicker">Evaluation complete</p>
                 <strong id="final-score"></strong>
                 <h4 id="final-heading"></h4>
-                <p>You worked through all 11 original open-ended prompts. The reference answers expose the intended reasoning boundaries; they do not turn this into a model leaderboard or publication result.</p>
+                <p id="final-copy">You worked through all 11 original open-ended prompts. The reference answers expose the intended reasoning boundaries; they do not turn this into a model leaderboard or publication result.</p>
                 <button id="replay-quiz" class="next-button" type="button">Try all 11 again <span>↺</span></button>
               </div>
             </aside>
           </div>
         </div>
 
-        <p class="quiz-footnote">
+        <p class="quiz-footnote" id="quiz-footnote">
           All 11 prompts and reference answers come from the current validated evaluation artifact. This portfolio page does not automatically score free text, and it does not display untraceable per-question model answers.
         </p>
       </section>
