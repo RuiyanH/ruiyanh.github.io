@@ -38,20 +38,57 @@
           </div>
         </div>
 
-        <div class="result-board" aria-label="Current research snapshot">
-          <div class="model-row winner">
-            <div><span>Current item bank</span><strong>Open-ended scientific reasoning evaluation</strong></div>
-            <b>11</b>
+        <div class="result-board" id="snapshot-carousel" aria-label="Research progression slideshow">
+          <div class="snapshot-topline">
+            <span>Research / progression</span>
+            <div class="snapshot-arrows">
+              <button id="snapshot-prev" type="button" aria-label="Show previous research snapshot">←</button>
+              <span id="snapshot-position">1 / 2</span>
+              <button id="snapshot-next" type="button" aria-label="Show next research snapshot">→</button>
+            </div>
           </div>
-          <div class="model-row">
-            <div><span>Scoring contract</span><strong>Required reasoning claims</strong></div>
-            <b>67</b>
+          <span class="sr-only" id="snapshot-live" aria-live="polite">Open-ended evaluation snapshot shown</span>
+
+          <div class="snapshot-viewport">
+            <section class="snapshot-slide active" id="snapshot-open" data-snapshot="open" aria-hidden="false">
+              <div class="snapshot-label">Current chapter · open-ended evaluation</div>
+              <div class="model-row winner">
+                <div><span>Current item bank</span><strong>Open-ended scientific reasoning evaluation</strong></div>
+                <b>11</b>
+              </div>
+              <div class="model-row">
+                <div><span>Scoring contract</span><strong>Required reasoning claims</strong></div>
+                <b>67</b>
+              </div>
+              <div class="model-row frontier">
+                <div><span>Training workflow</span><strong>Focused RLAIF tests passing</strong></div>
+                <b>28</b>
+              </div>
+              <p><span>14 linked sources</span><span>11 reasoning constructs</span><span>33 calibration cases</span></p>
+            </section>
+
+            <section class="snapshot-slide" id="snapshot-mcq" data-snapshot="mcq" aria-hidden="true">
+              <div class="snapshot-label">Completed chapter · multiple-choice study</div>
+              <div class="model-row winner">
+                <div><span>Evaluation set</span><strong>Scientific multiple-choice questions</strong></div>
+                <b>2,000</b>
+              </div>
+              <div class="model-row">
+                <div><span>Small-model result</span><strong>Qwen3-1.7B · two-stage fine-tuning</strong></div>
+                <b>74.3%</b>
+              </div>
+              <div class="model-row frontier">
+                <div><span>Larger thinking baseline</span><strong>Qwen3-8B Thinking</strong></div>
+                <b>71.5%</b>
+              </div>
+              <p><span>Base · 55.8%</span><span>QA-only · 67.3%</span><span>Gemini 2.5 Flash · 78.2%</span></p>
+            </section>
           </div>
-          <div class="model-row frontier">
-            <div><span>Training workflow</span><strong>Focused RLAIF tests passing</strong></div>
-            <b>28</b>
+
+          <div class="snapshot-picker" role="tablist" aria-label="Choose a research snapshot">
+            <button class="active" type="button" role="tab" data-snapshot-target="open" aria-controls="snapshot-open" aria-selected="true">Open-ended</button>
+            <button type="button" role="tab" data-snapshot-target="mcq" aria-controls="snapshot-mcq" aria-selected="false" tabindex="-1">MCQ study</button>
           </div>
-          <p><span>14 linked sources</span><span>11 reasoning constructs</span><span>33 calibration cases</span></p>
         </div>
       </section>
 
