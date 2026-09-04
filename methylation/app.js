@@ -377,6 +377,73 @@ document.querySelector(".mode-switch").addEventListener("click", (event) => {
   resetQuiz();
 });
 
+const snapshotCarousel = document.querySelector("#snapshot-carousel");
+const snapshotSlides = [...snapshotCarousel.querySelectorAll("[data-snapshot]")];
+const snapshotTabs = [...snapshotCarousel.querySelectorAll("[data-snapshot-target]")];
+const snapshotPosition = document.querySelector("#snapshot-position");
+const snapshotLive = document.querySelector("#snapshot-live");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+let snapshotIndex = 0;
+let snapshotTimer;
+
+function showSnapshot(nextIndex, announce = false) {
+  snapshotIndex = (nextIndex + snapshotSlides.length) % snapshotSlides.length;
+  snapshotSlides.forEach((slide, index) => {
+    const active = index === snapshotIndex;
+    slide.classList.toggle("active", active);
+    slide.setAttribute("aria-hidden", String(!active));
+  });
+  snapshotTabs.forEach((tab, index) => {
+    const active = index === snapshotIndex;
+    tab.classList.toggle("active", active);
+    tab.setAttribute("aria-selected", String(active));
+    tab.tabIndex = active ? 0 : -1;
+  });
+  snapshotPosition.textContent = `${snapshotIndex + 1} / ${snapshotSlides.length}`;
+  if (announce) snapshotLive.textContent = `${snapshotTabs[snapshotIndex].textContent.trim()} snapshot shown`;
+}
+
+function stopSnapshotRotation() {
+  window.clearInterval(snapshotTimer);
+  snapshotTimer = undefined;
+}
+
+function startSnapshotRotation() {
+  stopSnapshotRotation();
+  const interacting = snapshotCarousel.matches(":hover") || snapshotCarousel.contains(document.activeElement);
+  if (reduceMotion.matches || document.hidden || interacting) return;
+  snapshotTimer = window.setInterval(() => showSnapshot(snapshotIndex + 1), 6500);
+}
+
+function selectSnapshot(index) {
+  showSnapshot(index, true);
+  startSnapshotRotation();
+}
+
+document.querySelector("#snapshot-prev").addEventListener("click", () => selectSnapshot(snapshotIndex - 1));
+document.querySelector("#snapshot-next").addEventListener("click", () => selectSnapshot(snapshotIndex + 1));
+
+snapshotTabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => selectSnapshot(index));
+  tab.addEventListener("keydown", (event) => {
+    if (!["ArrowLeft", "ArrowRight"].includes(event.key)) return;
+    event.preventDefault();
+    const direction = event.key === "ArrowRight" ? 1 : -1;
+    const nextIndex = (index + direction + snapshotTabs.length) % snapshotTabs.length;
+    selectSnapshot(nextIndex);
+    snapshotTabs[nextIndex].focus();
+  });
+});
+
+snapshotCarousel.addEventListener("mouseenter", stopSnapshotRotation);
+snapshotCarousel.addEventListener("mouseleave", startSnapshotRotation);
+snapshotCarousel.addEventListener("focusin", stopSnapshotRotation);
+snapshotCarousel.addEventListener("focusout", (event) => {
+  if (!snapshotCarousel.contains(event.relatedTarget)) startSnapshotRotation();
+});
+document.addEventListener("visibilitychange", startSnapshotRotation);
+reduceMotion.addEventListener("change", startSnapshotRotation);
+
 document.querySelector(".recipe-tabs").addEventListener("click", (event) => {
   const button = event.target.closest("[data-recipe]");
   if (!button) return;
@@ -398,3 +465,4 @@ document.querySelector(".recipe-tabs").addEventListener("click", (event) => {
 
 updateModeCopy();
 renderQuestion();
+startSnapshotRotation();
