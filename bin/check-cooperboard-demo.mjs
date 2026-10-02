@@ -27,6 +27,7 @@ requireText(homepage, 'class="featured-project" href="/cooperboard/"', "demo-fir
 requireText(projectCard, "project.demo_url", "demo-first project card support");
 
 if (html.includes("localhost") || script.includes("localhost")) throw new Error("CooperBoard public demo: localhost reference found");
+if (html.includes("THIS REPLAY DOES NOT CLAIM")) throw new Error("CooperBoard public demo: removed claim panel found");
 if (/xox[baprs]-|GEMINI_API_KEY|SLACK_BOT_TOKEN/.test(html + script)) throw new Error("CooperBoard public demo: credential-like content found");
 if (css.length < 5000) throw new Error("CooperBoard public demo: stylesheet appears incomplete");
 if (image.size < 50_000) throw new Error("CooperBoard public demo: social image appears incomplete");
