@@ -23,7 +23,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I'm Rae Huang — incoming Stanford M.S. in Computer Science (Fall 2026), B.S. in Statistics & Data Science from Yale ('26). I'm targeting **machine learning engineering and data science roles**.
+I'm Rae Huang — an M.S. student in Data Science at Stanford, focused on machine learning and AI, with a B.S. in Statistics & Data Science from Yale ('26). I'm targeting **machine learning engineering and data science roles**.
 
 I work across the full ML lifecycle: fine-tuning and benchmarking LLMs against frontier baselines, training metric-learning models for image retrieval, building a two-stage recommender with point-in-time-correct feature pipelines on 32M transactions, and shipping forecasts with calibrated uncertainty. I care most about the parts that make models actually work in production — data pipelines, evaluation design, error analysis, and connecting model outputs to decisions.
 

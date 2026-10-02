@@ -13,11 +13,11 @@
 - title: EDUCATION
   type: time_table
   contents:
-    - title: M.S., Computer Science
+    - title: M.S., Data Science
       institution: Stanford University
-      year: Incoming Fall 2026
+      year: 09.2026 - Present
       description:
-        - "Incoming — starting Fall 2026"
+        - "Focus: Machine Learning and Artificial Intelligence"
     - title: B.S., Statistics & Data Science
       institution: Yale University
       year: 09.2021 - 05.2026
